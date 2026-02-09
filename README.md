@@ -1,263 +1,228 @@
-# Cofrade 360 🙏
+# Cofrade 360 🕯️📍
+Agenda cofrade + guía de hermandades + planificador inteligente de rutas “anti-bulla” para Semana Santa.
 
-**Cofrade 360** es una aplicación móvil y backend API para planificar y seguir la Semana Santa de Sevilla. Incluye agenda de eventos, información de hermandades, cálculo de rutas inteligentes evitando cortes de calle, y modo navegación en tiempo real.
-
-## 🏗️ Arquitectura del Monorepo
-
-```
-cofrade-360/
-├── frontend/           # Flutter app (Clean Architecture + Riverpod)
-├── backend/            # FastAPI + PostgreSQL + PostGIS
-├── docker-compose.yml  # Servicios: API, PostGIS, Redis, MinIO
-└── README.md
-```
-
-## ✨ Características
-
-### Frontend (Flutter)
-- **Clean Architecture** con separación de capas (Domain, Data, Presentation)
-- **Riverpod** para gestión de estado
-- **5 Tabs principales**:
-  - 📅 **Agenda**: Eventos y cultos de Semana Santa
-  - ⛪ **Hermandades**: Fichas de hermandades con información detallada
-  - 🗺️ **Itinerario**: Planificador de rutas inteligente
-  - 🚶 **Modo Calle**: Navegación en tiempo real
-  - 👤 **Perfil**: Configuración y preferencias
-- **Tema Claro/Oscuro** con colores de Semana Santa
-- **Mock Repositories** para desarrollo sin backend
-
-### Backend (FastAPI)
-- **FastAPI** con documentación automática (Swagger/ReDoc)
-- **PostgreSQL + PostGIS** para datos geoespaciales
-- **SQLAlchemy ORM** con modelos para Hermandades, Eventos, Rutas
-- **Alembic** para migraciones de base de datos
-- **A* Routing Algorithm** para cálculo de rutas óptimas
-- **API RESTful** con endpoints CRUD completos
-- **Tests con pytest**
-
-### Infraestructura (Docker)
-- **PostGIS**: Base de datos espacial
-- **Redis**: Cache y sesiones
-- **MinIO**: Almacenamiento de imágenes (S3-compatible)
-- **API**: Contenedor FastAPI con auto-reload
-
-## 🚀 Inicio Rápido
-
-### Requisitos Previos
-- Docker & Docker Compose
-- Flutter SDK (para desarrollo móvil)
-- Python 3.11+ (para desarrollo backend local)
-
-### 1. Levantar el Backend con Docker
-
-```bash
-# Levantar todos los servicios
-docker-compose up -d
-
-# Verificar que todos los servicios están corriendo
-docker-compose ps
-
-# Ver logs
-docker-compose logs -f api
-```
-
-Los servicios estarán disponibles en:
-- **API**: http://localhost:8000
-- **API Docs**: http://localhost:8000/docs
-- **PostgreSQL**: localhost:5432
-- **Redis**: localhost:6379
-- **MinIO Console**: http://localhost:9001 (minioadmin/minioadmin)
-
-### 2. Ejecutar la App Flutter
-
-```bash
-cd frontend
-
-# Instalar dependencias
-flutter pub get
-
-# Ejecutar en emulador o dispositivo
-flutter run
-
-# Ejecutar tests
-flutter test
-```
-
-## 📊 Base de Datos
-
-### Seed Data
-La base de datos se puebla automáticamente con:
-- **3 Hermandades**: Gran Poder, La Macarena, El Cachorro
-- **10 Eventos**: Pregón, procesiones, cultos
-
-### Modelos Principales
-
-**Hermandad**
-- Información básica (nombre, descripción, sede)
-- Ubicación geoespacial (PostGIS)
-- Fecha de fundación
-
-**Evento**
-- Título, descripción, fecha/hora
-- Ubicación y coordenadas
-- Relación con hermandad
-
-**Ruta**
-- Geometría de línea (LINESTRING)
-- Distancia y duración
-- Nodos y aristas para grafo de navegación
-
-## 🧪 Testing
-
-### Backend Tests
-```bash
-cd backend
-pip install -r requirements.txt
-pytest tests/
-```
-
-Tests incluidos:
-- ✅ API endpoints (health, hermandades, eventos, routing)
-- ✅ Algoritmo A* con grafo mock
-- ✅ Cálculo de distancias Haversine
-
-### Frontend Tests
-```bash
-cd frontend
-flutter test
-```
-
-Tests incluidos:
-- ✅ Smoke test de la aplicación
-- ✅ Navegación entre tabs
-- ✅ Carga de pantallas principales
-
-## 🗺️ Routing con A*
-
-El sistema de enrutamiento usa el algoritmo **A*** sobre un grafo que representa las calles de Sevilla.
-
-**Características**:
-- Cálculo de ruta óptima entre dos puntos
-- Evita calles bloqueadas por procesiones
-- Distancias reales usando fórmula Haversine
-- Preparado para integrar grafo real de OpenStreetMap
-
-**Endpoint**: `POST /api/v1/routing/optimal`
-
-```json
-{
-  "origen": [37.3862, -5.9926],
-  "destino": [37.4008, -5.9900],
-  "evitar_procesiones": true
-}
-```
-
-## 🛠️ Desarrollo
-
-### Estructura del Código
-
-**Frontend (Clean Architecture)**
-```
-lib/
-├── core/               # Theme, utils, errors
-├── features/           # Features con Domain/Data/Presentation
-│   ├── agenda/
-│   ├── hermandades/
-│   ├── itinerario/
-│   ├── modo_calle/
-│   └── perfil/
-└── shared/             # Widgets y componentes compartidos
-```
-
-**Backend**
-```
-app/
-├── api/                # API routes y endpoints
-├── core/               # Config, routing algorithm
-├── crud/               # Database operations
-├── db/                 # Database session y seed
-├── models/             # SQLAlchemy models
-└── schemas/            # Pydantic schemas
-```
-
-### Comandos Útiles
-
-**Docker**
-```bash
-# Reconstruir servicios
-docker-compose build
-
-# Ver logs de un servicio específico
-docker-compose logs -f api
-
-# Parar servicios
-docker-compose down
-
-# Parar y eliminar volúmenes
-docker-compose down -v
-```
-
-**Backend**
-```bash
-# Crear nueva migración
-alembic revision --autogenerate -m "description"
-
-# Aplicar migraciones
-alembic upgrade head
-
-# Revertir migración
-alembic downgrade -1
-```
-
-**Frontend**
-```bash
-# Generar código (Riverpod, JSON)
-flutter pub run build_runner build --delete-conflicting-outputs
-
-# Analizar código
-flutter analyze
-
-# Formatear código
-flutter format lib/
-```
-
-## 📝 API Endpoints
-
-### Hermandades
-- `GET /api/v1/hermandades` - Listar hermandades
-- `GET /api/v1/hermandades/{id}` - Obtener hermandad por ID
-- `POST /api/v1/hermandades` - Crear hermandad
-
-### Eventos
-- `GET /api/v1/eventos` - Listar eventos
-- `GET /api/v1/eventos/{id}` - Obtener evento por ID
-- `POST /api/v1/eventos` - Crear evento
-
-### Routing
-- `POST /api/v1/routing/optimal` - Calcular ruta óptima
-
-## 🔮 Próximos Pasos
-
-- [ ] Integrar grafo real de OpenStreetMap
-- [ ] Notificaciones push para eventos cercanos
-- [ ] Chat/foro de cofrades
-- [ ] Galería de fotos por hermandad
-- [ ] Modo offline con sincronización
-- [ ] Compartir itinerarios entre usuarios
-
-## 📄 Licencia
-
-MIT License - Ver archivo LICENSE para más detalles
-
-## 👥 Contribuir
-
-Las contribuciones son bienvenidas. Por favor:
-1. Fork el proyecto
-2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
-3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
-4. Push a la rama (`git push origin feature/AmazingFeature`)
-5. Abre un Pull Request
+## Qué es
+**Cofrade 360** es una app (Flutter) con backend API y un servicio de routing/IA que permite:
+- Consultar un **calendario** de cultos, actos, ensayos, conciertos, efemérides y extraordinarias.
+- Explorar fichas completas de **hermandades y cofradías** (historia, titulares, sede, multimedia, recorrido, etc.).
+- Crear tu **itinerario personal** (Viernes de Dolores → Domingo de Resurrección) y recibir **rutas en tiempo real** optimizadas por contexto cofrade (carrera oficial, calles ocupadas por cortejo, bulla, calles estrechas, etc.).
 
 ---
 
-**Desarrollado con ❤️ para la Semana Santa de Sevilla**
+## Stack “real” del repo (decisión tomada)
+Este repo está montado como **monorepo** con:
+- **Frontend:** Flutter
+- **API principal:** **NestJS (TypeScript)** → usuarios, catálogo, agenda, itinerarios, media, auth, etc.
+- **Motor de rutas/IA:** **FastAPI (Python)** → scoring anti-bulla + cálculo de rutas sobre grafo
+- **DB:** PostgreSQL (**PostGIS recomendado** si trabajas fuerte con geodatos)
+- **Cache/colas:** Redis
+- **Media:** MinIO (S3 compatible) para carteles/imágenes/vídeos (metadatos en DB)
+- **Docker Compose** para levantarlo todo local
+
+> Motivo del split: NestJS es muy sólido para dominio/validaciones/estructura de producto; Python simplifica el motor de rutas y heurísticas/ML.
+
+---
+
+## Estructura del repositorio
+```
+/
+  apps/
+    mobile/                 # Flutter app
+  services/
+    api/                    # NestJS API (TypeScript)
+    routing/                # FastAPI routing/IA (Python)
+  infra/
+    docker/
+      nginx/                # (opcional) reverse proxy
+  scripts/
+    importers/              # ingesta/normalización de eventos y hermandades
+  docker-compose.yml
+  .env.example
+```
+
+---
+
+## Requisitos
+- Flutter SDK (estable)
+- Node.js LTS (>= 20)
+- Python (>= 3.11)
+- Docker + Docker Compose
+
+---
+
+## Puesta en marcha (Docker)
+1) Copia variables de entorno:
+```bash
+cp .env.example .env
+```
+
+2) Levanta infraestructura y servicios:
+```bash
+docker compose up -d --build
+```
+
+3) Verifica salud:
+- API: http://localhost:3000/health
+- Routing: http://localhost:8001/health
+
+---
+
+## Desarrollo local (sin Docker para código)
+### Infra (solo DB/Redis/MinIO)
+```bash
+docker compose up -d postgres redis minio
+```
+
+### API (NestJS)
+```bash
+cd services/api
+npm i
+npm run start:dev
+```
+
+### Routing/IA (FastAPI)
+```bash
+cd services/routing
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+uvicorn app.main:app --reload --port 8001
+```
+
+### App Flutter
+```bash
+cd apps/mobile
+flutter pub get
+flutter run
+```
+
+---
+
+## Variables de entorno (root .env)
+
+### Base
+- `ENV=dev`
+- `TZ=Europe/Madrid`
+
+### PostgreSQL
+- `POSTGRES_HOST=postgres`
+- `POSTGRES_PORT=5432`
+- `POSTGRES_DB=cofrade360`
+- `POSTGRES_USER=cofrade`
+- `POSTGRES_PASSWORD=cofrade`
+
+### Redis
+- `REDIS_URL=redis://redis:6379`
+
+### MinIO (S3)
+- `S3_ENDPOINT=http://minio:9000`
+- `S3_ACCESS_KEY=minioadmin`
+- `S3_SECRET_KEY=minioadmin`
+- `S3_BUCKET=cofrade360-media`
+
+### API (NestJS)
+- `API_PORT=3000`
+- `JWT_SECRET=change_me`
+- `ROUTING_SERVICE_URL=http://routing:8001`
+
+### Routing (FastAPI)
+- `ROUTING_PORT=8001`
+
+### Mapas (opcional según proveedor)
+- `MAPS_PROVIDER=google|mapbox|osrm`
+- `MAPS_API_KEY=...`
+
+---
+
+## Contratos y endpoints (alto nivel)
+
+### API (NestJS) - REST
+- `GET /v1/events` (agenda)
+- `GET /v1/events/:id`
+- `GET /v1/brotherhoods` (hermandades)
+- `GET /v1/brotherhoods/:id`
+- `POST /v1/itineraries` (crear itinerario)
+- `GET /v1/itineraries/:id`
+- `POST /v1/itineraries/:id/waypoints` (puntos/horas)
+- `GET /v1/media/:id` (carteles, imágenes)
+
+### Routing/IA (FastAPI)
+- `POST /route` (ruta óptima con penalizaciones)
+- `POST /score` (scoring anti-bulla para depuración)
+- `GET /health`
+
+---
+
+## Motor “anti-bulla” (resumen técnico)
+El routing trabaja sobre un **grafo de calles** (nodos/intersecciones y aristas/calles) y minimiza:
+
+`coste_total = coste_base + penalizaciones`
+
+Penalizaciones típicas:
+- **Carrera oficial:** bloqueo o coste infinito en franjas críticas.
+- **Tramos ocupados por cortejo:** penalización alta (o bloqueo) en calles donde pasa la cofradía según hora y posición (cruz de guía / palio).
+- **Cruces:** penalización al cruzar perpendicularmente si hay paso/público.
+- **Bulla:** coste dinámico por densidad esperada (hermandad + tramo + hora + anchura de calle).
+
+Salida: ruta + ETA + “explicación” (por qué evita ciertos tramos) para transparencia en UX.
+
+---
+
+## Importadores de datos
+`scripts/importers/` contiene:
+- normalización de eventos (agenda) y multimedia (carteles)
+- normalización de fichas de hermandades
+- geocodificación (si aplica) y validación
+
+---
+
+## Privacidad
+- La ubicación solo se usa para navegación/avisos.
+- Opción de **modo privacidad**: sin tracking continuo (actualización manual).
+- Telemetría opcional y anonimizada.
+
+---
+
+## Roadmap (MVP → v1)
+- [ ] Agenda (listado + filtros + detalle + carteles)
+- [ ] Fichas de hermandades (mínimo viable + mapa de sede)
+- [ ] Itinerario manual (timeline + mapa)
+- [ ] Routing básico (sin bulla)
+- [ ] Scoring anti-bulla v1 (heurístico)
+- [ ] Alertas (próximo evento / cambios)
+- [ ] Offline day-pack (cache por jornada)
+
+---
+
+## Licencia
+Pendiente de definir.
+
+---
+
+# Propuesta de Valor (landing) + eslogan
+
+## Eslogan
+**Cofrade 360: Sevilla, paso a paso, sin bulla.**
+
+## Hero (cabecera)
+**Tu Semana Santa, perfectamente planificada.**  
+Agenda completa, hermandades al detalle y rutas inteligentes en tiempo real para que llegues a lo importante sin quedarte atrapado.
+
+## Qué problema resuelve
+- “¿Qué hay hoy y dónde?” → agenda fiable con carteles y datos prácticos.  
+- “Quiero saberlo todo de esta hermandad” → fichas ricas, historia y puntos clave.  
+- “Estoy en la calle, ¿cómo llego sin morir en la bulla?” → routing contextual con restricciones cofrades.
+
+## Por qué es distinta
+- No es solo un mapa: **entiende la ciudad en modo Semana Santa** (carrera oficial, cortejos, cruces difíciles, calles estrechas, horas punta).
+- Itinerarios **por jornada completa** (Viernes de Dolores → Domingo de Resurrección).
+- Recomendaciones de visión “realistas”: dónde colocarte y cuándo moverte.
+
+## Cómo funciona (3 pasos)
+1. **Explora** la agenda y las hermandades.
+2. **Diseña** tu itinerario por horas y zonas.
+3. **Navega** en tiempo real con rutas optimizadas según contexto.
+
+## CTA
+- **Empieza a planificar tu Semana Santa**  
+- **Crea tu itinerario en 2 minutos**
