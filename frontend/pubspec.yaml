@@ -1,0 +1,49 @@
+name: cofrade360
+description: Cofrade 360 - Holy Week planning and navigation app
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  
+  # State Management
+  flutter_riverpod: ^2.4.9
+  riverpod_annotation: ^2.3.3
+  
+  # UI
+  cupertino_icons: ^1.0.6
+  
+  # HTTP & API
+  dio: ^5.4.0
+  retrofit: ^4.0.3
+  json_annotation: ^4.8.1
+  
+  # Local Storage
+  shared_preferences: ^2.2.2
+  
+  # Utils
+  dartz: ^0.10.1
+  equatable: ^2.0.5
+  intl: ^0.18.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  
+  flutter_lints: ^3.0.1
+  
+  # Code Generation
+  build_runner: ^2.4.7
+  riverpod_generator: ^2.3.9
+  retrofit_generator: ^8.0.4
+  json_serializable: ^6.7.1
+  
+  # Testing
+  mockito: ^5.4.4
+
+flutter:
+  uses-material-design: true
