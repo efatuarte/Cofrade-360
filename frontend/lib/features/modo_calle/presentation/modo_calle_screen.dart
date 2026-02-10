@@ -8,7 +8,7 @@ class ModoCalleScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Modo Calle'),
+        title: const Text('Modo Exploración'),
       ),
       body: Center(
         child: Column(
@@ -28,7 +28,7 @@ class ModoCalleScreen extends ConsumerWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 32),
               child: Text(
-                'Activa el modo calle para ver procesiones cercanas y recibir alertas de cortes de tráfico',
+                'Activa el modo exploración para ver procesiones cercanas y recibir alertas de cortes de tráfico',
                 textAlign: TextAlign.center,
                 style: Theme.of(context).textTheme.bodyMedium,
               ),
@@ -36,10 +36,10 @@ class ModoCalleScreen extends ConsumerWidget {
             const SizedBox(height: 32),
             ElevatedButton.icon(
               onPressed: () {
-                // TODO: Activate street mode
+                // TODO: Activate exploration mode
               },
               icon: const Icon(Icons.navigation),
-              label: const Text('Activar Modo Calle'),
+              label: const Text('Activar Modo Exploración'),
             ),
           ],
         ),

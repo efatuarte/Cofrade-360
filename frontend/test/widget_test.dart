@@ -2,43 +2,109 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:cofrade360/main.dart';
+import 'package:cofrade360/features/auth/presentation/screens/login_screen.dart';
+import 'package:cofrade360/features/auth/presentation/screens/register_screen.dart';
 
 void main() {
-  testWidgets('App smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
+  testWidgets('App smoke test - shows MaterialApp', (WidgetTester tester) async {
     await tester.pumpWidget(const ProviderScope(child: MyApp()));
-
-    // Verify that the app starts
     expect(find.byType(MaterialApp), findsOneWidget);
   });
 
-  testWidgets('Bottom navigation has 5 tabs', (WidgetTester tester) async {
+  testWidgets('Unauthenticated user sees LoginScreen', (WidgetTester tester) async {
     await tester.pumpWidget(const ProviderScope(child: MyApp()));
     await tester.pumpAndSettle();
 
-    // Verify all 5 tabs are present
-    expect(find.text('Agenda'), findsOneWidget);
-    expect(find.text('Hermandades'), findsOneWidget);
-    expect(find.text('Itinerario'), findsOneWidget);
-    expect(find.text('Modo Calle'), findsOneWidget);
-    expect(find.text('Perfil'), findsOneWidget);
+    // Should show login screen with key elements
+    expect(find.text('Cofrade 360'), findsOneWidget);
+    expect(find.text('Iniciar Sesión'), findsOneWidget);
+    expect(find.byType(LoginScreen), findsOneWidget);
   });
 
-  testWidgets('Navigation between tabs works', (WidgetTester tester) async {
+  testWidgets('Login screen has email and password fields', (WidgetTester tester) async {
     await tester.pumpWidget(const ProviderScope(child: MyApp()));
     await tester.pumpAndSettle();
 
-    // Initially on Agenda tab
-    expect(find.text('Agenda'), findsNWidgets(2)); // In nav bar and app bar
+    expect(find.widgetWithText(TextFormField, 'Email'), findsOneWidget);
+    expect(find.widgetWithText(TextFormField, 'Contraseña'), findsOneWidget);
+  });
 
-    // Tap Hermandades tab
-    await tester.tap(find.text('Hermandades'));
+  testWidgets('Login form validates empty fields', (WidgetTester tester) async {
+    await tester.pumpWidget(const ProviderScope(child: MyApp()));
     await tester.pumpAndSettle();
-    expect(find.text('Hermandades'), findsNWidgets(2));
 
-    // Tap Perfil tab
-    await tester.tap(find.text('Perfil'));
+    // Tap login without filling fields
+    await tester.tap(find.text('Iniciar Sesión'));
     await tester.pumpAndSettle();
-    expect(find.text('Perfil'), findsNWidgets(2));
+
+    expect(find.text('Por favor ingresa tu email'), findsOneWidget);
+    expect(find.text('Por favor ingresa tu contraseña'), findsOneWidget);
+  });
+
+  testWidgets('Navigate to RegisterScreen from LoginScreen', (WidgetTester tester) async {
+    await tester.pumpWidget(const ProviderScope(child: MyApp()));
+    await tester.pumpAndSettle();
+
+    // Tap register link
+    await tester.tap(find.text('¿No tienes cuenta? Regístrate'));
+    await tester.pumpAndSettle();
+
+    expect(find.byType(RegisterScreen), findsOneWidget);
+    expect(find.text('Crear Cuenta'), findsOneWidget);
+  });
+
+  testWidgets('Register screen validates password length', (WidgetTester tester) async {
+    await tester.pumpWidget(const ProviderScope(child: MyApp()));
+    await tester.pumpAndSettle();
+
+    // Navigate to register
+    await tester.tap(find.text('¿No tienes cuenta? Regístrate'));
+    await tester.pumpAndSettle();
+
+    // Fill short password
+    await tester.enterText(
+      find.widgetWithText(TextFormField, 'Email'),
+      'test@test.com',
+    );
+    await tester.enterText(
+      find.widgetWithText(TextFormField, 'Contraseña'),
+      'short',
+    );
+    await tester.enterText(
+      find.widgetWithText(TextFormField, 'Confirmar Contraseña'),
+      'short',
+    );
+
+    await tester.tap(find.text('Registrarse'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('La contraseña debe tener al menos 8 caracteres'), findsOneWidget);
+  });
+
+  testWidgets('Register screen validates password match', (WidgetTester tester) async {
+    await tester.pumpWidget(const ProviderScope(child: MyApp()));
+    await tester.pumpAndSettle();
+
+    // Navigate to register
+    await tester.tap(find.text('¿No tienes cuenta? Regístrate'));
+    await tester.pumpAndSettle();
+
+    await tester.enterText(
+      find.widgetWithText(TextFormField, 'Email'),
+      'test@test.com',
+    );
+    await tester.enterText(
+      find.widgetWithText(TextFormField, 'Contraseña'),
+      'password123',
+    );
+    await tester.enterText(
+      find.widgetWithText(TextFormField, 'Confirmar Contraseña'),
+      'different123',
+    );
+
+    await tester.tap(find.text('Registrarse'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Las contraseñas no coinciden'), findsOneWidget);
   });
 }

@@ -9,7 +9,7 @@
 │  ┌──────────────────────────────────────────────────────────┐  │
 │  │              Presentation Layer (Widgets)                 │  │
 │  │  ┌──────┬───────────┬───────────┬────────────┬─────────┐ │  │
-│  │  │Agenda│Hermandades│Itinerario │Modo Calle  │ Perfil  │ │  │
+│  │  │Agenda│Hermandades│Itinerario │Modo Exploración  │ Perfil  │ │  │
 │  │  └──────┴───────────┴───────────┴────────────┴─────────┘ │  │
 │  │                      ↕ Riverpod State                      │  │
 │  └──────────────────────────────────────────────────────────┘  │

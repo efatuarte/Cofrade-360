@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../main.dart';
+import '../../auth/presentation/providers/auth_provider.dart';
 
 class PerfilScreen extends ConsumerWidget {
   const PerfilScreen({super.key});
@@ -8,10 +9,21 @@ class PerfilScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final themeMode = ref.watch(themeModeProvider);
+    final authState = ref.watch(authProvider);
+    final user = authState.user;
 
     return Scaffold(
       appBar: AppBar(
         title: const Text('Perfil'),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.logout),
+            onPressed: () async {
+              await ref.read(authProvider.notifier).logout();
+            },
+            tooltip: 'Cerrar Sesión',
+          ),
+        ],
       ),
       body: ListView(
         children: [
@@ -24,7 +36,7 @@ class PerfilScreen extends ConsumerWidget {
           const SizedBox(height: 16),
           Center(
             child: Text(
-              'Usuario Cofrade',
+              user?.email ?? 'Usuario Cofrade',
               style: Theme.of(context).textTheme.titleLarge,
             ),
           ),

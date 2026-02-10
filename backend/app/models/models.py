@@ -1,8 +1,33 @@
-from sqlalchemy import Column, String, DateTime, Text, Integer
+from sqlalchemy import Column, String, DateTime, Text, Integer, Boolean, Float, ForeignKey
 from sqlalchemy.orm import relationship
 from geoalchemy2 import Geometry
 from app.db.session import Base
 from datetime import datetime
+
+
+class User(Base):
+    __tablename__ = "users"
+
+    id = Column(String, primary_key=True, index=True)
+    email = Column(String, unique=True, nullable=False, index=True)
+    hashed_password = Column(String, nullable=False)
+    is_active = Column(Boolean, default=True, nullable=False)
+    created_at = Column(DateTime, default=datetime.utcnow, nullable=False)
+    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+
+
+class Location(Base):
+    __tablename__ = "locations"
+
+    id = Column(String, primary_key=True, index=True)
+    name = Column(String, nullable=False)
+    address = Column(String)
+    lat = Column(Float)
+    lng = Column(Float)
+    kind = Column(String, default="other")  # church, plaza, theater, street, other
+    created_at = Column(DateTime, default=datetime.utcnow)
+
+    eventos = relationship("Evento", back_populates="location")
 
 
 class Hermandad(Base):
@@ -27,14 +52,21 @@ class Evento(Base):
     id = Column(String, primary_key=True, index=True)
     titulo = Column(String, nullable=False)
     descripcion = Column(Text)
-    fecha_hora = Column(DateTime, nullable=False)
-    hermandad_id = Column(String, nullable=False)
-    ubicacion = Column(String)
-    ubicacion_geo = Column(Geometry('POINT', srid=4326))
+    tipo = Column(String, default="otro")
+    fecha_inicio = Column(DateTime, nullable=False)
+    fecha_fin = Column(DateTime)
+    location_id = Column(String, ForeignKey("locations.id"), nullable=True)
+    hermandad_id = Column(String, ForeignKey("hermandades.id"), nullable=True)
+    precio = Column(Float, default=0)
+    moneda = Column(String, default="EUR")
+    es_gratuito = Column(Boolean, default=True)
+    poster_asset_id = Column(String, nullable=True)
+    estado = Column(String, default="programado")
     created_at = Column(DateTime, default=datetime.utcnow)
     updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
     hermandad = relationship("Hermandad", back_populates="eventos")
+    location = relationship("Location", back_populates="eventos")
 
 
 class Ruta(Base):
@@ -55,7 +87,7 @@ class Nodo(Base):
 
     id = Column(String, primary_key=True, index=True)
     ubicacion = Column(Geometry('POINT', srid=4326), nullable=False)
-    tipo = Column(String)  # intersection, landmark, etc.
+    tipo = Column(String)
     created_at = Column(DateTime, default=datetime.utcnow)
 
 
@@ -67,6 +99,6 @@ class Arista(Base):
     nodo_destino = Column(String, nullable=False)
     geometria = Column(Geometry('LINESTRING', srid=4326))
     distancia_metros = Column(Integer)
-    costo = Column(Integer)  # For A* algorithm
-    bloqueada = Column(Integer, default=0)  # 0 = open, 1 = blocked
+    costo = Column(Integer)
+    bloqueada = Column(Integer, default=0)
     created_at = Column(DateTime, default=datetime.utcnow)

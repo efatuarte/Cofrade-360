@@ -23,7 +23,7 @@
   1. ✓ Agenda (with 3 mock events)
   2. ✓ Hermandades (with 3 mock brotherhoods)
   3. ✓ Itinerario (route planner placeholder)
-  4. ✓ Modo Calle (street mode placeholder)
+  4. ✓ Modo Exploración (street mode placeholder)
   5. ✓ Perfil (profile with theme switcher)
 
 - [x] **Light/Dark Theme**:

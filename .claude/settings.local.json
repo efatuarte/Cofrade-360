@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -m pytest:*)",
+      "Bash(python:*)",
+      "Bash(flutter analyze:*)",
+      "Bash(cmd.exe /c \"cd /d C:\\\\Users\\\\efatu\\\\Desktop\\\\Proyectos\\\\Cofrade-360\\\\frontend && flutter analyze lib\\\\features\\\\agenda\\\\ 2>&1\":*)",
+      "Bash(cmd.exe /c \"cd /d C:\\\\Users\\\\efatu\\\\Desktop\\\\Proyectos\\\\Cofrade-360\\\\frontend && flutter analyze lib\\\\features\\\\agenda\":*)",
+      "Bash(powershell.exe:*)"
+    ]
+  }
+}
