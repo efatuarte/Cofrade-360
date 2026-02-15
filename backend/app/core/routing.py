@@ -7,11 +7,6 @@ from typing import Dict, List, Optional, Tuple
 
 from app.schemas.schemas import RouteResponse
 
-from sqlalchemy.orm import Session
-
-from app.models.models import ProcessionSegmentOccupation, RestrictedArea, StreetSegment
-from app.schemas.schemas import RouteAlternative, RouteExplanationItem, RouteResponse
-
 
 @dataclass
 class Node:
