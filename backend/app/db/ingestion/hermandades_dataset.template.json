@@ -1,0 +1,48 @@
+{
+  "generated_at": "2026-01-01T00:00:00Z",
+  "source": "manual-template-a1",
+  "items": [
+    {
+      "name_short": "Gran Poder",
+      "name_full": "Pontificia y Real Hermandad y Cofradía de Nazarenos de Nuestro Padre Jesús del Gran Poder y María Santísima del Mayor Dolor y Traspaso",
+      "web_url": "https://www.gran-poder.es",
+      "ss_day": "Madrugada",
+      "sede": {
+        "temple_name": "Basílica de Jesús del Gran Poder",
+        "address": "Plaza de San Lorenzo, 13, Sevilla",
+        "lat": 37.3935,
+        "lng": -5.9995,
+        "needs_geocode": false
+      },
+      "titulares": [
+        {
+          "name": "Nuestro Padre Jesús del Gran Poder",
+          "type": "cristifero"
+        },
+        {
+          "name": "María Santísima del Mayor Dolor y Traspaso",
+          "type": "dolorosa"
+        }
+      ],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "provenance": [
+        {
+          "url": "https://www.gran-poder.es",
+          "accessed_at": "2026-01-01T00:00:00Z",
+          "fields_extracted": ["name_short", "name_full", "sede"]
+        }
+      ],
+      "procession": {
+        "date": "2026-04-10",
+        "salida": "2026-04-10T01:00:00",
+        "carrera_oficial_start": "2026-04-10T03:20:00",
+        "carrera_oficial_end": "2026-04-10T04:15:00",
+        "recogida": "2026-04-10T07:30:00",
+        "itinerary_text": "Plaza de San Lorenzo, Cardenal Spínola, ..."
+      }
+    }
+  ]
+}

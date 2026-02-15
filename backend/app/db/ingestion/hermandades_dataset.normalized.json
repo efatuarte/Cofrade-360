@@ -1,0 +1,3204 @@
+{
+  "generated_at": "2026-02-15T19:19:03.272430+00:00",
+  "source": "auto-web-scan-a2",
+  "total_items": 71,
+  "fetched_ok": 0,
+  "fetched_error": 71,
+  "items": [
+    {
+      "name_short": "Pino Montano",
+      "name_full": "Pino Montano",
+      "web_url": "https://hermandadpinomontano.es",
+      "ss_day": "Viernes de Dolores",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://hermandadpinomontano.es",
+          "accessed_at": "2026-02-15T19:19:03.271309+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    },
+    {
+      "name_short": "La Misión",
+      "name_full": "La Misión",
+      "web_url": "https://archicofradiamision.es",
+      "ss_day": "Viernes de Dolores",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://archicofradiamision.es",
+          "accessed_at": "2026-02-15T19:19:03.271361+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    },
+    {
+      "name_short": "Dulce Nombre (Bellavista)",
+      "name_full": "Dulce Nombre (Bellavista)",
+      "web_url": "https://www.dulcenombrebellavista.es",
+      "ss_day": "Viernes de Dolores",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://www.dulcenombrebellavista.es",
+          "accessed_at": "2026-02-15T19:19:03.271377+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    },
+    {
+      "name_short": "Pasión y Muerte",
+      "name_full": "Pasión y Muerte",
+      "web_url": "https://hermandadpasionymuerte.es",
+      "ss_day": "Viernes de Dolores",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://hermandadpasionymuerte.es",
+          "accessed_at": "2026-02-15T19:19:03.271390+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    },
+    {
+      "name_short": "Bendición y Esperanza",
+      "name_full": "Bendición y Esperanza",
+      "web_url": "https://bendicionyesperanza.es",
+      "ss_day": "Viernes de Dolores",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://bendicionyesperanza.es",
+          "accessed_at": "2026-02-15T19:19:03.271403+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    },
+    {
+      "name_short": "Stmo. Cristo de la Corona",
+      "name_full": "Stmo. Cristo de la Corona",
+      "web_url": "https://www.hermandadcristocorona.org",
+      "ss_day": "Viernes de Dolores",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://www.hermandadcristocorona.org",
+          "accessed_at": "2026-02-15T19:19:03.271413+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    },
+    {
+      "name_short": "Padre Pío",
+      "name_full": "Padre Pío",
+      "web_url": "https://hermandadpadrepio.com",
+      "ss_day": "Sábado de Pasión",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://hermandadpadrepio.com",
+          "accessed_at": "2026-02-15T19:19:03.271424+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    },
+    {
+      "name_short": "Divino Perdón",
+      "name_full": "Divino Perdón",
+      "web_url": "https://mobile.twitter.com/hdadivinoperdon",
+      "ss_day": "Sábado de Pasión",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://mobile.twitter.com/hdadivinoperdon",
+          "accessed_at": "2026-02-15T19:19:03.271433+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    },
+    {
+      "name_short": "Torreblanca",
+      "name_full": "Torreblanca",
+      "web_url": "https://hermandaddelosdolores.org",
+      "ss_day": "Sábado de Pasión",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://hermandaddelosdolores.org",
+          "accessed_at": "2026-02-15T19:19:03.271443+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    },
+    {
+      "name_short": "San José Obrero",
+      "name_full": "San José Obrero",
+      "web_url": "https://hermandadsanjoseobrerosevilla.blogspot.com",
+      "ss_day": "Sábado de Pasión",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://hermandadsanjoseobrerosevilla.blogspot.com",
+          "accessed_at": "2026-02-15T19:19:03.271452+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    },
+    {
+      "name_short": "La Milagrosa",
+      "name_full": "La Milagrosa",
+      "web_url": "https://www.hermandaddelamilagrosa.es",
+      "ss_day": "Sábado de Pasión",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://www.hermandaddelamilagrosa.es",
+          "accessed_at": "2026-02-15T19:19:03.271462+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    },
+    {
+      "name_short": "Jesús Despojado",
+      "name_full": "Jesús Despojado",
+      "web_url": "https://www.jesusdespojado.org",
+      "ss_day": "Domingo de Ramos",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://www.jesusdespojado.org",
+          "accessed_at": "2026-02-15T19:19:03.271473+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    },
+    {
+      "name_short": "La Paz",
+      "name_full": "La Paz",
+      "web_url": "https://www.hermandaddelapaz.org",
+      "ss_day": "Domingo de Ramos",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://www.hermandaddelapaz.org",
+          "accessed_at": "2026-02-15T19:19:03.271482+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    },
+    {
+      "name_short": "La Cena",
+      "name_full": "La Cena",
+      "web_url": "https://lacenadesevilla.es",
+      "ss_day": "Domingo de Ramos",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://lacenadesevilla.es",
+          "accessed_at": "2026-02-15T19:19:03.271491+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    },
+    {
+      "name_short": "La Hiniesta",
+      "name_full": "La Hiniesta",
+      "web_url": "https://www.hermandaddelahiniesta.es",
+      "ss_day": "Domingo de Ramos",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://www.hermandaddelahiniesta.es",
+          "accessed_at": "2026-02-15T19:19:03.271500+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    },
+    {
+      "name_short": "San Roque",
+      "name_full": "San Roque",
+      "web_url": "https://hermandadsanroque.com",
+      "ss_day": "Domingo de Ramos",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://hermandadsanroque.com",
+          "accessed_at": "2026-02-15T19:19:03.271510+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    },
+    {
+      "name_short": "La Estrella",
+      "name_full": "La Estrella",
+      "web_url": "https://www.hermandad-estrella.org",
+      "ss_day": "Domingo de Ramos",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://www.hermandad-estrella.org",
+          "accessed_at": "2026-02-15T19:19:03.271518+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    },
+    {
+      "name_short": "La Amargura",
+      "name_full": "La Amargura",
+      "web_url": "https://www.amargura.org",
+      "ss_day": "Domingo de Ramos",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://www.amargura.org",
+          "accessed_at": "2026-02-15T19:19:03.271566+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    },
+    {
+      "name_short": "El Amor",
+      "name_full": "El Amor",
+      "web_url": "https://hermandaddelamor.net",
+      "ss_day": "Domingo de Ramos",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://hermandaddelamor.net",
+          "accessed_at": "2026-02-15T19:19:03.271577+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    },
+    {
+      "name_short": "Cautivo y Rescatado",
+      "name_full": "Cautivo y Rescatado",
+      "web_url": "https://jesuscautivoyrescatado.com",
+      "ss_day": "Lunes Santo",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://jesuscautivoyrescatado.com",
+          "accessed_at": "2026-02-15T19:19:03.271604+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    },
+    {
+      "name_short": "Redención -Rocío",
+      "name_full": "Redención -Rocío",
+      "web_url": "https://hermandadredencion.com",
+      "ss_day": "Lunes Santo",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://hermandadredencion.com",
+          "accessed_at": "2026-02-15T19:19:03.271614+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    },
+    {
+      "name_short": "Santa Genoveva",
+      "name_full": "Santa Genoveva",
+      "web_url": "https://santagenoveva.com",
+      "ss_day": "Lunes Santo",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://santagenoveva.com",
+          "accessed_at": "2026-02-15T19:19:03.271623+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    },
+    {
+      "name_short": "San Gonzalo",
+      "name_full": "San Gonzalo",
+      "web_url": "https://hermandaddesangonzalo.es",
+      "ss_day": "Lunes Santo",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://hermandaddesangonzalo.es",
+          "accessed_at": "2026-02-15T19:19:03.271631+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    },
+    {
+      "name_short": "Santa Marta",
+      "name_full": "Santa Marta",
+      "web_url": "https://hermandaddesantamarta.org",
+      "ss_day": "Lunes Santo",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://hermandaddesantamarta.org",
+          "accessed_at": "2026-02-15T19:19:03.271640+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    },
+    {
+      "name_short": "Vera+Cruz",
+      "name_full": "Vera+Cruz",
+      "web_url": "https://veracruzsevilla.org",
+      "ss_day": "Lunes Santo",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://veracruzsevilla.org",
+          "accessed_at": "2026-02-15T19:19:03.271648+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    },
+    {
+      "name_short": "Las Penas",
+      "name_full": "Las Penas",
+      "web_url": "https://www.hermandaddelaspenas.es",
+      "ss_day": "Lunes Santo",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://www.hermandaddelaspenas.es",
+          "accessed_at": "2026-02-15T19:19:03.271657+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    },
+    {
+      "name_short": "Las Aguas",
+      "name_full": "Las Aguas",
+      "web_url": "https://www.hermandaddelasaguas.org",
+      "ss_day": "Lunes Santo",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://www.hermandaddelasaguas.org",
+          "accessed_at": "2026-02-15T19:19:03.271666+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    },
+    {
+      "name_short": "El Museo",
+      "name_full": "El Museo",
+      "web_url": "https://www.hermandaddelmuseo.org",
+      "ss_day": "Lunes Santo",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://www.hermandaddelmuseo.org",
+          "accessed_at": "2026-02-15T19:19:03.271674+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    },
+    {
+      "name_short": "San Esteban",
+      "name_full": "San Esteban",
+      "web_url": "https://www.hermandadsanesteban.org",
+      "ss_day": "Martes Santo",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://www.hermandadsanesteban.org",
+          "accessed_at": "2026-02-15T19:19:03.271682+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    },
+    {
+      "name_short": "Dolores del Cerro",
+      "name_full": "Dolores del Cerro",
+      "web_url": "https://www.doloresdelcerro.com",
+      "ss_day": "Martes Santo",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://www.doloresdelcerro.com",
+          "accessed_at": "2026-02-15T19:19:03.271690+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    },
+    {
+      "name_short": "La Candelaria",
+      "name_full": "La Candelaria",
+      "web_url": "https://www.hermandaddelacandelaria.com",
+      "ss_day": "Martes Santo",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://www.hermandaddelacandelaria.com",
+          "accessed_at": "2026-02-15T19:19:03.271713+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    },
+    {
+      "name_short": "San Benito",
+      "name_full": "San Benito",
+      "web_url": "https://hermandaddesanbenito.net",
+      "ss_day": "Martes Santo",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://hermandaddesanbenito.net",
+          "accessed_at": "2026-02-15T19:19:03.271723+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    },
+    {
+      "name_short": "Dulce Nombre",
+      "name_full": "Dulce Nombre",
+      "web_url": "https://hermandaddeldulcenombre.org",
+      "ss_day": "Martes Santo",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://hermandaddeldulcenombre.org",
+          "accessed_at": "2026-02-15T19:19:03.271734+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    },
+    {
+      "name_short": "Los Javieres",
+      "name_full": "Los Javieres",
+      "web_url": "https://javieres.com",
+      "ss_day": "Martes Santo",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://javieres.com",
+          "accessed_at": "2026-02-15T19:19:03.271743+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    },
+    {
+      "name_short": "Los Estudiantes",
+      "name_full": "Los Estudiantes",
+      "web_url": "https://hermandaddelosestudiantes.es",
+      "ss_day": "Martes Santo",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://hermandaddelosestudiantes.es",
+          "accessed_at": "2026-02-15T19:19:03.271752+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    },
+    {
+      "name_short": "Santa Cruz",
+      "name_full": "Santa Cruz",
+      "web_url": "https://www.hermandaddesantacruz.com",
+      "ss_day": "Martes Santo",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://www.hermandaddesantacruz.com",
+          "accessed_at": "2026-02-15T19:19:03.271760+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    },
+    {
+      "name_short": "El Carmen",
+      "name_full": "El Carmen",
+      "web_url": "https://www.hermandaddelcarmen.es",
+      "ss_day": "Miércoles Santo",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://www.hermandaddelcarmen.es",
+          "accessed_at": "2026-02-15T19:19:03.271784+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    },
+    {
+      "name_short": "La Sed",
+      "name_full": "La Sed",
+      "web_url": "https://www.hermandaddelased.org",
+      "ss_day": "Miércoles Santo",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://www.hermandaddelased.org",
+          "accessed_at": "2026-02-15T19:19:03.271793+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    },
+    {
+      "name_short": "San Bernardo",
+      "name_full": "San Bernardo",
+      "web_url": "https://www.hermandaddesanbernardo.com",
+      "ss_day": "Miércoles Santo",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://www.hermandaddesanbernardo.com",
+          "accessed_at": "2026-02-15T19:19:03.271801+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    },
+    {
+      "name_short": "Buen Fin",
+      "name_full": "Buen Fin",
+      "web_url": "https://hermandadbuenfin.es",
+      "ss_day": "Miércoles Santo",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://hermandadbuenfin.es",
+          "accessed_at": "2026-02-15T19:19:03.271810+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    },
+    {
+      "name_short": "Sagrada Lanzada",
+      "name_full": "Sagrada Lanzada",
+      "web_url": "https://lanzada.org",
+      "ss_day": "Miércoles Santo",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://lanzada.org",
+          "accessed_at": "2026-02-15T19:19:03.271817+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    },
+    {
+      "name_short": "El Baratillo",
+      "name_full": "El Baratillo",
+      "web_url": "https://www.hermandadelbaratillo.es",
+      "ss_day": "Miércoles Santo",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://www.hermandadelbaratillo.es",
+          "accessed_at": "2026-02-15T19:19:03.271844+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    },
+    {
+      "name_short": "Cristo de Burgos",
+      "name_full": "Cristo de Burgos",
+      "web_url": "https://www.cristodeburgos.es",
+      "ss_day": "Miércoles Santo",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://www.cristodeburgos.es",
+          "accessed_at": "2026-02-15T19:19:03.271853+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    },
+    {
+      "name_short": "Siete Palabras",
+      "name_full": "Siete Palabras",
+      "web_url": "https://siete-palabras.com",
+      "ss_day": "Miércoles Santo",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://siete-palabras.com",
+          "accessed_at": "2026-02-15T19:19:03.271878+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    },
+    {
+      "name_short": "Los Panaderos",
+      "name_full": "Los Panaderos",
+      "web_url": "https://www.hdadpanaderos.es",
+      "ss_day": "Miércoles Santo",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://www.hdadpanaderos.es",
+          "accessed_at": "2026-02-15T19:19:03.271887+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    },
+    {
+      "name_short": "Los Negritos",
+      "name_full": "Los Negritos",
+      "web_url": "https://www.hermandadlosnegritos.org",
+      "ss_day": "Jueves Santo",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://www.hermandadlosnegritos.org",
+          "accessed_at": "2026-02-15T19:19:03.271927+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    },
+    {
+      "name_short": "La Exaltación",
+      "name_full": "La Exaltación",
+      "web_url": "https://www.laexaltacion.org",
+      "ss_day": "Jueves Santo",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://www.laexaltacion.org",
+          "accessed_at": "2026-02-15T19:19:03.271936+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    },
+    {
+      "name_short": "Las Cigarreras",
+      "name_full": "Las Cigarreras",
+      "web_url": "https://www.columnayazotes.es",
+      "ss_day": "Jueves Santo",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://www.columnayazotes.es",
+          "accessed_at": "2026-02-15T19:19:03.271960+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    },
+    {
+      "name_short": "Monte-Sión",
+      "name_full": "Monte-Sión",
+      "web_url": "https://hermandaddemontesion.com",
+      "ss_day": "Jueves Santo",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://hermandaddemontesion.com",
+          "accessed_at": "2026-02-15T19:19:03.271968+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    },
+    {
+      "name_short": "La Quinta Angustia",
+      "name_full": "La Quinta Angustia",
+      "web_url": "https://laquintaangustia.org",
+      "ss_day": "Jueves Santo",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://laquintaangustia.org",
+          "accessed_at": "2026-02-15T19:19:03.271975+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    },
+    {
+      "name_short": "El Valle",
+      "name_full": "El Valle",
+      "web_url": "https://www.elvalle.org",
+      "ss_day": "Jueves Santo",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://www.elvalle.org",
+          "accessed_at": "2026-02-15T19:19:03.272015+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    },
+    {
+      "name_short": "Pasión",
+      "name_full": "Pasión",
+      "web_url": "https://www.hermandaddepasion.org",
+      "ss_day": "Jueves Santo",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://www.hermandaddepasion.org",
+          "accessed_at": "2026-02-15T19:19:03.272023+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    },
+    {
+      "name_short": "El Silencio",
+      "name_full": "El Silencio",
+      "web_url": "https://www.hermandaddeelsilencio.org",
+      "ss_day": "Madrugada",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://www.hermandaddeelsilencio.org",
+          "accessed_at": "2026-02-15T19:19:03.272032+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    },
+    {
+      "name_short": "Gran Poder",
+      "name_full": "Gran Poder",
+      "web_url": "https://www.gran-poder.es",
+      "ss_day": "Madrugada",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://www.gran-poder.es",
+          "accessed_at": "2026-02-15T19:19:03.272040+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    },
+    {
+      "name_short": "La Macarena",
+      "name_full": "La Macarena",
+      "web_url": "https://www.hermandaddelamacarena.es",
+      "ss_day": "Madrugada",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://www.hermandaddelamacarena.es",
+          "accessed_at": "2026-02-15T19:19:03.272047+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    },
+    {
+      "name_short": "El Calvario",
+      "name_full": "El Calvario",
+      "web_url": "https://hermandaddelcalvario.org",
+      "ss_day": "Madrugada",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://hermandaddelcalvario.org",
+          "accessed_at": "2026-02-15T19:19:03.272072+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    },
+    {
+      "name_short": "Esperanza de Triana",
+      "name_full": "Esperanza de Triana",
+      "web_url": "https://esperanzadetriana.es",
+      "ss_day": "Madrugada",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://esperanzadetriana.es",
+          "accessed_at": "2026-02-15T19:19:03.272096+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    },
+    {
+      "name_short": "Los Gitanos",
+      "name_full": "Los Gitanos",
+      "web_url": "https://www.hermandaddelosgitanos.com",
+      "ss_day": "Madrugada",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://www.hermandaddelosgitanos.com",
+          "accessed_at": "2026-02-15T19:19:03.272121+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    },
+    {
+      "name_short": "Carretería",
+      "name_full": "Carretería",
+      "web_url": "https://hermandaddelacarreteria.org",
+      "ss_day": "Viernes Santo",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://hermandaddelacarreteria.org",
+          "accessed_at": "2026-02-15T19:19:03.272130+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    },
+    {
+      "name_short": "La Soledad (San Buenaventura)",
+      "name_full": "La Soledad (San Buenaventura)",
+      "web_url": "https://www.soledadsanbuenaventura.com",
+      "ss_day": "Viernes Santo",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://www.soledadsanbuenaventura.com",
+          "accessed_at": "2026-02-15T19:19:03.272154+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    },
+    {
+      "name_short": "El Cachorro",
+      "name_full": "El Cachorro",
+      "web_url": "https://www.hermandaddelcachorro.org",
+      "ss_day": "Viernes Santo",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://www.hermandaddelcachorro.org",
+          "accessed_at": "2026-02-15T19:19:03.272162+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    },
+    {
+      "name_short": "La O",
+      "name_full": "La O",
+      "web_url": "https://www.hermandaddelao.es",
+      "ss_day": "Viernes Santo",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://www.hermandaddelao.es",
+          "accessed_at": "2026-02-15T19:19:03.272169+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    },
+    {
+      "name_short": "Tres Caídas de San Isidoro",
+      "name_full": "Tres Caídas de San Isidoro",
+      "web_url": "https://trescaidas.org",
+      "ss_day": "Viernes Santo",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://trescaidas.org",
+          "accessed_at": "2026-02-15T19:19:03.272288+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    },
+    {
+      "name_short": "Montserrat",
+      "name_full": "Montserrat",
+      "web_url": "https://www.montserratsevilla.com",
+      "ss_day": "Viernes Santo",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://www.montserratsevilla.com",
+          "accessed_at": "2026-02-15T19:19:03.272297+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    },
+    {
+      "name_short": "Sagrada Mortaja",
+      "name_full": "Sagrada Mortaja",
+      "web_url": "https://www.hermandadsagradamortaja.org",
+      "ss_day": "Viernes Santo",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://www.hermandadsagradamortaja.org",
+          "accessed_at": "2026-02-15T19:19:03.272321+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    },
+    {
+      "name_short": "El Sol",
+      "name_full": "El Sol",
+      "web_url": "https://hermandaddelsol.org",
+      "ss_day": "Sábado Santo",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://hermandaddelsol.org",
+          "accessed_at": "2026-02-15T19:19:03.272331+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    },
+    {
+      "name_short": "Los Servitas",
+      "name_full": "Los Servitas",
+      "web_url": "https://realhermandadservita.com",
+      "ss_day": "Sábado Santo",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://realhermandadservita.com",
+          "accessed_at": "2026-02-15T19:19:03.272338+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    },
+    {
+      "name_short": "La Trinidad",
+      "name_full": "La Trinidad",
+      "web_url": "https://hermandaddelatrinidad.es",
+      "ss_day": "Sábado Santo",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://hermandaddelatrinidad.es",
+          "accessed_at": "2026-02-15T19:19:03.272346+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    },
+    {
+      "name_short": "El Santo Entierro",
+      "name_full": "El Santo Entierro",
+      "web_url": "https://www.santoentierro.org",
+      "ss_day": "Sábado Santo",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://www.santoentierro.org",
+          "accessed_at": "2026-02-15T19:19:03.272369+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    },
+    {
+      "name_short": "La Soledad (San Lorenzo)",
+      "name_full": "La Soledad (San Lorenzo)",
+      "web_url": "https://www.hermandaddelasoledad.org",
+      "ss_day": "Sábado Santo",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://www.hermandaddelasoledad.org",
+          "accessed_at": "2026-02-15T19:19:03.272392+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    },
+    {
+      "name_short": "La Resurrección",
+      "name_full": "La Resurrección",
+      "web_url": "https://www.hermandaddelaresurreccion.com",
+      "ss_day": "Domingo de Resurrección",
+      "sede": {
+        "temple_name": null,
+        "address": null,
+        "lat": null,
+        "lng": null,
+        "needs_geocode": true
+      },
+      "titulares": [],
+      "media": {
+        "logo_url": null,
+        "images": []
+      },
+      "schedule": {
+        "salida": null,
+        "carrera_oficial_start": null,
+        "carrera_oficial_end": null,
+        "recogida": null,
+        "itinerary_text": null
+      },
+      "provenance": [
+        {
+          "url": "https://www.hermandaddelaresurreccion.com",
+          "accessed_at": "2026-02-15T19:19:03.272415+00:00",
+          "fields_extracted": [
+            "name_short",
+            "web_url",
+            "ss_day"
+          ],
+          "status_code": null
+        }
+      ],
+      "ingestion": {
+        "fetched_ok": false,
+        "notes": [
+          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
+          "manual_review_required:name_full"
+        ],
+        "description": null
+      }
+    }
+  ]
+}

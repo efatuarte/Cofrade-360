@@ -5,8 +5,16 @@ from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 from app.core.deps import get_db, get_current_active_user
 from app.core.security import verify_password, create_access_token, create_refresh_token, decode_token
-from app.schemas.schemas import UserCreate, UserResponse, LoginRequest, TokenResponse, RefreshRequest
-from app.crud.crud import get_user_by_email, create_user
+from app.schemas.schemas import (
+    LoginRequest,
+    NotificationSettingsResponse,
+    NotificationSettingsUpdate,
+    RefreshRequest,
+    TokenResponse,
+    UserCreate,
+    UserResponse,
+)
+from app.crud.crud import create_user, get_user_by_email, get_user_by_id, update_user_notification_settings
 from app.models.models import User
 
 router = APIRouter()
@@ -93,10 +101,22 @@ def refresh(refresh_data: RefreshRequest, db: Session = Depends(get_db)):
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail="Invalid refresh token"
         )
+
+    user = get_user_by_id(db, user_id=user_id)
+    if user is None:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="User not found"
+        )
+    if not user.is_active:
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Inactive user"
+        )
     
     # Create new tokens
-    access_token = create_access_token(data={"sub": user_id})
-    new_refresh_token = create_refresh_token(data={"sub": user_id})
+    access_token = create_access_token(data={"sub": user.id})
+    new_refresh_token = create_refresh_token(data={"sub": user.id})
     
     return TokenResponse(
         access_token=access_token,
@@ -120,3 +140,31 @@ def get_me(current_user: User = Depends(get_current_active_user)):
     Get current user info
     """
     return current_user
+
+
+@router.get("/me/notifications", response_model=NotificationSettingsResponse)
+def get_my_notification_settings(current_user: User = Depends(get_current_active_user)):
+    """Get current user notification preferences"""
+    return NotificationSettingsResponse(
+        notifications_processions=current_user.notifications_processions,
+        notifications_restrictions=current_user.notifications_restrictions,
+    )
+
+
+@router.patch("/me/notifications", response_model=NotificationSettingsResponse)
+def patch_my_notification_settings(
+    payload: NotificationSettingsUpdate,
+    db: Session = Depends(get_db),
+    current_user: User = Depends(get_current_active_user),
+):
+    """Update current user notification preferences"""
+    updated = update_user_notification_settings(
+        db,
+        user=current_user,
+        notifications_processions=payload.notifications_processions,
+        notifications_restrictions=payload.notifications_restrictions,
+    )
+    return NotificationSettingsResponse(
+        notifications_processions=updated.notifications_processions,
+        notifications_restrictions=updated.notifications_restrictions,
+    )

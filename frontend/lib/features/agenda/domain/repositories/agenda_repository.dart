@@ -13,4 +13,14 @@ abstract class AgendaRepository {
   });
 
   Future<Either<Failure, Evento>> getEventoById(String id);
+
+  Future<Either<Failure, EventPoster>> getPosterUrl(String id);
+}
+
+
+class EventPoster {
+  final String assetId;
+  final String url;
+
+  const EventPoster({required this.assetId, required this.url});
 }

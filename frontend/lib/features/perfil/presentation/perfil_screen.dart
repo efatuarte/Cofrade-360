@@ -1,13 +1,94 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
 import '../../../main.dart';
 import '../../auth/presentation/providers/auth_provider.dart';
 
-class PerfilScreen extends ConsumerWidget {
+class PerfilScreen extends ConsumerStatefulWidget {
   const PerfilScreen({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<PerfilScreen> createState() => _PerfilScreenState();
+}
+
+class _PerfilScreenState extends ConsumerState<PerfilScreen> {
+  bool _notificationsProcessions = true;
+  bool _notificationsRestrictions = true;
+  bool _isLoadingPrefs = true;
+  bool _isSavingPrefs = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadNotificationSettings();
+  }
+
+  Future<void> _loadNotificationSettings() async {
+    try {
+      final response = await ref.read(apiClientProvider).dio.get('/auth/me/notifications');
+      final data = response.data as Map<String, dynamic>;
+      if (!mounted) return;
+      setState(() {
+        _notificationsProcessions = data['notifications_processions'] == true;
+        _notificationsRestrictions = data['notifications_restrictions'] == true;
+        _isLoadingPrefs = false;
+      });
+    } on DioException {
+      if (!mounted) return;
+      setState(() {
+        _isLoadingPrefs = false;
+      });
+    }
+  }
+
+  Future<void> _saveNotificationSettings({
+    bool? notificationsProcessions,
+    bool? notificationsRestrictions,
+  }) async {
+    setState(() {
+      _isSavingPrefs = true;
+    });
+    try {
+      final payload = <String, dynamic>{};
+      if (notificationsProcessions != null) {
+        payload['notifications_processions'] = notificationsProcessions;
+      }
+      if (notificationsRestrictions != null) {
+        payload['notifications_restrictions'] = notificationsRestrictions;
+      }
+
+      final response = await ref.read(apiClientProvider).dio.patch(
+            '/auth/me/notifications',
+            data: payload,
+          );
+      final data = response.data as Map<String, dynamic>;
+
+      if (!mounted) return;
+      setState(() {
+        _notificationsProcessions = data['notifications_processions'] == true;
+        _notificationsRestrictions = data['notifications_restrictions'] == true;
+        _isSavingPrefs = false;
+      });
+    } on DioException {
+      if (!mounted) return;
+      setState(() {
+        if (notificationsProcessions != null) {
+          _notificationsProcessions = !_notificationsProcessions;
+        }
+        if (notificationsRestrictions != null) {
+          _notificationsRestrictions = !_notificationsRestrictions;
+        }
+        _isSavingPrefs = false;
+      });
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('No se pudieron guardar tus preferencias.')),
+      );
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
     final themeMode = ref.watch(themeModeProvider);
     final authState = ref.watch(authProvider);
     final user = authState.user;
@@ -78,23 +159,42 @@ class PerfilScreen extends ConsumerWidget {
             context,
             title: 'Notificaciones',
             children: [
+              if (_isLoadingPrefs)
+                const ListTile(
+                  leading: SizedBox(
+                    width: 24,
+                    height: 24,
+                    child: CircularProgressIndicator(strokeWidth: 2),
+                  ),
+                  title: Text('Cargando preferencias...'),
+                ),
               SwitchListTile(
                 secondary: const Icon(Icons.notifications),
                 title: const Text('Alertas de Procesiones'),
                 subtitle: const Text('Recibe notificaciones cuando una procesión esté cerca'),
-                value: true,
-                onChanged: (bool value) {
-                  // TODO: Handle notification toggle
-                },
+                value: _notificationsProcessions,
+                onChanged: (_isLoadingPrefs || _isSavingPrefs)
+                    ? null
+                    : (bool value) {
+                        setState(() {
+                          _notificationsProcessions = value;
+                        });
+                        _saveNotificationSettings(notificationsProcessions: value);
+                      },
               ),
               SwitchListTile(
                 secondary: const Icon(Icons.warning),
                 title: const Text('Cortes de Tráfico'),
                 subtitle: const Text('Avisos de cortes de calle en tu ruta'),
-                value: true,
-                onChanged: (bool value) {
-                  // TODO: Handle notification toggle
-                },
+                value: _notificationsRestrictions,
+                onChanged: (_isLoadingPrefs || _isSavingPrefs)
+                    ? null
+                    : (bool value) {
+                        setState(() {
+                          _notificationsRestrictions = value;
+                        });
+                        _saveNotificationSettings(notificationsRestrictions: value);
+                      },
               ),
             ],
           ),

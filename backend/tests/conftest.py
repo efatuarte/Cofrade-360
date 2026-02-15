@@ -12,7 +12,22 @@ from sqlalchemy.orm import sessionmaker
 from app.main import app
 from app.core.deps import get_db
 from app.core.security import get_password_hash, create_access_token
-from app.models.models import User, Location, Evento
+from app.models.models import (
+    DataProvenance,
+    Evento,
+    Hermandad,
+    Location,
+    MediaAsset,
+    PlanItem,
+    Procession,
+    ProcessionItineraryText,
+    ProcessionSchedulePoint,
+    ProcessionSegmentOccupation,
+    RestrictedArea,
+    StreetSegment,
+    User,
+    UserPlan,
+)
 
 SQLALCHEMY_DATABASE_URL = "sqlite:///./test.db"
 engine = create_engine(
@@ -49,9 +64,31 @@ def setup_tables():
     """Create tables needed for tests (no PostGIS dependency)."""
     User.__table__.create(bind=engine, checkfirst=True)
     Location.__table__.create(bind=engine, checkfirst=True)
+    Hermandad.__table__.create(bind=engine, checkfirst=True)
+    MediaAsset.__table__.create(bind=engine, checkfirst=True)
     Evento.__table__.create(bind=engine, checkfirst=True)
+    UserPlan.__table__.create(bind=engine, checkfirst=True)
+    PlanItem.__table__.create(bind=engine, checkfirst=True)
+    StreetSegment.__table__.create(bind=engine, checkfirst=True)
+    RestrictedArea.__table__.create(bind=engine, checkfirst=True)
+    Procession.__table__.create(bind=engine, checkfirst=True)
+    ProcessionSegmentOccupation.__table__.create(bind=engine, checkfirst=True)
+    ProcessionSchedulePoint.__table__.create(bind=engine, checkfirst=True)
+    ProcessionItineraryText.__table__.create(bind=engine, checkfirst=True)
+    DataProvenance.__table__.create(bind=engine, checkfirst=True)
     yield
+    DataProvenance.__table__.drop(bind=engine, checkfirst=True)
+    ProcessionItineraryText.__table__.drop(bind=engine, checkfirst=True)
+    ProcessionSchedulePoint.__table__.drop(bind=engine, checkfirst=True)
+    ProcessionSegmentOccupation.__table__.drop(bind=engine, checkfirst=True)
+    Procession.__table__.drop(bind=engine, checkfirst=True)
+    RestrictedArea.__table__.drop(bind=engine, checkfirst=True)
+    StreetSegment.__table__.drop(bind=engine, checkfirst=True)
+    PlanItem.__table__.drop(bind=engine, checkfirst=True)
+    UserPlan.__table__.drop(bind=engine, checkfirst=True)
     Evento.__table__.drop(bind=engine, checkfirst=True)
+    MediaAsset.__table__.drop(bind=engine, checkfirst=True)
+    Hermandad.__table__.drop(bind=engine, checkfirst=True)
     Location.__table__.drop(bind=engine, checkfirst=True)
     User.__table__.drop(bind=engine, checkfirst=True)
 
@@ -111,3 +148,100 @@ def make_evento(db, location_id: str, **kw) -> Evento:
     db.commit()
     db.refresh(ev)
     return ev
+
+
+def make_hermandad(db, church_id: str, **kw) -> Hermandad:
+    defaults = dict(
+        id=str(uuid.uuid4()),
+        nombre="Hermandad Test",
+        descripcion="Desc",
+        name_short="Test",
+        name_full="Hermandad Test Full",
+        church_id=church_id,
+        ss_day="viernes_santo",
+        history="Historia",
+        highlights='["h1"]',
+        stats='{"nazarenos": 100}',
+    )
+    defaults.update(kw)
+    h = Hermandad(**defaults)
+    db.add(h)
+    db.commit()
+    db.refresh(h)
+    return h
+
+
+def make_media_asset(db, brotherhood_id: str, **kw) -> MediaAsset:
+    defaults = dict(
+        id=str(uuid.uuid4()),
+        kind="image",
+        mime="image/jpeg",
+        path=f"brotherhoods/{uuid.uuid4()}.jpg",
+        brotherhood_id=brotherhood_id,
+    )
+    defaults.update(kw)
+    asset = MediaAsset(**defaults)
+    db.add(asset)
+    db.commit()
+    db.refresh(asset)
+    return asset
+
+
+def make_admin_user(db) -> User:
+    uid = str(uuid.uuid4())
+    u = User(
+        id=uid,
+        email=f"admin-{uid[:8]}@test.com",
+        hashed_password=get_password_hash("test1234"),
+        role="admin",
+        is_active=True,
+    )
+    db.add(u)
+    db.commit()
+    db.refresh(u)
+    return u
+
+
+def make_editor_user(db) -> User:
+    uid = str(uuid.uuid4())
+    u = User(
+        id=uid,
+        email=f"editor-{uid[:8]}@test.com",
+        hashed_password=get_password_hash("test1234"),
+        role="editor",
+        is_active=True,
+    )
+    db.add(u)
+    db.commit()
+    db.refresh(u)
+    return u
+
+
+def make_street_segment(db, name: str = "Segmento Test") -> StreetSegment:
+    seg = StreetSegment(
+        id=str(uuid.uuid4()),
+        name=name,
+        geom="LINESTRING(-5.99 37.39, -5.98 37.40)",
+        width_estimate=3.5,
+        kind="street",
+        is_walkable=True,
+    )
+    db.add(seg)
+    db.commit()
+    db.refresh(seg)
+    return seg
+
+
+def make_procession(db, brotherhood_id: str, date=None) -> Procession:
+    from datetime import datetime
+
+    p = Procession(
+        id=str(uuid.uuid4()),
+        brotherhood_id=brotherhood_id,
+        date=date or datetime(2026, 4, 10, 17, 0),
+        status="in_progress",
+    )
+    db.add(p)
+    db.commit()
+    db.refresh(p)
+    return p

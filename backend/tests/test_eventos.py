@@ -147,3 +147,71 @@ def test_filter_by_search_query(client, db):
     data = r.json()
     assert data["total"] == 1
     assert "Gran Poder" in data["items"][0]["titulo"]
+
+
+def test_filter_by_type_alias(client, db):
+    loc = make_location(db)
+    make_evento(db, loc.id, titulo="Procesion alias", tipo="procesion")
+    make_evento(db, loc.id, titulo="Concierto alias", tipo="concierto")
+
+    r = client.get("/api/v1/events?type=procesion")
+    assert r.status_code == 200
+    data = r.json()
+    assert data["total"] == 1
+    assert data["items"][0]["tipo"] == "procesion"
+
+
+def test_filter_by_price_and_has_poster(client, db):
+    loc = make_location(db)
+    make_evento(db, loc.id, titulo="Free no poster", precio=0, es_gratuito=True)
+    make_evento(
+        db,
+        loc.id,
+        titulo="Paid poster",
+        precio=20,
+        es_gratuito=False,
+        poster_asset_id="events/paid.jpg",
+    )
+
+    r = client.get("/api/v1/events?min_price=10&max_price=30&has_poster=true")
+    assert r.status_code == 200
+    data = r.json()
+    assert data["total"] == 1
+    assert data["items"][0]["titulo"] == "Paid poster"
+
+
+def test_list_events_invalid_ranges(client):
+    r = client.get(
+        "/api/v1/events?from=2026-04-10T10:00:00&to=2026-04-01T10:00:00"
+    )
+    assert r.status_code == 422
+
+    r2 = client.get("/api/v1/events?min_price=20&max_price=5")
+    assert r2.status_code == 422
+
+
+def test_get_event_poster_signed_url(client, db, monkeypatch):
+    loc = make_location(db)
+    ev = make_evento(db, loc.id, poster_asset_id="events/my-poster.jpg")
+
+    def fake_signed(asset_id: str, bucket_name=None):
+        assert asset_id == "events/my-poster.jpg"
+        return "https://minio.local/signed/events/my-poster.jpg"
+
+    monkeypatch.setattr(
+        "app.api.endpoints.eventos.get_presigned_get_url",
+        fake_signed,
+    )
+
+    r = client.get(f"/api/v1/events/{ev.id}/poster")
+    assert r.status_code == 200
+    assert r.json()["asset_id"] == "events/my-poster.jpg"
+    assert "signed" in r.json()["url"]
+
+
+def test_get_event_poster_without_asset_returns_404(client, db):
+    loc = make_location(db)
+    ev = make_evento(db, loc.id, poster_asset_id=None)
+
+    r = client.get(f"/api/v1/events/{ev.id}/poster")
+    assert r.status_code == 404
