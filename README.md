@@ -226,3 +226,133 @@ Agenda completa, hermandades al detalle y rutas inteligentes en tiempo real para
 ## CTA
 - **Empieza a planificar tu Semana Santa**  
 - **Crea tu itinerario en 2 minutos**
+
+---
+
+## FASE 6 — Operativo (Processions + StreetSegments + Restrictions)
+
+### Migraciones
+```bash
+cd backend
+alembic upgrade head
+```
+
+### Seed operativo
+```bash
+cd backend
+python -m app.db.seed
+```
+
+### Endpoints clave
+- `GET /api/v1/processions?date=&status=`
+- `GET /api/v1/processions/{id}`
+- `GET /api/v1/processions/{id}/occupations?from=&to=`
+- `GET /api/v1/restrictions?from=&to=`
+- `POST /api/v1/restrictions` *(admin/editor)*
+- `PATCH /api/v1/restrictions/{id}` *(admin/editor)*
+- `POST /api/v1/processions/occupations` *(admin/editor)*
+- `PATCH /api/v1/processions/occupations/{id}` *(admin/editor)*
+
+### Curl rápido
+```bash
+# Login admin
+curl -X POST http://localhost:8000/api/v1/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{"email":"admin@cofrade360.com","password":"test1234"}'
+
+# Listar procesiones por fecha
+curl "http://localhost:8000/api/v1/processions?date=2026-04-10T10:00:00"
+
+# Listar restricciones activas en ventana
+curl "http://localhost:8000/api/v1/restrictions?from=2026-04-10T17:00:00&to=2026-04-10T21:00:00"
+
+# Crear restricción (admin/editor)
+curl -X POST http://localhost:8000/api/v1/restrictions \
+  -H "Authorization: Bearer <TOKEN>" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name":"Corte puntual",
+    "geom":"POLYGON((-5.99 37.39,-5.98 37.39,-5.98 37.38,-5.99 37.38,-5.99 37.39))",
+    "start_datetime":"2026-04-10T18:00:00",
+    "end_datetime":"2026-04-10T20:00:00",
+    "reason":"corte"
+  }'
+```
+
+
+## FASE 9 — Preferencias de Alertas
+
+### Endpoints
+- `GET /api/v1/auth/me/notifications`
+- `PATCH /api/v1/auth/me/notifications`
+
+### Ejemplo
+```bash
+# Obtener preferencias
+curl -H "Authorization: Bearer <TOKEN>" \
+  http://localhost:8000/api/v1/auth/me/notifications
+
+# Desactivar alertas de restricciones
+curl -X PATCH http://localhost:8000/api/v1/auth/me/notifications \
+  -H "Authorization: Bearer <TOKEN>" \
+  -H "Content-Type: application/json" \
+  -d '{"notifications_restrictions": false}'
+```
+
+
+## FASE A3 — Import del dataset normalizado a DB
+
+### Comandos
+```bash
+cd backend
+python -m app.db.ingestion.import_hermandades_dataset
+```
+
+### Endpoint (admin/editor)
+- `POST /api/v1/ingestion/hermandades/import`
+
+### Notas
+- La importación es idempotente por `name_short` (hermandad) y por `path` (media por hermandad).
+- Si `MediaAsset.path` ya es URL remota (`http/https`), la API devuelve esa URL tal cual sin firmarla para facilitar estrategia “remote URL”.
+
+
+## FASE A4 — Guía de actualización de dataset (operativa)
+
+### Flujo recomendado end-to-end
+```bash
+# 1) Levantar entorno
+cd /workspace/Cofrade-360
+docker compose up -d
+
+# 2) Migrar DB
+cd backend
+alembic upgrade head
+
+# 3) Regenerar dataset normalizado desde fuentes (A2)
+python -m app.db.ingestion.build_hermandades_dataset
+
+# 4) Importar dataset a DB (A3)
+python -m app.db.ingestion.import_hermandades_dataset
+
+# 5) Verificar tests de ingestión
+pytest -q backend/tests/test_ingestion.py backend/tests/test_ingestion_dataset.py backend/tests/test_ingestion_import.py
+```
+
+### Endpoints de soporte ingestión
+- `GET /api/v1/ingestion/hermandades/sources`
+- `POST /api/v1/ingestion/hermandades/import` *(admin/editor)*
+- `GET /api/v1/provenance?entity_type=brotherhood&entity_id=<id>`
+
+### Política de trazabilidad (provenance)
+Cada registro normalizado debe incluir al menos:
+- `url`
+- `accessed_at`
+- `fields_extracted[]`
+- `status_code` (si disponible)
+
+### Troubleshooting
+- Si el entorno bloquea scraping saliente (proxy/tunnel), el builder genera igualmente `hermandades_dataset.normalized.json` con:
+  - `ingestion.fetched_ok=false`
+  - `ingestion.notes[]` con `fetch_error`
+  - `manual_review_required:*`
+- En ese caso, completar manualmente campos pendientes (`name_full`, `sede`, `schedule`, `itinerary_text`, `media`) manteniendo `provenance` antes de importar.

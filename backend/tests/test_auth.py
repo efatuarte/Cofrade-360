@@ -12,6 +12,8 @@ def test_register_user(client):
     assert data["email"] == "test@example.com"
     assert "id" in data
     assert data["is_active"] is True
+    assert data["notifications_processions"] is True
+    assert data["notifications_restrictions"] is True
 
 
 def test_register_duplicate_email(client):

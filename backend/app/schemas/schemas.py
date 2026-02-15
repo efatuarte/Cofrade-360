@@ -79,7 +79,10 @@ class UserCreate(UserBase):
 
 class UserResponse(UserBase):
     id: str
+    role: str = "user"
     is_active: bool
+    notifications_processions: bool = True
+    notifications_restrictions: bool = True
     created_at: datetime
 
     model_config = ConfigDict(from_attributes=True)
@@ -98,6 +101,22 @@ class TokenResponse(BaseModel):
 
 class RefreshRequest(BaseModel):
     refresh_token: str
+
+
+class NotificationSettingsUpdate(BaseModel):
+    notifications_processions: Optional[bool] = None
+    notifications_restrictions: Optional[bool] = None
+
+    @model_validator(mode="after")
+    def at_least_one_field(self):
+        if self.notifications_processions is None and self.notifications_restrictions is None:
+            raise ValueError("At least one notification field must be provided")
+        return self
+
+
+class NotificationSettingsResponse(BaseModel):
+    notifications_processions: bool
+    notifications_restrictions: bool
 
 
 # ============= Location Schemas =============

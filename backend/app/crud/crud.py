@@ -34,6 +34,23 @@ def create_user(db: Session, user: UserCreate) -> User:
     return db_user
 
 
+
+
+def update_user_notification_settings(
+    db: Session,
+    *,
+    user: User,
+    notifications_processions: Optional[bool] = None,
+    notifications_restrictions: Optional[bool] = None,
+) -> User:
+    if notifications_processions is not None:
+        user.notifications_processions = notifications_processions
+    if notifications_restrictions is not None:
+        user.notifications_restrictions = notifications_restrictions
+    db.commit()
+    db.refresh(user)
+    return user
+
 # ============= Location CRUD =============
 
 def get_location(db: Session, location_id: str) -> Optional[Location]:

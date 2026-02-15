@@ -31,9 +31,9 @@ def test_a_star_search():
     goal = nodes["macarena"]
     path = a_star_search(start, goal, nodes, edges)
     assert path is not None
-    assert len(path) >= 2
-    assert path[0].id == start.id
-    assert path[-1].id == goal.id
+    assert len(path.node_ids) >= 2
+    assert path.node_ids[0] == start.id
+    assert path.node_ids[-1] == goal.id
 
 
 def test_calculate_optimal_route():

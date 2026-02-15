@@ -28,7 +28,6 @@ def seed_database():
         )
         db.add(test_user)
         db.commit()
-        print("   - 1 test user (test@cofrade360.com / test1234)")
 
         locations = [
             Location(id=str(uuid.uuid4()), name="Teatro de la Maestranza", address="Paseo de Cristóbal Colón, 22", lat=37.3838, lng=-5.9971, kind="theater"),
@@ -133,6 +132,8 @@ def seed_database():
             Evento(id=str(uuid.uuid4()), titulo="Traslado al Paso – Cachorro", descripcion="Traslado de imágenes al paso.", tipo="otro", fecha_inicio=datetime(2026, 4, 9, 22, 0), fecha_fin=datetime(2026, 4, 9, 23, 30), location_id=locations[5].id, hermandad_id=hermandades[2].id, es_gratuito=True, precio=0, estado="programado"),
             Evento(id=str(uuid.uuid4()), titulo="Exposición: Bordados de Semana Santa", descripcion="Muestra de bordados sevillanos.", tipo="exposicion", fecha_inicio=datetime(2026, 3, 20, 10, 0), fecha_fin=datetime(2026, 4, 12, 20, 0), location_id=locations[6].id, es_gratuito=False, precio=5.0, moneda="EUR", estado="programado"),
         ]
+        db.add_all(provenance_rows)
+        db.commit()
 
         db.add_all(eventos)
         db.commit()

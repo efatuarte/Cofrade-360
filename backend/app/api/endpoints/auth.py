@@ -132,3 +132,31 @@ def get_me(current_user: User = Depends(get_current_active_user)):
     Get current user info
     """
     return current_user
+
+
+@router.get("/me/notifications", response_model=NotificationSettingsResponse)
+def get_my_notification_settings(current_user: User = Depends(get_current_active_user)):
+    """Get current user notification preferences"""
+    return NotificationSettingsResponse(
+        notifications_processions=current_user.notifications_processions,
+        notifications_restrictions=current_user.notifications_restrictions,
+    )
+
+
+@router.patch("/me/notifications", response_model=NotificationSettingsResponse)
+def patch_my_notification_settings(
+    payload: NotificationSettingsUpdate,
+    db: Session = Depends(get_db),
+    current_user: User = Depends(get_current_active_user),
+):
+    """Update current user notification preferences"""
+    updated = update_user_notification_settings(
+        db,
+        user=current_user,
+        notifications_processions=payload.notifications_processions,
+        notifications_restrictions=payload.notifications_restrictions,
+    )
+    return NotificationSettingsResponse(
+        notifications_processions=updated.notifications_processions,
+        notifications_restrictions=updated.notifications_restrictions,
+    )

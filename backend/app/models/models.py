@@ -13,7 +13,10 @@ class User(Base):
     id = Column(String, primary_key=True, index=True)
     email = Column(String, unique=True, nullable=False, index=True)
     hashed_password = Column(String, nullable=False)
+    role = Column(String, nullable=False, default="user")  # user | editor | admin
     is_active = Column(Boolean, default=True, nullable=False)
+    notifications_processions = Column(Boolean, default=True, nullable=False)
+    notifications_restrictions = Column(Boolean, default=True, nullable=False)
     created_at = Column(DateTime, default=datetime.utcnow, nullable=False)
     updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
@@ -26,7 +29,7 @@ class Location(Base):
     address = Column(String)
     lat = Column(Float)
     lng = Column(Float)
-    kind = Column(String, default="other")  # church, plaza, theater, street, other
+    kind = Column(String, default="other")
     created_at = Column(DateTime, default=datetime.utcnow)
 
     eventos = relationship("Evento", back_populates="location")
