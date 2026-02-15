@@ -1,0 +1,22 @@
+[
+  {
+    "type": "procession",
+    "year": 2026,
+    "brotherhood": "gran-poder",
+    "date": "2026-04-03T01:00:00",
+    "schedule_points": [
+      {"point_type": "salida", "label": "Salida", "scheduled_datetime": "2026-04-03T01:00:00"},
+      {"point_type": "recogida", "label": "Recogida", "scheduled_datetime": "2026-04-03T08:00:00"}
+    ],
+    "itinerary_text": "Basílica del Gran Poder, Plaza del Duque, Carrera Oficial, Basílica del Gran Poder",
+    "confidence": 0.86,
+    "provenance": [
+      {
+        "url": "https://www.gran-poder.es/estacion-de-penitencia",
+        "accessed_at": "2026-02-15T11:00:00",
+        "fields_extracted": ["date", "schedule_points", "itinerary_text"],
+        "notes": "Contraste con boletín oficial"
+      }
+    ]
+  }
+]

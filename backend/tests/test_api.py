@@ -3,7 +3,6 @@ from datetime import datetime
 from fastapi.testclient import TestClient
 
 from app.main import app
-from app.schemas.schemas import RouteResponse
 
 client = TestClient(app)
 
@@ -41,10 +40,23 @@ def test_routing_optimal():
     assert data["eta_seconds"] > 0
 
 
-def test_mode_calle_ws_reroute_message():
+def test_mode_calle_ws_protocol_route_update_and_heartbeat():
     with client.websocket_connect("/api/v1/routing/ws/mode-calle?plan_id=plan-1") as ws:
+        hello = ws.receive_json()
+        assert hello["type"] == "hello"
+
         ws.send_json(
             {
+                "type": "heartbeat",
+                "sent_at": datetime(2026, 4, 10, 22, 15).isoformat(),
+            }
+        )
+        heartbeat = ws.receive_json()
+        assert heartbeat["type"] == "heartbeat"
+
+        ws.send_json(
+            {
+                "type": "location_update",
                 "location": {"lat": 37.3862, "lng": -5.9926},
                 "datetime": datetime(2026, 4, 10, 22, 15).isoformat(),
                 "target": {"type": "event", "id": "macarena"},
@@ -52,6 +64,6 @@ def test_mode_calle_ws_reroute_message():
             }
         )
         msg = ws.receive_json()
-        assert msg["type"] == "reroute"
+        assert msg["type"] == "route_update"
         assert "route" in msg
         assert "eta_seconds" in msg["route"]

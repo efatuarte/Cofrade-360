@@ -10,6 +10,7 @@ UserModel _$UserModelFromJson(Map<String, dynamic> json) => UserModel(
       id: json['id'] as String,
       email: json['email'] as String,
       isActive: json['is_active'] as bool,
+      role: json['role'] as String? ?? 'user',
       createdAt: DateTime.parse(json['created_at'] as String),
     );
 
@@ -18,6 +19,7 @@ Map<String, dynamic> _$UserModelToJson(UserModel instance) =>
       'id': instance.id,
       'email': instance.email,
       'is_active': instance.isActive,
+      'role': instance.role,
       'created_at': instance.createdAt.toIso8601String(),
     };
 

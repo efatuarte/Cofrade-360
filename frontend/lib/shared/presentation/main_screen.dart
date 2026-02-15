@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_riverpod/legacy.dart';
 
+import '../../features/admin/presentation/admin_screen.dart';
 import '../../features/agenda/presentation/agenda_screen.dart';
 import '../../features/hermandades/presentation/hermandades_screen.dart';
 import '../../features/itinerario/presentation/itinerario_screen.dart';
@@ -23,6 +24,7 @@ class MainScreen extends ConsumerWidget {
       const ItinerarioScreen(),
       const ModoCalleScreen(),
       const PerfilScreen(),
+      const AdminScreen(),
     ];
 
     return Scaffold(
@@ -55,6 +57,10 @@ class MainScreen extends ConsumerWidget {
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
             label: 'Perfil',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.admin_panel_settings),
+            label: 'Admin',
           ),
         ],
       ),

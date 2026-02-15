@@ -356,3 +356,133 @@ Cada registro normalizado debe incluir al menos:
   - `ingestion.notes[]` con `fetch_error`
   - `manual_review_required:*`
 - En ese caso, completar manualmente campos pendientes (`name_full`, `sede`, `schedule`, `itinerary_text`, `media`) manteniendo `provenance` antes de importar.
+
+## FASE 11 — Data Pipeline V1 (dataset versionado + backoffice mínimo)
+
+### Dataset versionado
+- Ruta de datasets: `backend/app/db/datasets/<year>/brotherhoods.json` y `backend/app/db/datasets/<year>/processions.json`.
+- Cada entrada incluye `provenance` con: `url`, `accessed_at`, `fields_extracted`, `notes`.
+- Validación por Pydantic en `backend/app/db/ingest.py` (`BrotherhoodData`, `ProcessionData`).
+
+### Ingestión CLI
+```bash
+# Dry-run (no persiste cambios)
+python -m backend.app.db.ingest --year 2026 --dry-run
+
+# Apply (persiste upserts)
+python -m backend.app.db.ingest --year 2026 --apply
+```
+
+### Backoffice mínimo (admin)
+- `GET /api/v1/admin/brotherhoods`
+- `PATCH /api/v1/admin/brotherhoods/{brotherhood_id}` (sede, día, logo/media)
+- `GET /api/v1/admin/processions`
+- `PATCH /api/v1/admin/processions/{procession_id}` (horarios, itinerary_text, confidence)
+- `GET /api/v1/admin/audit-logs`
+
+### Auditoría y rollback
+- Tabla de auditoría: `audit_logs` (actor, entidad, cambios, timestamp).
+- Rollback de migración Fase 11:
+```bash
+cd backend
+alembic downgrade -1
+```
+
+### Verificación rápida
+```bash
+cd backend
+pytest -q
+```
+
+## FASE 12 — Routing Real V1 (grafo walkable + A* server-side)
+
+### Modelo de datos de grafo
+- `street_nodes(id, geom)`
+- `street_edges(id, source_node, target_node, geom, length_m, width_estimate, highway_type, is_walkable, tags)`
+- `route_restrictions(edge_id, starts_at, ends_at, reason, severity)`
+
+### Carga de grafo
+```bash
+cd backend
+python -m app.db.import_street_graph
+```
+> Este comando carga un dataset base de Sevilla centro (`backend/app/db/datasets/street_graph_sevilla.sample.json`) para desarrollo local.
+
+### Routing
+- Endpoint real: `POST /api/v1/routing/optimal`
+- Soporta:
+  - `origin + destination`
+  - `origin + target` (compat)
+- Devuelve:
+  - `polyline` simplificada
+  - `eta_seconds`
+  - `warnings`
+  - `explanation`
+  - `alternatives[]`
+
+### Caching y performance
+- Cache de rutas por bucket de 10 min (`origin/destination/time_bucket/constraints`) en memoria de proceso (fallback de dev).
+- Objetivo de latencia en dev para rutas medias: `< 500ms` con grafo cargado en memoria.
+
+### Troubleshooting
+- Si no hay grafo cargado, el backend entra en fallback de línea recta con warning explícito.
+- Para producción, sustituir dataset sample por import OSM completo y añadir Redis cache distribuida.
+
+## FASE 13 — Modo Calle Street-Ready (WS robusto + alertas + offline)
+
+### Protocolo WS versionado (`/api/v1/routing/ws/mode-calle`)
+- `hello` (server/client handshake)
+- `location_update` (cliente -> servidor)
+- `route_update` (servidor -> cliente)
+- `warning` (servidor -> cliente)
+- `heartbeat` (bidireccional)
+
+### Alertas activas
+- `ETA_MISS`: ETA superior al umbral de ventana (`>20 min` en baseline dev)
+- `HIGH_BULLA`: bulla score alto
+- `ROUTE_CUT`: corte/restricción activa en ruta
+
+Todas las alertas y rutas publicadas por WS se persisten en `notification_events`.
+
+### Offline degradado
+- Endpoint: `GET /api/v1/routing/last?plan_id=<id>`
+- Recupera la última ruta publicada por WS para continuidad cuando el socket cae.
+
+### Frontend Modo Calle
+- Banner persistente de estado: conectado/desconectado/offline + ETA + siguiente punto.
+- Botón `Plan B` para recalcular priorizando ruta tranquila.
+- Reconexión manual (`Reconectar`) y degradación offline con polling ligero de `routing/last`.
+- Throttling de ubicación (envío cada ~5s en baseline dev).
+
+## FASE 14 — Bulla V1 (reports + señales + agregación + anti-abuso + analítica)
+
+### Entidades
+- `crowd_reports`: reportes de usuarios (rate-limited, moderables)
+- `crowd_signals`: señales agregadas por bucket temporal y geohash
+- `analytics_events`: eventos estructurados con `trace_id`
+
+### Endpoints
+- `POST /api/v1/crowd/reports` (usuario autenticado)
+- `GET /api/v1/crowd/signals`
+- `POST /api/v1/crowd/aggregate` *(admin)*
+- `PATCH /api/v1/crowd/reports/{id}` *(admin, moderación flagged/hidden)*
+- `GET /api/v1/crowd/analytics` *(admin)*
+
+### Agregación
+- Bucket por 10 minutos (`aggregate_crowd_signals`)
+- Confidence en función del número de reportes válidos
+- Señales ocultas/moderadas no cuentan en agregación
+
+### Integración con routing
+- Se aplica `penalty_bulla` cuando `avoid_bulla=true`
+- La explicación de ruta incluye detalle de penalización cuando impacta
+
+### Frontend
+- Botón de un gesto `Reportar bulla`
+- `BullaMeter` visible en Modo Calle
+
+### Verificación
+```bash
+cd backend
+pytest -q
+```
