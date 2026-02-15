@@ -2,9 +2,6 @@
 Tests for authentication endpoints.
 Uses shared conftest.py fixtures (SQLite, no PostGIS).
 """
-from app.core.security import get_password_hash
-
-
 def test_register_user(client):
     response = client.post(
         "/api/v1/auth/register",
@@ -109,3 +106,53 @@ def test_get_current_user(client):
 def test_get_current_user_unauthorized(client):
     response = client.get("/api/v1/auth/me")
     assert response.status_code == 403
+
+
+def test_refresh_token_for_deleted_user_returns_401(client, db):
+    client.post(
+        "/api/v1/auth/register",
+        json={"email": "to-delete@example.com", "password": "testpassword123"},
+    )
+    login_response = client.post(
+        "/api/v1/auth/login",
+        json={"email": "to-delete@example.com", "password": "testpassword123"},
+    )
+    refresh_token = login_response.json()["refresh_token"]
+
+    from app.models.models import User
+
+    user = db.query(User).filter(User.email == "to-delete@example.com").first()
+    db.delete(user)
+    db.commit()
+
+    response = client.post(
+        "/api/v1/auth/refresh",
+        json={"refresh_token": refresh_token},
+    )
+    assert response.status_code == 401
+    assert response.json()["detail"] == "User not found"
+
+
+def test_refresh_token_for_inactive_user_returns_403(client, db):
+    client.post(
+        "/api/v1/auth/register",
+        json={"email": "inactive@example.com", "password": "testpassword123"},
+    )
+    login_response = client.post(
+        "/api/v1/auth/login",
+        json={"email": "inactive@example.com", "password": "testpassword123"},
+    )
+    refresh_token = login_response.json()["refresh_token"]
+
+    from app.models.models import User
+
+    user = db.query(User).filter(User.email == "inactive@example.com").first()
+    user.is_active = False
+    db.commit()
+
+    response = client.post(
+        "/api/v1/auth/refresh",
+        json={"refresh_token": refresh_token},
+    )
+    assert response.status_code == 403
+    assert response.json()["detail"] == "Inactive user"

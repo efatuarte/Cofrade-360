@@ -16,6 +16,14 @@ final eventoDetailProvider =
   );
 });
 
+final eventoPosterProvider =
+    FutureProvider.family<String?, Evento>((ref, evento) async {
+  if (evento.posterAssetId == null || evento.posterAssetId!.isEmpty) return null;
+  final repo = ref.watch(agendaRepositoryProvider);
+  final result = await repo.getPosterUrl(evento.id);
+  return result.fold((_) => null, (poster) => poster.url);
+});
+
 class EventDetailScreen extends ConsumerWidget {
   final String eventoId;
 
@@ -63,13 +71,13 @@ class EventDetailScreen extends ConsumerWidget {
   }
 }
 
-class _EventDetailBody extends StatelessWidget {
+class _EventDetailBody extends ConsumerWidget {
   final Evento evento;
 
   const _EventDetailBody({required this.evento});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final color = tipoColor(evento.tipo);
     final dateFmt = DateFormat('EEEE d MMMM yyyy, HH:mm', 'es_ES');
 
@@ -139,6 +147,35 @@ class _EventDetailBody extends StatelessWidget {
                       ),
                   ],
                 ),
+
+                const SizedBox(height: 24),
+
+                // Poster
+                if (evento.posterAssetId != null)
+                  ref.watch(eventoPosterProvider(evento)).when(
+                        data: (url) => url == null
+                            ? const SizedBox.shrink()
+                            : ClipRRect(
+                                borderRadius: BorderRadius.circular(12),
+                                child: Image.network(
+                                  url,
+                                  height: 180,
+                                  width: double.infinity,
+                                  fit: BoxFit.cover,
+                                  errorBuilder: (_, __, ___) => Container(
+                                    height: 120,
+                                    alignment: Alignment.center,
+                                    color: Colors.grey.shade200,
+                                    child: const Text('Poster no disponible'),
+                                  ),
+                                ),
+                              ),
+                        loading: () => const Padding(
+                          padding: EdgeInsets.symmetric(vertical: 20),
+                          child: Center(child: CircularProgressIndicator()),
+                        ),
+                        error: (_, __) => const SizedBox.shrink(),
+                      ),
 
                 const SizedBox(height: 24),
 

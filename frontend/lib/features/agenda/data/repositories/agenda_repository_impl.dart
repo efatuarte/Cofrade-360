@@ -37,7 +37,7 @@ class AgendaRepositoryImpl implements AgendaRepository {
         'page': page,
         'page_size': pageSize,
       };
-      if (tipo != null) queryParams['tipo'] = tipo;
+      if (tipo != null) queryParams['type'] = tipo;
       if (q != null && q.isNotEmpty) queryParams['q'] = q;
       if (fromDate != null) queryParams['from'] = fromDate.toIso8601String();
       if (toDate != null) queryParams['to'] = toDate.toIso8601String();
@@ -50,6 +50,25 @@ class AgendaRepositoryImpl implements AgendaRepository {
       final paginated =
           parsePaginatedEventos(response.data as Map<String, dynamic>);
       return Right(paginated);
+    } on DioException catch (e) {
+      return Left(ServerFailure(_messageFromDio(e)));
+    } catch (e) {
+      return Left(ServerFailure(e.toString()));
+    }
+  }
+
+
+  @override
+  Future<Either<Failure, EventPoster>> getPosterUrl(String id) async {
+    try {
+      final response = await apiClient.dio.get('/events/$id/poster');
+      final data = response.data as Map<String, dynamic>;
+      return Right(
+        EventPoster(
+          assetId: data['asset_id'] as String,
+          url: data['url'] as String,
+        ),
+      );
     } on DioException catch (e) {
       return Left(ServerFailure(_messageFromDio(e)));
     } catch (e) {

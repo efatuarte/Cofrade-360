@@ -33,6 +33,28 @@ class LocationKind(str, Enum):
     other = "other"
 
 
+class SemanaSantaDay(str, Enum):
+    domingo_ramos = "domingo_ramos"
+    lunes_santo = "lunes_santo"
+    martes_santo = "martes_santo"
+    miercoles_santo = "miercoles_santo"
+    jueves_santo = "jueves_santo"
+    madrugada = "madrugada"
+    viernes_santo = "viernes_santo"
+    sabado_santo = "sabado_santo"
+    domingo_resurreccion = "domingo_resurreccion"
+
+
+class MediaKind(str, Enum):
+    image = "image"
+    video = "video"
+
+
+class PlanItemType(str, Enum):
+    event = "event"
+    brotherhood = "brotherhood"
+
+
 # ============= Pagination =============
 
 T = TypeVar("T")
@@ -99,7 +121,7 @@ class LocationResponse(LocationBase):
     model_config = ConfigDict(from_attributes=True)
 
 
-# ============= Hermandad Schemas =============
+# ============= Hermandad & Media Schemas =============
 
 class HermandadBase(BaseModel):
     nombre: str
@@ -119,6 +141,51 @@ class Hermandad(HermandadBase):
     updated_at: datetime
 
     model_config = ConfigDict(from_attributes=True)
+
+
+class BrotherhoodResponse(BaseModel):
+    id: str
+    name_short: str
+    name_full: str
+    logo_asset_id: Optional[str] = None
+    church_id: Optional[str] = None
+    ss_day: Optional[SemanaSantaDay] = None
+    history: Optional[str] = None
+    highlights: Optional[str] = None
+    stats: Optional[str] = None
+    created_at: datetime
+    church: Optional[LocationResponse] = None
+
+    model_config = ConfigDict(from_attributes=True)
+
+
+class MediaAssetResponse(BaseModel):
+    id: str
+    kind: MediaKind
+    mime: str
+    path: str
+    brotherhood_id: Optional[str] = None
+    created_at: datetime
+
+    model_config = ConfigDict(from_attributes=True)
+
+
+class SignedMediaResponse(BaseModel):
+    asset_id: str
+    url: str
+
+
+class MediaUploadRequest(BaseModel):
+    kind: MediaKind
+    mime: str
+    extension: str = Field(default="jpg", min_length=2, max_length=10)
+    brotherhood_id: Optional[str] = None
+
+
+class MediaUploadSignedUrlResponse(BaseModel):
+    asset_id: str
+    path: str
+    put_url: str
 
 
 # ============= Evento Schemas =============
@@ -144,7 +211,6 @@ class EventoCreate(EventoBase):
         if self.fecha_fin and self.fecha_inicio > self.fecha_fin:
             raise ValueError("fecha_inicio must be before fecha_fin")
 
-        # Coherencia precio vs es_gratuito
         if self.es_gratuito and self.precio > 0:
             raise ValueError("Free events cannot have a price > 0")
 
@@ -178,6 +244,89 @@ class EventoResponse(EventoBase):
     model_config = ConfigDict(from_attributes=True)
 
 
+# ============= Itinerario Schemas =============
+
+class PlanConflictWarning(BaseModel):
+    item_id: str
+    conflict_with_item_id: str
+    detail: str
+
+
+class PlanItemBase(BaseModel):
+    item_type: PlanItemType
+    event_id: Optional[str] = None
+    brotherhood_id: Optional[str] = None
+    desired_time_start: datetime
+    desired_time_end: datetime
+    lat: Optional[float] = None
+    lng: Optional[float] = None
+    notes: Optional[str] = None
+
+    @model_validator(mode="after")
+    def validate_window_and_target(self):
+        if self.desired_time_start > self.desired_time_end:
+            raise ValueError("desired_time_start must be <= desired_time_end")
+        if self.item_type == PlanItemType.event and not self.event_id:
+            raise ValueError("event_id is required for event item")
+        if self.item_type == PlanItemType.brotherhood and not self.brotherhood_id:
+            raise ValueError("brotherhood_id is required for brotherhood item")
+        return self
+
+
+class PlanItemCreate(PlanItemBase):
+    pass
+
+
+class PlanItemUpdate(BaseModel):
+    desired_time_start: Optional[datetime] = None
+    desired_time_end: Optional[datetime] = None
+    lat: Optional[float] = None
+    lng: Optional[float] = None
+    notes: Optional[str] = None
+
+
+class PlanItemResponse(PlanItemBase):
+    id: str
+    plan_id: str
+    position: int
+    created_at: datetime
+
+    model_config = ConfigDict(from_attributes=True)
+
+
+class UserPlanCreate(BaseModel):
+    title: str = Field(..., min_length=3, max_length=120)
+    plan_date: datetime
+
+
+class UserPlanUpdate(BaseModel):
+    title: Optional[str] = Field(None, min_length=3, max_length=120)
+    plan_date: Optional[datetime] = None
+
+
+class UserPlanResponse(BaseModel):
+    id: str
+    user_id: str
+    title: str
+    plan_date: datetime
+    created_at: datetime
+    updated_at: Optional[datetime] = None
+    items: List[PlanItemResponse] = []
+
+    model_config = ConfigDict(from_attributes=True)
+
+
+class AddPlanItemResponse(BaseModel):
+    item: PlanItemResponse
+    warnings: List[PlanConflictWarning] = []
+
+
+class OptimizePlanResponse(BaseModel):
+    items: List[PlanItemResponse]
+    warnings: List[PlanConflictWarning] = []
+
+
+
 # ============= Ruta Schemas =============
 
 class RutaBase(BaseModel):
@@ -201,17 +350,46 @@ class Ruta(RutaBase):
 
 # ============= Routing Schemas =============
 
+class RoutingTarget(BaseModel):
+    type: str = Field(..., pattern='^(event|brotherhood)$')
+    id: str
+
+
+class RoutingConstraints(BaseModel):
+    avoid_bulla: bool = True
+    max_walk_km: float = Field(10.0, gt=0)
+
+
 class RouteRequest(BaseModel):
-    origen: List[float] = Field(..., min_length=2, max_length=2)   # [lat, lon]
-    destino: List[float] = Field(..., min_length=2, max_length=2)  # [lat, lon]
-    evitar_procesiones: bool = True
+    origin: List[float] = Field(..., min_length=2, max_length=2)  # [lat, lng]
+    datetime: datetime
+    target: RoutingTarget
+    constraints: RoutingConstraints = RoutingConstraints()
 
 
 class RouteResponse(BaseModel):
-    ruta: List[List[float]]
-    distancia_metros: int
-    duracion_minutos: int
-    instrucciones: List[str]
+    polyline: List[List[float]]
+    eta_seconds: int
+    bulla_score: float
+    warnings: List[str]
+    explanation: List[str]
+
+
+class ModeCalleWsLocation(BaseModel):
+    lat: float
+    lng: float
+
+
+class ModeCalleWsRequest(BaseModel):
+    location: ModeCalleWsLocation
+    datetime: datetime
+    target: RoutingTarget
+    constraints: RoutingConstraints = RoutingConstraints()
+
+
+class ModeCalleWsResponse(BaseModel):
+    type: str = "reroute"
+    route: RouteResponse
 
 
 # ============= Error Schemas =============

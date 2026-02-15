@@ -12,7 +12,7 @@ from sqlalchemy.orm import sessionmaker
 from app.main import app
 from app.core.deps import get_db
 from app.core.security import get_password_hash, create_access_token
-from app.models.models import User, Location, Evento
+from app.models.models import User, Location, Hermandad, MediaAsset, Evento, UserPlan, PlanItem
 
 SQLALCHEMY_DATABASE_URL = "sqlite:///./test.db"
 engine = create_engine(
@@ -49,9 +49,17 @@ def setup_tables():
     """Create tables needed for tests (no PostGIS dependency)."""
     User.__table__.create(bind=engine, checkfirst=True)
     Location.__table__.create(bind=engine, checkfirst=True)
+    Hermandad.__table__.create(bind=engine, checkfirst=True)
+    MediaAsset.__table__.create(bind=engine, checkfirst=True)
     Evento.__table__.create(bind=engine, checkfirst=True)
+    UserPlan.__table__.create(bind=engine, checkfirst=True)
+    PlanItem.__table__.create(bind=engine, checkfirst=True)
     yield
+    PlanItem.__table__.drop(bind=engine, checkfirst=True)
+    UserPlan.__table__.drop(bind=engine, checkfirst=True)
     Evento.__table__.drop(bind=engine, checkfirst=True)
+    MediaAsset.__table__.drop(bind=engine, checkfirst=True)
+    Hermandad.__table__.drop(bind=engine, checkfirst=True)
     Location.__table__.drop(bind=engine, checkfirst=True)
     User.__table__.drop(bind=engine, checkfirst=True)
 
@@ -111,3 +119,40 @@ def make_evento(db, location_id: str, **kw) -> Evento:
     db.commit()
     db.refresh(ev)
     return ev
+
+
+def make_hermandad(db, church_id: str, **kw) -> Hermandad:
+    defaults = dict(
+        id=str(uuid.uuid4()),
+        nombre="Hermandad Test",
+        descripcion="Desc",
+        name_short="Test",
+        name_full="Hermandad Test Full",
+        church_id=church_id,
+        ss_day="viernes_santo",
+        history="Historia",
+        highlights='["h1"]',
+        stats='{"nazarenos": 100}',
+    )
+    defaults.update(kw)
+    h = Hermandad(**defaults)
+    db.add(h)
+    db.commit()
+    db.refresh(h)
+    return h
+
+
+def make_media_asset(db, brotherhood_id: str, **kw) -> MediaAsset:
+    defaults = dict(
+        id=str(uuid.uuid4()),
+        kind="image",
+        mime="image/jpeg",
+        path=f"brotherhoods/{uuid.uuid4()}.jpg",
+        brotherhood_id=brotherhood_id,
+    )
+    defaults.update(kw)
+    asset = MediaAsset(**defaults)
+    db.add(asset)
+    db.commit()
+    db.refresh(asset)
+    return asset

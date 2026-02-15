@@ -1,4 +1,4 @@
-from pydantic_settings import BaseSettings, SettingsConfigDict
+from pydantic_settings import BaseSettings
 
 class Settings(BaseSettings):
     PROJECT_NAME: str = "Cofrade 360 API"
@@ -18,7 +18,10 @@ class Settings(BaseSettings):
     MINIO_ENDPOINT: str = "minio:9000"
     MINIO_ACCESS_KEY: str = "minioadmin"
     MINIO_SECRET_KEY: str = "minioadmin"
-    MINIO_BUCKET: str = "cofrade360"
+    MINIO_BUCKET: str = "media"
+    MINIO_PUBLIC_ENDPOINT: str = ""
+    MINIO_SECURE: bool = False
+    MINIO_PRESIGNED_EXPIRE_SECONDS: int = 3600
     
     # Security
     SECRET_KEY: str = "your-secret-key-change-in-production-min-32-chars"
