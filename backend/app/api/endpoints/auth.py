@@ -6,7 +6,7 @@ from sqlalchemy.orm import Session
 from app.core.deps import get_db, get_current_active_user
 from app.core.security import verify_password, create_access_token, create_refresh_token, decode_token
 from app.schemas.schemas import UserCreate, UserResponse, LoginRequest, TokenResponse, RefreshRequest
-from app.crud.crud import get_user_by_email, create_user
+from app.crud.crud import get_user_by_email, get_user_by_id, create_user
 from app.models.models import User
 
 router = APIRouter()
@@ -93,10 +93,22 @@ def refresh(refresh_data: RefreshRequest, db: Session = Depends(get_db)):
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail="Invalid refresh token"
         )
+
+    user = get_user_by_id(db, user_id=user_id)
+    if user is None:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="User not found"
+        )
+    if not user.is_active:
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Inactive user"
+        )
     
     # Create new tokens
-    access_token = create_access_token(data={"sub": user_id})
-    new_refresh_token = create_refresh_token(data={"sub": user_id})
+    access_token = create_access_token(data={"sub": user.id})
+    new_refresh_token = create_refresh_token(data={"sub": user.id})
     
     return TokenResponse(
         access_token=access_token,
