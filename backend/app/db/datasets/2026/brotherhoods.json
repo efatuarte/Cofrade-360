@@ -1,0 +1,24 @@
+[
+  {
+    "type": "brotherhood",
+    "year": 2026,
+    "name_short": "Gran Poder",
+    "name_full": "Hermandad del Gran Poder",
+    "web": "https://www.gran-poder.es",
+    "ss_day": "madrugada",
+    "sede": "Basílica de Nuestro Padre Jesús del Gran Poder",
+    "titulares": ["Nuestro Padre Jesús del Gran Poder", "María Santísima del Mayor Dolor y Traspaso"],
+    "media_links": [
+      "https://www.gran-poder.es/wp-content/uploads/logo.png"
+    ],
+    "notes": "Dataset inicial curado para Fase 11",
+    "provenance": [
+      {
+        "url": "https://www.gran-poder.es",
+        "accessed_at": "2026-02-15T10:30:00",
+        "fields_extracted": ["name_short", "name_full", "sede", "media_links"],
+        "notes": "Revisión manual por editor"
+      }
+    ]
+  }
+]

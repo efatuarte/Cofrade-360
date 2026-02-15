@@ -168,6 +168,7 @@ class BrotherhoodResponse(BaseModel):
     name_full: str
     logo_asset_id: Optional[str] = None
     church_id: Optional[str] = None
+    sede: Optional[str] = None
     ss_day: Optional[SemanaSantaDay] = None
     history: Optional[str] = None
     highlights: Optional[str] = None
@@ -370,7 +371,7 @@ class Ruta(RutaBase):
 # ============= Routing Schemas =============
 
 class RoutingTarget(BaseModel):
-    type: str = Field(..., pattern='^(event|brotherhood)$')
+    type: str = Field(..., pattern='^(event|brotherhood|plan_item)$')
     id: str
 
 
@@ -381,9 +382,22 @@ class RoutingConstraints(BaseModel):
 
 class RouteRequest(BaseModel):
     origin: List[float] = Field(..., min_length=2, max_length=2)  # [lat, lng]
+    destination: Optional[List[float]] = Field(default=None, min_length=2, max_length=2)
     datetime: datetime
-    target: RoutingTarget
+    target: Optional[RoutingTarget] = None
     constraints: RoutingConstraints = RoutingConstraints()
+
+    @model_validator(mode="after")
+    def validate_destination_or_target(self):
+        if self.destination is None and self.target is None:
+            raise ValueError("Either destination or target must be provided")
+        return self
+
+
+class RouteAlternative(BaseModel):
+    polyline: List[List[float]]
+    eta_seconds: int
+    explanation: List[str]
 
 
 class RouteResponse(BaseModel):
@@ -392,23 +406,47 @@ class RouteResponse(BaseModel):
     bulla_score: float
     warnings: List[str]
     explanation: List[str]
-
-
+    alternatives: List[RouteAlternative] = []
 class ModeCalleWsLocation(BaseModel):
     lat: float
     lng: float
 
 
-class ModeCalleWsRequest(BaseModel):
+class ModeCalleWsHello(BaseModel):
+    type: str = "hello"
+    protocol_version: str = "1.0"
+    token: Optional[str] = None
+
+
+class ModeCalleWsLocationUpdate(BaseModel):
+    type: str = "location_update"
     location: ModeCalleWsLocation
     datetime: datetime
     target: RoutingTarget
     constraints: RoutingConstraints = RoutingConstraints()
 
 
-class ModeCalleWsResponse(BaseModel):
-    type: str = "reroute"
+class ModeCalleWsHeartbeat(BaseModel):
+    type: str = "heartbeat"
+    sent_at: datetime
+
+
+class ModeCalleWsRouteUpdate(BaseModel):
+    type: str = "route_update"
     route: RouteResponse
+
+
+class ModeCalleWsWarning(BaseModel):
+    type: str = "warning"
+    code: str
+    detail: str
+    created_at: datetime
+
+
+class RoutingLastResponse(BaseModel):
+    plan_id: str
+    route: RouteResponse
+    generated_at: datetime
 
 
 # ============= Error Schemas =============
@@ -417,3 +455,205 @@ class ErrorDetail(BaseModel):
     detail: str
     code: Optional[str] = None
     trace_id: Optional[str] = None
+
+
+# ============= Procession, Provenance & Ingestion Schemas =============
+
+class ProcessionStatus(str, Enum):
+    scheduled = "scheduled"
+    running = "running"
+    finished = "finished"
+
+
+class ProcessionResponse(BaseModel):
+    id: str
+    brotherhood_id: str
+    date: datetime
+    status: str
+    confidence: float = 0.5
+    created_at: datetime
+
+    model_config = ConfigDict(from_attributes=True)
+
+
+class ProcessionSchedulePointCreate(BaseModel):
+    point_type: str
+    label: Optional[str] = None
+    scheduled_datetime: datetime
+
+
+class ProcessionSchedulePointResponse(ProcessionSchedulePointCreate):
+    id: str
+    procession_id: str
+
+    model_config = ConfigDict(from_attributes=True)
+
+
+class ProcessionItineraryTextUpsert(BaseModel):
+    raw_text: str
+    source_url: Optional[str] = None
+    accessed_at: Optional[datetime] = None
+
+
+class ProcessionItineraryTextResponse(BaseModel):
+    id: str
+    procession_id: str
+    raw_text: str
+    source_url: Optional[str] = None
+    accessed_at: Optional[datetime] = None
+
+    model_config = ConfigDict(from_attributes=True)
+
+
+class ProvenanceCreate(BaseModel):
+    entity_type: str
+    entity_id: str
+    source_url: str
+    accessed_at: datetime
+    fields_extracted: list[str] = []
+
+
+class ProvenanceResponse(ProvenanceCreate):
+    id: str
+    created_at: datetime
+
+    model_config = ConfigDict(from_attributes=True)
+
+
+class IngestionBrotherhoodSource(BaseModel):
+    ss_day: str
+    name: str
+    web_url: str
+
+
+class IngestionImportSummary(BaseModel):
+    total_items: int
+    created_hermandades: int
+    created_media: int
+    created_processions: int
+    created_schedule_points: int
+    created_provenance: int
+
+
+class RestrictedAreaCreate(BaseModel):
+    name: str
+    geom: str
+    start_datetime: datetime
+    end_datetime: datetime
+    reason: str
+
+
+class RestrictedAreaUpdate(BaseModel):
+    name: Optional[str] = None
+    geom: Optional[str] = None
+    start_datetime: Optional[datetime] = None
+    end_datetime: Optional[datetime] = None
+    reason: Optional[str] = None
+
+
+class RestrictedAreaResponse(RestrictedAreaCreate):
+    id: str
+
+
+class ProcessionOccupationCreate(BaseModel):
+    procession_id: str
+    street_segment_id: str
+    start_datetime: datetime
+    end_datetime: datetime
+    direction: str = "unknown"
+    crowd_factor: float = 1.0
+
+
+class ProcessionOccupationUpdate(BaseModel):
+    start_datetime: Optional[datetime] = None
+    end_datetime: Optional[datetime] = None
+    direction: Optional[str] = None
+    crowd_factor: Optional[float] = None
+
+
+class ProcessionOccupationResponse(ProcessionOccupationCreate):
+    id: str
+
+
+# ============= Phase 11 Admin Schemas =============
+
+class AdminBrotherhoodUpdate(BaseModel):
+    sede: Optional[str] = None
+    ss_day: Optional[SemanaSantaDay] = None
+    logo_asset_id: Optional[str] = None
+    media_links: list[str] = Field(default_factory=list)
+
+
+class AdminProcessionUpdate(BaseModel):
+    confidence: float = Field(ge=0, le=1)
+    itinerary_text: str
+    schedule_points: list[ProcessionSchedulePointCreate] = Field(default_factory=list)
+
+
+class AuditLogResponse(BaseModel):
+    id: str
+    entity_type: str
+    entity_id: str
+    action: str
+    changed_fields: str
+    actor_user_id: str
+    created_at: datetime
+
+    model_config = ConfigDict(from_attributes=True)
+
+
+
+# ============= Phase 14 Crowd & Analytics Schemas =============
+
+class CrowdReportCreate(BaseModel):
+    lat: float
+    lng: float
+    severity: int = Field(ge=1, le=5)
+    note: Optional[str] = None
+
+
+class CrowdReportResponse(BaseModel):
+    id: str
+    user_id: str
+    geohash: str
+    lat: float
+    lng: float
+    severity: int
+    note: Optional[str] = None
+    is_flagged: bool
+    is_hidden: bool
+    created_at: datetime
+
+    model_config = ConfigDict(from_attributes=True)
+
+
+class CrowdSignalResponse(BaseModel):
+    id: str
+    geohash: str
+    bucket_start: datetime
+    bucket_end: datetime
+    score: float
+    confidence: float
+    reports_count: int
+
+    model_config = ConfigDict(from_attributes=True)
+
+
+class CrowdModerationUpdate(BaseModel):
+    is_flagged: Optional[bool] = None
+    is_hidden: Optional[bool] = None
+
+
+class CrowdAggregateResponse(BaseModel):
+    created_signals: int
+
+
+class AnalyticsEventResponse(BaseModel):
+    id: str
+    event_type: str
+    user_id: Optional[str] = None
+    trace_id: Optional[str] = None
+    payload: str
+    created_at: datetime
+
+    model_config = ConfigDict(from_attributes=True)

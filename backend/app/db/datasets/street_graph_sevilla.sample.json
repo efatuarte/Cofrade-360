@@ -1,0 +1,84 @@
+{
+  "nodes": [
+    {"id": "n_campana", "lat": 37.3921, "lng": -5.9968},
+    {"id": "n_duque", "lat": 37.3927, "lng": -5.9990},
+    {"id": "n_setas", "lat": 37.3936, "lng": -5.9924},
+    {"id": "n_catedral", "lat": 37.3862, "lng": -5.9926},
+    {"id": "n_san_lorenzo", "lat": 37.3938, "lng": -5.9994},
+    {"id": "n_alameda", "lat": 37.3997, "lng": -5.9958}
+  ],
+  "edges": [
+    {
+      "id": "e_campana_duque",
+      "source_node": "n_campana",
+      "target_node": "n_duque",
+      "length_m": 210,
+      "highway_type": "pedestrian",
+      "is_walkable": true,
+      "geometry": [[37.3921, -5.9968], [37.3927, -5.9990]]
+    },
+    {
+      "id": "e_duque_sanlorenzo",
+      "source_node": "n_duque",
+      "target_node": "n_san_lorenzo",
+      "length_m": 170,
+      "highway_type": "residential",
+      "is_walkable": true,
+      "geometry": [[37.3927, -5.9990], [37.3938, -5.9994]]
+    },
+    {
+      "id": "e_campana_setas",
+      "source_node": "n_campana",
+      "target_node": "n_setas",
+      "length_m": 390,
+      "highway_type": "pedestrian",
+      "is_walkable": true,
+      "geometry": [[37.3921, -5.9968], [37.3936, -5.9924]]
+    },
+    {
+      "id": "e_setas_catedral",
+      "source_node": "n_setas",
+      "target_node": "n_catedral",
+      "length_m": 900,
+      "highway_type": "pedestrian",
+      "is_walkable": true,
+      "geometry": [[37.3936, -5.9924], [37.3862, -5.9926]]
+    },
+    {
+      "id": "e_catedral_campana",
+      "source_node": "n_catedral",
+      "target_node": "n_campana",
+      "length_m": 1000,
+      "highway_type": "pedestrian",
+      "is_walkable": true,
+      "geometry": [[37.3862, -5.9926], [37.3921, -5.9968]]
+    },
+    {
+      "id": "e_setas_alameda",
+      "source_node": "n_setas",
+      "target_node": "n_alameda",
+      "length_m": 760,
+      "highway_type": "pedestrian",
+      "is_walkable": true,
+      "geometry": [[37.3936, -5.9924], [37.3997, -5.9958]]
+    },
+    {
+      "id": "e_alameda_sanlorenzo",
+      "source_node": "n_alameda",
+      "target_node": "n_san_lorenzo",
+      "length_m": 740,
+      "highway_type": "pedestrian",
+      "is_walkable": true,
+      "geometry": [[37.3997, -5.9958], [37.3938, -5.9994]]
+    },
+    {
+      "id": "e_sanlorenzo_campana",
+      "source_node": "n_san_lorenzo",
+      "target_node": "n_campana",
+      "length_m": 450,
+      "highway_type": "residential",
+      "is_walkable": true,
+      "geometry": [[37.3938, -5.9994], [37.3921, -5.9968]]
+    }
+  ]
+}

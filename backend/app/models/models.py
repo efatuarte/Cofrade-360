@@ -167,3 +167,147 @@ class Arista(Base):
     costo = Column(Integer)
     bloqueada = Column(Integer, default=0)
     created_at = Column(DateTime, default=datetime.utcnow)
+
+
+class Procession(Base):
+    __tablename__ = "processions"
+
+    id = Column(String, primary_key=True, index=True)
+    brotherhood_id = Column(String, ForeignKey("hermandades.id"), nullable=False, index=True)
+    date = Column(DateTime, nullable=False, index=True)
+    status = Column(String, nullable=False, default="scheduled")
+    confidence = Column(Float, nullable=False, default=0.5)
+    created_at = Column(DateTime, default=datetime.utcnow, nullable=False)
+
+
+class ProcessionSchedulePoint(Base):
+    __tablename__ = "procession_schedule_points"
+
+    id = Column(String, primary_key=True, index=True)
+    procession_id = Column(String, ForeignKey("processions.id"), nullable=False, index=True)
+    point_type = Column(String, nullable=False)
+    label = Column(String, nullable=True)
+    scheduled_datetime = Column(DateTime, nullable=False)
+
+
+class ProcessionItineraryText(Base):
+    __tablename__ = "procession_itinerary_texts"
+
+    id = Column(String, primary_key=True, index=True)
+    procession_id = Column(String, ForeignKey("processions.id"), nullable=False, unique=True, index=True)
+    raw_text = Column(Text, nullable=False)
+    source_url = Column(String, nullable=True)
+    accessed_at = Column(DateTime, nullable=True)
+
+
+class DataProvenance(Base):
+    __tablename__ = "data_provenance"
+
+    id = Column(String, primary_key=True, index=True)
+    entity_type = Column(String, nullable=False)
+    entity_id = Column(String, nullable=False, index=True)
+    source_url = Column(String, nullable=False)
+    accessed_at = Column(DateTime, nullable=False)
+    fields_extracted = Column(Text, nullable=False, default="[]")
+    notes = Column(Text, nullable=True)
+    created_at = Column(DateTime, default=datetime.utcnow, nullable=False)
+
+
+class AuditLog(Base):
+    __tablename__ = "audit_logs"
+
+    id = Column(String, primary_key=True, index=True)
+    entity_type = Column(String, nullable=False, index=True)
+    entity_id = Column(String, nullable=False, index=True)
+    action = Column(String, nullable=False)
+    changed_fields = Column(Text, nullable=False, default="{}")
+    actor_user_id = Column(String, ForeignKey("users.id"), nullable=False, index=True)
+    created_at = Column(DateTime, default=datetime.utcnow, nullable=False)
+
+
+
+class StreetNode(Base):
+    __tablename__ = "street_nodes"
+
+    id = Column(String, primary_key=True, index=True)
+    geom = Column(Text, nullable=False)
+    created_at = Column(DateTime, default=datetime.utcnow, nullable=False)
+
+
+class StreetEdge(Base):
+    __tablename__ = "street_edges"
+
+    id = Column(String, primary_key=True, index=True)
+    source_node = Column(String, ForeignKey("street_nodes.id"), nullable=False, index=True)
+    target_node = Column(String, ForeignKey("street_nodes.id"), nullable=False, index=True)
+    geom = Column(Text, nullable=False)
+    length_m = Column(Float, nullable=False)
+    width_estimate = Column(Float, nullable=True)
+    highway_type = Column(String, nullable=True)
+    is_walkable = Column(Boolean, nullable=False, default=True)
+    tags = Column(Text, nullable=True)
+    created_at = Column(DateTime, default=datetime.utcnow, nullable=False)
+
+
+class RouteRestriction(Base):
+    __tablename__ = "route_restrictions"
+
+    id = Column(String, primary_key=True, index=True)
+    edge_id = Column(String, ForeignKey("street_edges.id"), nullable=False, index=True)
+    starts_at = Column(DateTime, nullable=False, index=True)
+    ends_at = Column(DateTime, nullable=False, index=True)
+    reason = Column(String, nullable=False)
+    severity = Column(Float, nullable=False, default=100.0)
+    created_at = Column(DateTime, default=datetime.utcnow, nullable=False)
+
+
+
+class NotificationEvent(Base):
+    __tablename__ = "notification_events"
+
+    id = Column(String, primary_key=True, index=True)
+    plan_id = Column(String, nullable=True, index=True)
+    user_id = Column(String, ForeignKey("users.id"), nullable=True, index=True)
+    kind = Column(String, nullable=False, index=True)
+    payload = Column(Text, nullable=False)
+    created_at = Column(DateTime, default=datetime.utcnow, nullable=False, index=True)
+
+
+
+class CrowdReport(Base):
+    __tablename__ = "crowd_reports"
+
+    id = Column(String, primary_key=True, index=True)
+    user_id = Column(String, ForeignKey("users.id"), nullable=False, index=True)
+    geohash = Column(String, nullable=False, index=True)
+    lat = Column(Float, nullable=False)
+    lng = Column(Float, nullable=False)
+    severity = Column(Integer, nullable=False, default=3)
+    note = Column(Text, nullable=True)
+    is_flagged = Column(Boolean, nullable=False, default=False)
+    is_hidden = Column(Boolean, nullable=False, default=False)
+    created_at = Column(DateTime, default=datetime.utcnow, nullable=False, index=True)
+
+
+class CrowdSignal(Base):
+    __tablename__ = "crowd_signals"
+
+    id = Column(String, primary_key=True, index=True)
+    geohash = Column(String, nullable=False, index=True)
+    bucket_start = Column(DateTime, nullable=False, index=True)
+    bucket_end = Column(DateTime, nullable=False, index=True)
+    score = Column(Float, nullable=False)
+    confidence = Column(Float, nullable=False)
+    reports_count = Column(Integer, nullable=False, default=0)
+    created_at = Column(DateTime, default=datetime.utcnow, nullable=False)
+
+
+class AnalyticsEvent(Base):
+    __tablename__ = "analytics_events"
+
+    id = Column(String, primary_key=True, index=True)
+    event_type = Column(String, nullable=False, index=True)
+    user_id = Column(String, ForeignKey("users.id"), nullable=True, index=True)
+    trace_id = Column(String, nullable=True, index=True)
+    payload = Column(Text, nullable=False, default="{}")
+    created_at = Column(DateTime, default=datetime.utcnow, nullable=False, index=True)

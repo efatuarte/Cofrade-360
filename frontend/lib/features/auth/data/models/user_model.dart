@@ -9,6 +9,7 @@ class UserModel {
   final String email;
   @JsonKey(name: 'is_active')
   final bool isActive;
+  final String role;
   @JsonKey(name: 'created_at')
   final DateTime createdAt;
 
@@ -16,6 +17,7 @@ class UserModel {
     required this.id,
     required this.email,
     required this.isActive,
+    required this.role,
     required this.createdAt,
   });
 
@@ -29,6 +31,7 @@ class UserModel {
       id: id,
       email: email,
       isActive: isActive,
+      role: role,
       createdAt: createdAt,
     );
   }
