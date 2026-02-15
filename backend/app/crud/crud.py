@@ -1,4 +1,3 @@
-import json
 import uuid
 from datetime import datetime
 from typing import List, Optional, Tuple
@@ -7,22 +6,7 @@ from sqlalchemy import or_
 from sqlalchemy.orm import Session, joinedload
 
 from app.core.security import get_password_hash
-from app.models.models import (
-    Evento,
-    Hermandad,
-    Location,
-    MediaAsset,
-    PlanItem,
-    DataProvenance,
-    Procession,
-    ProcessionItineraryText,
-    ProcessionSchedulePoint,
-    ProcessionSegmentOccupation,
-    RestrictedArea,
-    StreetSegment,
-    User,
-    UserPlan,
-)
+from app.models.models import Evento, Hermandad, Location, MediaAsset, PlanItem, User, UserPlan
 from app.schemas.schemas import EventoCreate, EventoUpdate, HermandadCreate, LocationCreate, UserCreate
 
 
@@ -42,10 +26,7 @@ def create_user(db: Session, user: UserCreate) -> User:
         id=str(uuid.uuid4()),
         email=user.email,
         hashed_password=hashed_password,
-        role="user",
         is_active=True,
-        notifications_processions=True,
-        notifications_restrictions=True,
     )
     db.add(db_user)
     db.commit()
@@ -385,197 +366,3 @@ def reorder_plan_items(db: Session, *, plan_id: str, ordered_ids: List[str]) -> 
         db.query(PlanItem).filter(PlanItem.plan_id == plan_id, PlanItem.id == item_id).update({"position": idx})
     db.commit()
     return db.query(PlanItem).filter(PlanItem.plan_id == plan_id).order_by(PlanItem.position.asc()).all()
-
-
-
-def list_procession_schedule_points(db: Session, *, procession_id: str) -> List[ProcessionSchedulePoint]:
-    return (
-        db.query(ProcessionSchedulePoint)
-        .filter(ProcessionSchedulePoint.procession_id == procession_id)
-        .order_by(ProcessionSchedulePoint.scheduled_datetime.asc())
-        .all()
-    )
-
-
-def replace_procession_schedule_points(
-    db: Session,
-    *,
-    procession_id: str,
-    points: List,
-) -> List[ProcessionSchedulePoint]:
-    db.query(ProcessionSchedulePoint).filter(ProcessionSchedulePoint.procession_id == procession_id).delete()
-    created: List[ProcessionSchedulePoint] = []
-    for point in points:
-        row = ProcessionSchedulePoint(
-            id=str(uuid.uuid4()),
-            procession_id=procession_id,
-            point_type=point.point_type.value if hasattr(point.point_type, "value") else point.point_type,
-            label=point.label,
-            scheduled_datetime=point.scheduled_datetime,
-        )
-        db.add(row)
-        created.append(row)
-    db.commit()
-    for row in created:
-        db.refresh(row)
-    return sorted(created, key=lambda item: item.scheduled_datetime)
-
-
-def get_procession_itinerary_text(db: Session, *, procession_id: str) -> Optional[ProcessionItineraryText]:
-    return (
-        db.query(ProcessionItineraryText)
-        .filter(ProcessionItineraryText.procession_id == procession_id)
-        .first()
-    )
-
-
-def upsert_procession_itinerary_text(db: Session, *, procession_id: str, payload) -> ProcessionItineraryText:
-    current = get_procession_itinerary_text(db, procession_id=procession_id)
-    if current is None:
-        current = ProcessionItineraryText(
-            id=str(uuid.uuid4()),
-            procession_id=procession_id,
-            raw_text=payload.raw_text,
-            source_url=payload.source_url,
-            accessed_at=payload.accessed_at,
-        )
-        db.add(current)
-    else:
-        current.raw_text = payload.raw_text
-        current.source_url = payload.source_url
-        current.accessed_at = payload.accessed_at
-    db.commit()
-    db.refresh(current)
-    return current
-
-
-def create_provenance(db: Session, *, payload) -> DataProvenance:
-    item = DataProvenance(
-        id=str(uuid.uuid4()),
-        entity_type=payload.entity_type,
-        entity_id=payload.entity_id,
-        source_url=payload.source_url,
-        accessed_at=payload.accessed_at,
-        fields_extracted=json.dumps(payload.fields_extracted),
-    )
-    db.add(item)
-    db.commit()
-    db.refresh(item)
-    return item
-
-
-def list_provenance(db: Session, *, entity_type: Optional[str] = None, entity_id: Optional[str] = None) -> List[DataProvenance]:
-    query = db.query(DataProvenance)
-    if entity_type:
-        query = query.filter(DataProvenance.entity_type == entity_type)
-    if entity_id:
-        query = query.filter(DataProvenance.entity_id == entity_id)
-    return query.order_by(DataProvenance.accessed_at.desc()).all()
-
-
-# ============= Operativo CRUD =============
-
-def list_processions(db: Session, *, date: Optional[datetime] = None, status: Optional[str] = None) -> List[Procession]:
-    query = db.query(Procession)
-    if date:
-        start = datetime(date.year, date.month, date.day, 0, 0, 0)
-        end = datetime(date.year, date.month, date.day, 23, 59, 59)
-        query = query.filter(Procession.date >= start, Procession.date <= end)
-    if status:
-        query = query.filter(Procession.status == status)
-    return query.order_by(Procession.date.asc()).all()
-
-
-def get_procession(db: Session, procession_id: str) -> Optional[Procession]:
-    return db.query(Procession).filter(Procession.id == procession_id).first()
-
-
-def list_procession_occupations(
-    db: Session,
-    *,
-    procession_id: str,
-    from_date: Optional[datetime] = None,
-    to_date: Optional[datetime] = None,
-) -> List[ProcessionSegmentOccupation]:
-    query = db.query(ProcessionSegmentOccupation).filter(ProcessionSegmentOccupation.procession_id == procession_id)
-    if from_date:
-        query = query.filter(ProcessionSegmentOccupation.end_datetime >= from_date)
-    if to_date:
-        query = query.filter(ProcessionSegmentOccupation.start_datetime <= to_date)
-    return query.order_by(ProcessionSegmentOccupation.start_datetime.asc()).all()
-
-
-def list_restrictions(
-    db: Session,
-    *,
-    from_date: Optional[datetime] = None,
-    to_date: Optional[datetime] = None,
-) -> List[RestrictedArea]:
-    query = db.query(RestrictedArea)
-    if from_date:
-        query = query.filter(RestrictedArea.end_datetime >= from_date)
-    if to_date:
-        query = query.filter(RestrictedArea.start_datetime <= to_date)
-    return query.order_by(RestrictedArea.start_datetime.asc()).all()
-
-
-def create_restriction(db: Session, *, payload) -> RestrictedArea:
-    item = RestrictedArea(id=str(uuid.uuid4()), **payload.model_dump())
-    db.add(item)
-    db.commit()
-    db.refresh(item)
-    return item
-
-
-def get_restriction(db: Session, restriction_id: str) -> Optional[RestrictedArea]:
-    return db.query(RestrictedArea).filter(RestrictedArea.id == restriction_id).first()
-
-
-def update_restriction(db: Session, *, item: RestrictedArea, payload) -> RestrictedArea:
-    for field, value in payload.model_dump(exclude_unset=True).items():
-        setattr(item, field, value)
-    db.commit()
-    db.refresh(item)
-    return item
-
-
-def create_occupation(db: Session, *, payload) -> ProcessionSegmentOccupation:
-    occ = ProcessionSegmentOccupation(id=str(uuid.uuid4()), **payload.model_dump())
-    db.add(occ)
-    db.commit()
-    db.refresh(occ)
-    return occ
-
-
-def get_occupation(db: Session, occupation_id: str) -> Optional[ProcessionSegmentOccupation]:
-    return db.query(ProcessionSegmentOccupation).filter(ProcessionSegmentOccupation.id == occupation_id).first()
-
-
-def update_occupation(db: Session, *, item: ProcessionSegmentOccupation, payload) -> ProcessionSegmentOccupation:
-    for field, value in payload.model_dump(exclude_unset=True).items():
-        setattr(item, field, value)
-    db.commit()
-    db.refresh(item)
-    return item
-
-
-def has_occupation_overlap(
-    db: Session,
-    *,
-    street_segment_id: str,
-    start_datetime: datetime,
-    end_datetime: datetime,
-    exclude_id: Optional[str] = None,
-) -> bool:
-    query = db.query(ProcessionSegmentOccupation).filter(
-        ProcessionSegmentOccupation.street_segment_id == street_segment_id,
-        ProcessionSegmentOccupation.start_datetime < end_datetime,
-        ProcessionSegmentOccupation.end_datetime > start_datetime,
-    )
-    if exclude_id:
-        query = query.filter(ProcessionSegmentOccupation.id != exclude_id)
-    return db.query(query.exists()).scalar()
-
-
-def get_street_segment(db: Session, segment_id: str) -> Optional[StreetSegment]:
-    return db.query(StreetSegment).filter(StreetSegment.id == segment_id).first()

@@ -38,8 +38,6 @@ def _build_url(method: str, object_name: str, bucket_name: str | None = None) ->
 
 
 def get_presigned_get_url(object_name: str, bucket_name: str | None = None) -> str:
-    if object_name.startswith("http://") or object_name.startswith("https://"):
-        return object_name
     return _build_url("GET", object_name, bucket_name)
 
 

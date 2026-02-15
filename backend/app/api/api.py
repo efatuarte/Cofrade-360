@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from app.api.endpoints import alerts, auth, eventos, hermandades, ingestion, itinerario, media, processions, routing
+from app.api.endpoints import auth, eventos, hermandades, itinerario, media, routing
 
 api_router = APIRouter()
 
@@ -10,8 +10,3 @@ api_router.include_router(routing.router, prefix="/routing", tags=["routing"])
 
 api_router.include_router(media.router, tags=["media"])
 api_router.include_router(itinerario.router, tags=["itinerario"])
-api_router.include_router(processions.router, tags=["processions"])
-
-api_router.include_router(alerts.router, tags=["alerts"])
-
-api_router.include_router(ingestion.router, tags=["ingestion"])

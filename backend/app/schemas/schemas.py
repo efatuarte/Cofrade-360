@@ -55,33 +55,6 @@ class PlanItemType(str, Enum):
     brotherhood = "brotherhood"
 
 
-class RestrictionReason(str, Enum):
-    carrera_oficial = "carrera_oficial"
-    corte = "corte"
-    valla = "valla"
-    otro = "otro"
-
-
-class ProcessionStatus(str, Enum):
-    scheduled = "scheduled"
-    in_progress = "in_progress"
-    finished = "finished"
-    cancelled = "cancelled"
-
-
-class OccupationDirection(str, Enum):
-    parallel = "parallel"
-    perpendicular = "perpendicular"
-    unknown = "unknown"
-
-
-class ProcessionSchedulePointType(str, Enum):
-    salida = "salida"
-    carrera_oficial_start = "carrera_oficial_start"
-    carrera_oficial_end = "carrera_oficial_end"
-    recogida = "recogida"
-
-
 # ============= Pagination =============
 
 T = TypeVar("T")
@@ -290,152 +263,6 @@ class EventoResponse(EventoBase):
     model_config = ConfigDict(from_attributes=True)
 
 
-# ============= Operativo / Processions Schemas =============
-
-class StreetSegmentResponse(BaseModel):
-    id: str
-    name: str
-    geom: str
-    width_estimate: Optional[float] = None
-    kind: str
-    is_walkable: bool
-    created_at: datetime
-
-    model_config = ConfigDict(from_attributes=True)
-
-
-class RestrictedAreaBase(BaseModel):
-    name: str
-    geom: str
-    start_datetime: datetime
-    end_datetime: datetime
-    reason: RestrictionReason
-
-    @model_validator(mode="after")
-    def validate_window(self):
-        if self.start_datetime > self.end_datetime:
-            raise ValueError("start_datetime must be <= end_datetime")
-        return self
-
-
-class RestrictedAreaCreate(RestrictedAreaBase):
-    pass
-
-
-class RestrictedAreaUpdate(BaseModel):
-    name: Optional[str] = None
-    geom: Optional[str] = None
-    start_datetime: Optional[datetime] = None
-    end_datetime: Optional[datetime] = None
-    reason: Optional[RestrictionReason] = None
-
-
-class RestrictedAreaResponse(RestrictedAreaBase):
-    id: str
-    created_at: datetime
-
-    model_config = ConfigDict(from_attributes=True)
-
-
-class ProcessionBase(BaseModel):
-    brotherhood_id: str
-    date: datetime
-    status: ProcessionStatus = ProcessionStatus.scheduled
-
-
-class ProcessionResponse(ProcessionBase):
-    id: str
-    created_at: datetime
-
-    model_config = ConfigDict(from_attributes=True)
-
-
-class ProcessionSchedulePointBase(BaseModel):
-    point_type: ProcessionSchedulePointType
-    label: Optional[str] = None
-    scheduled_datetime: datetime
-
-
-class ProcessionSchedulePointCreate(ProcessionSchedulePointBase):
-    pass
-
-
-class ProcessionSchedulePointResponse(ProcessionSchedulePointBase):
-    id: str
-    procession_id: str
-
-    model_config = ConfigDict(from_attributes=True)
-
-
-class ProcessionItineraryTextUpsert(BaseModel):
-    raw_text: str = Field(..., min_length=10)
-    source_url: Optional[str] = None
-    accessed_at: Optional[datetime] = None
-
-
-class ProcessionItineraryTextResponse(BaseModel):
-    id: str
-    procession_id: str
-    raw_text: str
-    source_url: Optional[str] = None
-    accessed_at: Optional[datetime] = None
-
-    model_config = ConfigDict(from_attributes=True)
-
-
-class ProvenanceCreate(BaseModel):
-    entity_type: str
-    entity_id: str
-    source_url: str
-    accessed_at: datetime
-    fields_extracted: List[str] = Field(default_factory=list)
-
-
-class ProvenanceResponse(ProvenanceCreate):
-    id: str
-    created_at: datetime
-
-    model_config = ConfigDict(from_attributes=True)
-
-
-class IngestionBrotherhoodSource(BaseModel):
-    ss_day: str
-    name: str
-    web_url: str
-
-
-class ProcessionOccupationBase(BaseModel):
-    procession_id: str
-    street_segment_id: str
-    start_datetime: datetime
-    end_datetime: datetime
-    direction: OccupationDirection = OccupationDirection.unknown
-    crowd_factor: float = Field(1.0, ge=0.1, le=5.0)
-
-    @model_validator(mode="after")
-    def validate_window(self):
-        if self.start_datetime > self.end_datetime:
-            raise ValueError("start_datetime must be <= end_datetime")
-        return self
-
-
-class ProcessionOccupationCreate(ProcessionOccupationBase):
-    pass
-
-
-class ProcessionOccupationUpdate(BaseModel):
-    start_datetime: Optional[datetime] = None
-    end_datetime: Optional[datetime] = None
-    direction: Optional[OccupationDirection] = None
-    crowd_factor: Optional[float] = Field(None, ge=0.1, le=5.0)
-
-
-class ProcessionOccupationResponse(ProcessionOccupationBase):
-    id: str
-
-    model_config = ConfigDict(from_attributes=True)
-
-
 # ============= Itinerario Schemas =============
 
 class PlanConflictWarning(BaseModel):
@@ -543,51 +370,28 @@ class Ruta(RutaBase):
 # ============= Routing Schemas =============
 
 class RoutingTarget(BaseModel):
-    type: str = Field(..., pattern='^(event|brotherhood|plan_item)$')
+    type: str = Field(..., pattern='^(event|brotherhood)$')
     id: str
 
 
 class RoutingConstraints(BaseModel):
-    avoid_bulla: float = Field(0.5, ge=0.0, le=1.0)
-    prefer_wide: bool = True
-    max_detour: float = Field(1.5, ge=1.0, le=3.0)
+    avoid_bulla: bool = True
+    max_walk_km: float = Field(10.0, gt=0)
 
 
 class RouteRequest(BaseModel):
-    origin: List[float] = Field(..., min_length=2, max_length=2)
-    destination: Optional[List[float]] = Field(None, min_length=2, max_length=2)
+    origin: List[float] = Field(..., min_length=2, max_length=2)  # [lat, lng]
     datetime: datetime
-    target: Optional[RoutingTarget] = None
+    target: RoutingTarget
     constraints: RoutingConstraints = RoutingConstraints()
-
-    @model_validator(mode="after")
-    def validate_destination_or_target(self):
-        if self.destination is None and self.target is None:
-            raise ValueError("Either destination or target must be provided")
-        return self
-
-
-class RouteExplanationItem(BaseModel):
-    reason: str
-    weight: float
-    segments_count: int
-
-
-class RouteAlternative(BaseModel):
-    label: str
-    polyline: List[List[float]]
-    eta_seconds: int
-    total_cost: float
 
 
 class RouteResponse(BaseModel):
     polyline: List[List[float]]
     eta_seconds: int
-    total_cost: float
     bulla_score: float
     warnings: List[str]
-    explanation: List[RouteExplanationItem]
-    alternatives: List[RouteAlternative] = []
+    explanation: List[str]
 
 
 class ModeCalleWsLocation(BaseModel):
@@ -596,50 +400,15 @@ class ModeCalleWsLocation(BaseModel):
 
 
 class ModeCalleWsRequest(BaseModel):
-    type: str = Field(..., pattern='^client_location_update$')
-    plan_id: str
     location: ModeCalleWsLocation
     datetime: datetime
-    destination: Optional[List[float]] = None
-    target: Optional[RoutingTarget] = None
+    target: RoutingTarget
     constraints: RoutingConstraints = RoutingConstraints()
 
 
-class ModeCalleWsRouteUpdate(BaseModel):
-    type: str = "server_route_update"
+class ModeCalleWsResponse(BaseModel):
+    type: str = "reroute"
     route: RouteResponse
-
-
-class ModeCalleWsWarning(BaseModel):
-    type: str = "server_warning"
-    message: str
-
-
-class AlertItem(BaseModel):
-    id: str
-    kind: str
-    severity: str
-    title: str
-    detail: str
-    starts_at: datetime
-    ends_at: Optional[datetime] = None
-    source_id: Optional[str] = None
-
-
-class AlertsResponse(BaseModel):
-    generated_at: datetime
-    window_start: datetime
-    window_end: datetime
-    items: List[AlertItem]
-
-
-class IngestionImportSummary(BaseModel):
-    total_items: int
-    created_hermandades: int
-    created_media: int
-    created_processions: int
-    created_schedule_points: int
-    created_provenance: int
 
 
 # ============= Error Schemas =============

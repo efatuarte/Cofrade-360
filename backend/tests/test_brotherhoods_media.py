@@ -1,4 +1,3 @@
-from app.core.storage import get_presigned_get_url
 from tests.conftest import auth_header, make_hermandad, make_location, make_media_asset, make_user
 
 
@@ -78,8 +77,3 @@ def test_media_upload_and_get_media(client, db, monkeypatch):
     assert get_response.status_code == 200
     get_payload = get_response.json()
     assert get_payload["url"].startswith("https://signed.local/get/")
-
-
-def test_get_presigned_get_url_passthrough_for_remote_urls():
-    remote = "https://cdn.example.com/image.jpg"
-    assert get_presigned_get_url(remote) == remote
