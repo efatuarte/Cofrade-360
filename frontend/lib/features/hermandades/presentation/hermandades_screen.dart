@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_riverpod/legacy.dart';
 
-import '../../../auth/presentation/providers/auth_provider.dart';
+import '../../auth/presentation/providers/auth_provider.dart';
 import '../data/repositories/hermandades_repository_impl.dart';
 import '../domain/entities/hermandad.dart';
 import 'hermandad_detail_screen.dart';

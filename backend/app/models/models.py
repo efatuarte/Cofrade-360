@@ -57,6 +57,8 @@ class Hermandad(Base):
     highlights = Column(Text, nullable=True)  # JSON serialized string
     stats = Column(Text, nullable=True)  # JSON serialized string
 
+    web_url = Column(String, nullable=True)
+
     ubicacion = Column(Text, nullable=True)
     created_at = Column(DateTime, default=datetime.utcnow)
     updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
@@ -64,6 +66,7 @@ class Hermandad(Base):
     eventos = relationship("Evento", back_populates="hermandad")
     church = relationship("Location")
     media_assets = relationship("MediaAsset", back_populates="brotherhood", foreign_keys="MediaAsset.brotherhood_id")
+    titulares = relationship("Titular", back_populates="brotherhood", cascade="all, delete-orphan")
 
 
 class MediaAsset(Base):
@@ -77,6 +80,19 @@ class MediaAsset(Base):
     created_at = Column(DateTime, default=datetime.utcnow, nullable=False)
 
     brotherhood = relationship("Hermandad", back_populates="media_assets", foreign_keys=[brotherhood_id])
+
+
+class Titular(Base):
+    __tablename__ = "titulares"
+
+    id = Column(String, primary_key=True, index=True)
+    brotherhood_id = Column(String, ForeignKey("hermandades.id"), nullable=False, index=True)
+    name = Column(String, nullable=False)
+    kind = Column(String, nullable=False, default="unknown")  # cristo | virgen | misterio | unknown
+    position = Column(Integer, nullable=False, default=0)  # display order
+    created_at = Column(DateTime, default=datetime.utcnow, nullable=False)
+
+    brotherhood = relationship("Hermandad", back_populates="titulares")
 
 
 class Evento(Base):
@@ -178,6 +194,10 @@ class Procession(Base):
     status = Column(String, nullable=False, default="scheduled")
     confidence = Column(Float, nullable=False, default=0.5)
     created_at = Column(DateTime, default=datetime.utcnow, nullable=False)
+
+    brotherhood = relationship("Hermandad")
+    schedule_points = relationship("ProcessionSchedulePoint", cascade="all, delete-orphan")
+    itinerary = relationship("ProcessionItineraryText", uselist=False, cascade="all, delete-orphan")
 
 
 class ProcessionSchedulePoint(Base):

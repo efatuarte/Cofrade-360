@@ -4,9 +4,15 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_riverpod/legacy.dart';
+import 'package:latlong2/latlong.dart';
 
 import '../../../core/network/api_client.dart';
 import '../../auth/presentation/providers/auth_provider.dart';
+import 'widgets/map_overlays.dart';
+import 'widgets/modo_calle_map.dart';
+
+// ─────────────────────────── State ───────────────────────────
 
 enum StreetConnectionStatus { connected, disconnected, offline }
 
@@ -33,6 +39,7 @@ class ModoCalleState {
   final List<String> explanation;
   final List<RouteAlternativeUi> alternatives;
   final StreetConnectionStatus connectionStatus;
+  final bool is3DView;
 
   const ModoCalleState({
     this.isLoading = false,
@@ -45,6 +52,7 @@ class ModoCalleState {
     this.explanation = const [],
     this.alternatives = const [],
     this.connectionStatus = StreetConnectionStatus.disconnected,
+    this.is3DView = false,
   });
 
   ModoCalleState copyWith({
@@ -58,6 +66,7 @@ class ModoCalleState {
     List<String>? explanation,
     List<RouteAlternativeUi>? alternatives,
     StreetConnectionStatus? connectionStatus,
+    bool? is3DView,
   }) {
     return ModoCalleState(
       isLoading: isLoading ?? this.isLoading,
@@ -70,9 +79,12 @@ class ModoCalleState {
       explanation: explanation ?? this.explanation,
       alternatives: alternatives ?? this.alternatives,
       connectionStatus: connectionStatus ?? this.connectionStatus,
+      is3DView: is3DView ?? this.is3DView,
     );
   }
 }
+
+// ─────────────────────────── Notifier ───────────────────────────
 
 class ModoCalleNotifier extends StateNotifier<ModoCalleState> {
   final ApiClient _apiClient;
@@ -83,6 +95,16 @@ class ModoCalleNotifier extends StateNotifier<ModoCalleState> {
   DateTime _lastLocationSentAt = DateTime.fromMillisecondsSinceEpoch(0);
 
   ModoCalleNotifier(this._apiClient) : super(const ModoCalleState());
+
+  /// Posicion simulada del usuario (basada en tick).
+  LatLng get simulatedUserPosition => LatLng(
+        37.3921 + (_tick % 8) * 0.0001,
+        -5.9968 - (_tick % 8) * 0.0001,
+      );
+
+  void toggle3DView() {
+    state = state.copyWith(is3DView: !state.is3DView);
+  }
 
   Future<void> recalculateNow({bool avoidBulla = true}) async {
     state = state.copyWith(isLoading: true, error: null);
@@ -210,8 +232,6 @@ class ModoCalleNotifier extends StateNotifier<ModoCalleState> {
     await recalculateNow(avoidBulla: true);
   }
 
-
-
   Future<void> reportBulla() async {
     try {
       await _apiClient.dio.post(
@@ -220,7 +240,7 @@ class ModoCalleNotifier extends StateNotifier<ModoCalleState> {
           'lat': 37.3921,
           'lng': -5.9968,
           'severity': state.bullaScore >= 0.75 ? 5 : 3,
-          'note': 'Reporte rápido desde Modo Calle',
+          'note': 'Reporte rapido desde Modo Calle',
         },
       );
       state = state.copyWith(warnings: [...state.warnings, 'Reporte enviado']);
@@ -241,6 +261,8 @@ class ModoCalleNotifier extends StateNotifier<ModoCalleState> {
 final modoCalleProvider = StateNotifierProvider<ModoCalleNotifier, ModoCalleState>((ref) {
   return ModoCalleNotifier(ref.watch(apiClientProvider));
 });
+
+// ─────────────────────────── UI ───────────────────────────
 
 class ModoCalleScreen extends ConsumerWidget {
   const ModoCalleScreen({super.key});
@@ -273,110 +295,254 @@ class ModoCalleScreen extends ConsumerWidget {
     final notifier = ref.read(modoCalleProvider.notifier);
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Modo Calle')),
-      body: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              width: double.infinity,
-              padding: const EdgeInsets.all(12),
-              decoration: BoxDecoration(
-                color: _statusColor(state.connectionStatus).withOpacity(0.15),
+      appBar: AppBar(
+        title: const Text('Modo Calle'),
+        actions: [
+          // Toggle 2D / 3D
+          IconButton(
+            icon: Icon(state.is3DView ? Icons.view_in_ar : Icons.map_outlined),
+            tooltip: state.is3DView ? 'Vista 2D (cenital)' : 'Vista 3D',
+            onPressed: notifier.toggle3DView,
+          ),
+        ],
+      ),
+      body: Column(
+        children: [
+          // ── Barra compacta de acciones ──
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
+            decoration: BoxDecoration(
+              color: Theme.of(context).colorScheme.surface,
+              border: Border(
+                bottom: BorderSide(color: Colors.grey.shade300, width: 0.5),
+              ),
+            ),
+            child: Row(
+              children: [
+                _CompactActionButton(
+                  icon: Icons.play_arrow,
+                  label: 'Iniciar',
+                  onPressed: notifier.startStreetMode,
+                  filled: true,
+                ),
+                const SizedBox(width: 6),
+                _CompactActionButton(
+                  icon: Icons.sync,
+                  label: 'Reconectar',
+                  onPressed: notifier.reconnect,
+                ),
+                const SizedBox(width: 6),
+                _CompactActionButton(
+                  icon: Icons.alt_route,
+                  label: 'Plan B',
+                  onPressed: notifier.activatePlanB,
+                ),
+                const SizedBox(width: 6),
+                _CompactActionButton(
+                  icon: Icons.campaign,
+                  label: 'Bulla',
+                  onPressed: notifier.reportBulla,
+                  filled: true,
+                ),
+              ],
+            ),
+          ),
+
+          // ── Mapa con overlays ──
+          Expanded(
+            child: Stack(
+              children: [
+                // Mapa interactivo
+                ModoCalleMap(
+                  backendPolyline: state.polyline,
+                  is3DView: state.is3DView,
+                  userPosition: notifier.simulatedUserPosition,
+                ),
+
+                // Status chip (esquina superior izquierda)
+                Positioned(
+                  top: 12,
+                  left: 12,
+                  child: StatusChip(
+                    statusLabel: _statusLabel(state.connectionStatus),
+                    statusColor: _statusColor(state.connectionStatus),
+                    etaSeconds: state.etaSeconds,
+                    nextStop: state.nextStop,
+                  ),
+                ),
+
+                // Bulla meter (esquina superior derecha)
+                Positioned(
+                  top: 12,
+                  right: 12,
+                  child: BullaMeterChip(score: state.bullaScore),
+                ),
+
+                // Warnings (parte inferior del mapa)
+                if (state.warnings.isNotEmpty)
+                  Positioned(
+                    bottom: 70,
+                    left: 12,
+                    right: 12,
+                    child: WarningsBanner(warnings: state.warnings),
+                  ),
+
+                // Alternativas (boton flotante izquierda)
+                if (state.alternatives.isNotEmpty)
+                  Positioned(
+                    bottom: 16,
+                    left: 12,
+                    child: FloatingActionButton.extended(
+                      heroTag: 'alternatives',
+                      onPressed: () => _showAlternatives(context, state),
+                      backgroundColor: const Color(0xFFD4AF37),
+                      foregroundColor: Colors.black87,
+                      icon: const Icon(Icons.swap_horiz, size: 18),
+                      label: Text('${state.alternatives.length} rutas'),
+                    ),
+                  ),
+
+                // Indicador de carga
+                if (state.isLoading)
+                  const Positioned(
+                    top: 70,
+                    left: 0,
+                    right: 0,
+                    child: LinearProgressIndicator(),
+                  ),
+
+                // Error
+                if (state.error != null)
+                  Positioned(
+                    bottom: 70,
+                    left: 12,
+                    right: 12,
+                    child: Container(
+                      padding: const EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        color: Colors.red.shade50,
+                        borderRadius: BorderRadius.circular(8),
+                        border: Border.all(color: Colors.red.shade300),
+                      ),
+                      child: Text(
+                        state.error!,
+                        style: TextStyle(fontSize: 12, color: Colors.red.shade900),
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ),
+                  ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  void _showAlternatives(BuildContext context, ModoCalleState state) {
+    showModalBottomSheet(
+      context: context,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
+      ),
+      builder: (context) {
+        return Padding(
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Center(
+                child: Container(
+                  width: 40,
+                  height: 4,
+                  decoration: BoxDecoration(
+                    color: Colors.grey.shade400,
+                    borderRadius: BorderRadius.circular(2),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 12),
+              const Text(
+                'Rutas alternativas',
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 8),
+              ...state.alternatives.map(
+                (alt) => Card(
+                  child: ListTile(
+                    leading: const Icon(Icons.alt_route),
+                    title: Text('ETA ${alt.etaSeconds ~/ 60} min'),
+                    subtitle: Text(
+                      alt.explanation.join(' > '),
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                    trailing: const Icon(Icons.chevron_right),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 8),
+            ],
+          ),
+        );
+      },
+    );
+  }
+}
+
+// ── Widget auxiliar: boton compacto para la barra de acciones ──
+
+class _CompactActionButton extends StatelessWidget {
+  final IconData icon;
+  final String label;
+  final VoidCallback onPressed;
+  final bool filled;
+
+  const _CompactActionButton({
+    required this.icon,
+    required this.label,
+    required this.onPressed,
+    this.filled = false,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final primary = Theme.of(context).colorScheme.primary;
+
+    if (filled) {
+      return Expanded(
+        child: SizedBox(
+          height: 36,
+          child: FilledButton.icon(
+            onPressed: onPressed,
+            icon: Icon(icon, size: 16),
+            label: Text(label, style: const TextStyle(fontSize: 12)),
+            style: FilledButton.styleFrom(
+              padding: const EdgeInsets.symmetric(horizontal: 8),
+              shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(8),
               ),
-              child: Text(
-                'Estado: ${_statusLabel(state.connectionStatus)} · ETA: ${state.etaSeconds != null ? '${state.etaSeconds! ~/ 60} min' : '--'} · ${state.nextStop}',
-                style: const TextStyle(fontWeight: FontWeight.w600),
-              ),
             ),
-            const SizedBox(height: 10),
-            Row(
-              children: [
-                Expanded(
-                  child: ElevatedButton.icon(
-                    onPressed: notifier.startStreetMode,
-                    icon: const Icon(Icons.play_arrow),
-                    label: const Text('Iniciar'),
-                  ),
-                ),
-                const SizedBox(width: 8),
-                Expanded(
-                  child: OutlinedButton.icon(
-                    onPressed: notifier.reconnect,
-                    icon: const Icon(Icons.sync),
-                    label: const Text('Reconectar'),
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 8),
-            Row(
-              children: [
-                Expanded(
-                  child: OutlinedButton.icon(
-                    onPressed: notifier.activatePlanB,
-                    icon: const Icon(Icons.alt_route),
-                    label: const Text('Plan B'),
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 8),
-            Row(
-              children: [
-                Expanded(
-                  child: ElevatedButton.icon(
-                    onPressed: notifier.reportBulla,
-                    icon: const Icon(Icons.campaign),
-                    label: const Text('Reportar bulla'),
-                  ),
-                ),
-              ],
-            ),
-            if (state.connectionStatus == StreetConnectionStatus.offline)
-              const Padding(
-                padding: EdgeInsets.only(top: 8.0),
-                child: Text('Última ruta disponible (polling ligero activo)'),
-              ),
+          ),
+        ),
+      );
+    }
 
-            const SizedBox(height: 8),
-            const Text('BullaMeter'),
-            LinearProgressIndicator(value: state.bullaScore.clamp(0.0, 1.0)),
-            Text('Score: ${(state.bullaScore * 100).toStringAsFixed(0)}%'),
-            if (state.warnings.isNotEmpty)
-              ...state.warnings.map((w) => Padding(
-                    padding: const EdgeInsets.only(top: 6),
-                    child: Text('⚠ $w'),
-                  )),
-            const SizedBox(height: 10),
-            const Text('Turn-by-turn simplificado'),
-            Expanded(
-              child: ListView.builder(
-                itemCount: state.polyline.length,
-                itemBuilder: (context, index) {
-                  final point = state.polyline[index];
-                  return ListTile(
-                    dense: true,
-                    leading: Text('${index + 1}'),
-                    title: Text('${point[0].toStringAsFixed(5)}, ${point[1].toStringAsFixed(5)}'),
-                  );
-                },
-              ),
+    return Expanded(
+      child: SizedBox(
+        height: 36,
+        child: OutlinedButton.icon(
+          onPressed: onPressed,
+          icon: Icon(icon, size: 16, color: primary),
+          label: Text(label, style: TextStyle(fontSize: 12, color: primary)),
+          style: OutlinedButton.styleFrom(
+            padding: const EdgeInsets.symmetric(horizontal: 8),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(8),
             ),
-            if (state.alternatives.isNotEmpty) ...[
-              const Divider(),
-              const Text('Alternativas'),
-              ...state.alternatives.map(
-                (alt) => ListTile(
-                  title: Text('ETA ${alt.etaSeconds ~/ 60} min'),
-                  subtitle: Text(alt.explanation.join(' · ')),
-                ),
-              ),
-            ],
-            if (state.error != null) Text(state.error!, style: const TextStyle(color: Colors.red)),
-          ],
+          ),
         ),
       ),
     );

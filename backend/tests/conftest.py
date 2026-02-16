@@ -30,6 +30,7 @@ from app.models.models import (
     RouteRestriction,
     StreetEdge,
     StreetNode,
+    Titular,
     User,
     UserPlan,
 )
@@ -70,6 +71,7 @@ def setup_tables():
     User.__table__.create(bind=engine, checkfirst=True)
     Location.__table__.create(bind=engine, checkfirst=True)
     Hermandad.__table__.create(bind=engine, checkfirst=True)
+    Titular.__table__.create(bind=engine, checkfirst=True)
     MediaAsset.__table__.create(bind=engine, checkfirst=True)
     Evento.__table__.create(bind=engine, checkfirst=True)
     UserPlan.__table__.create(bind=engine, checkfirst=True)
@@ -103,6 +105,7 @@ def setup_tables():
     UserPlan.__table__.drop(bind=engine, checkfirst=True)
     Evento.__table__.drop(bind=engine, checkfirst=True)
     MediaAsset.__table__.drop(bind=engine, checkfirst=True)
+    Titular.__table__.drop(bind=engine, checkfirst=True)
     Hermandad.__table__.drop(bind=engine, checkfirst=True)
     Location.__table__.drop(bind=engine, checkfirst=True)
     User.__table__.drop(bind=engine, checkfirst=True)

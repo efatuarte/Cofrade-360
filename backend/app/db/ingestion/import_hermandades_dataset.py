@@ -19,13 +19,14 @@ from app.models.models import (
     Procession,
     ProcessionItineraryText,
     ProcessionSchedulePoint,
+    Titular,
 )
 
 DEFAULT_DATASET_PATH = Path(__file__).resolve().parent / "hermandades_dataset.normalized.json"
 
 DAY_TO_ENUM = {
-    "Viernes de Dolores": "viernes_santo",
-    "Sábado de Pasión": "sabado_santo",
+    "Viernes de Dolores": "viernes_dolores",
+    "Sábado de Pasión": "sabado_pasion",
     "Domingo de Ramos": "domingo_ramos",
     "Lunes Santo": "lunes_santo",
     "Martes Santo": "martes_santo",
@@ -86,6 +87,7 @@ def _upsert_hermandad(db: Session, item: Dict[str, Any], church: Optional[Locati
             nombre=item["name_full"],
             name_short=name_short,
             name_full=item.get("name_full") or name_short,
+            web_url=item.get("web_url"),
             ss_day=DAY_TO_ENUM.get(item.get("ss_day", ""), None),
             sede=(item.get("sede") or {}).get("temple_name"),
             church_id=church.id if church else None,
@@ -99,11 +101,42 @@ def _upsert_hermandad(db: Session, item: Dict[str, Any], church: Optional[Locati
     else:
         hermandad.nombre = item.get("name_full") or hermandad.nombre
         hermandad.name_full = item.get("name_full") or hermandad.name_full
+        hermandad.web_url = item.get("web_url") or hermandad.web_url
         hermandad.ss_day = DAY_TO_ENUM.get(item.get("ss_day", ""), hermandad.ss_day)
         hermandad.sede = (item.get("sede") or {}).get("temple_name") or hermandad.sede
         if church:
             hermandad.church_id = church.id
     return hermandad, created
+
+
+def _upsert_titulares(db: Session, hermandad: Hermandad, titulares: list[Dict[str, Any]]) -> int:
+    if not titulares:
+        return 0
+    created = 0
+    for idx, t in enumerate(titulares):
+        name = (t.get("name") or "").strip()
+        if not name:
+            continue
+        exists = (
+            db.query(Titular)
+            .filter(Titular.brotherhood_id == hermandad.id, Titular.name == name)
+            .first()
+        )
+        if exists:
+            exists.kind = t.get("kind", exists.kind)
+            exists.position = idx
+            continue
+        db.add(
+            Titular(
+                id=str(uuid.uuid4()),
+                brotherhood_id=hermandad.id,
+                name=name,
+                kind=t.get("kind", "unknown"),
+                position=idx,
+            )
+        )
+        created += 1
+    return created
 
 
 def _upsert_media(db: Session, hermandad: Hermandad, media: Dict[str, Any]) -> int:
@@ -250,6 +283,7 @@ def import_dataset(db: Session, dataset_path: Path = DEFAULT_DATASET_PATH) -> Di
     items = payload.get("items", [])
 
     created_hermandades = 0
+    created_titulares = 0
     created_media = 0
     created_processions = 0
     created_schedule_points = 0
@@ -260,12 +294,14 @@ def import_dataset(db: Session, dataset_path: Path = DEFAULT_DATASET_PATH) -> Di
         media = item.get("media") or {}
         provenance = item.get("provenance") or []
         schedule = item.get("schedule") or {}
+        titulares = item.get("titulares") or []
 
         church = _find_or_create_location(db, sede)
         hermandad, is_created = _upsert_hermandad(db, item, church)
         if is_created:
             created_hermandades += 1
 
+        created_titulares += _upsert_titulares(db, hermandad, titulares)
         created_media += _upsert_media(db, hermandad, media)
 
         source_url = provenance[0].get("url") if provenance else item.get("web_url")
@@ -279,6 +315,7 @@ def import_dataset(db: Session, dataset_path: Path = DEFAULT_DATASET_PATH) -> Di
     return {
         "total_items": len(items),
         "created_hermandades": created_hermandades,
+        "created_titulares": created_titulares,
         "created_media": created_media,
         "created_processions": created_processions,
         "created_schedule_points": created_schedule_points,

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_riverpod/legacy.dart';
 import 'package:intl/intl.dart';
 
-import '../../../auth/presentation/providers/auth_provider.dart';
+import '../../auth/presentation/providers/auth_provider.dart';
 import '../data/repositories/itinerario_repository_impl.dart';
 import '../domain/entities/plan.dart';
 
@@ -19,7 +20,7 @@ final plansProvider = FutureProvider<List<UserPlanEntity>>((ref) async {
 });
 
 final selectedPlanProvider = Provider<UserPlanEntity?>((ref) {
-  final plans = ref.watch(plansProvider).valueOrNull;
+  final plans = ref.watch(plansProvider).value;
   final selectedId = ref.watch(selectedPlanIdProvider);
   if (plans == null || plans.isEmpty) return null;
   if (selectedId == null) return plans.first;

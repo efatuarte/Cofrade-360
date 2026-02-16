@@ -6,7 +6,9 @@
       "Bash(flutter analyze:*)",
       "Bash(cmd.exe /c \"cd /d C:\\\\Users\\\\efatu\\\\Desktop\\\\Proyectos\\\\Cofrade-360\\\\frontend && flutter analyze lib\\\\features\\\\agenda\\\\ 2>&1\":*)",
       "Bash(cmd.exe /c \"cd /d C:\\\\Users\\\\efatu\\\\Desktop\\\\Proyectos\\\\Cofrade-360\\\\frontend && flutter analyze lib\\\\features\\\\agenda\":*)",
-      "Bash(powershell.exe:*)"
+      "Bash(powershell.exe:*)",
+      "Bash(flutter pub get:*)",
+      "Bash(C:/src/flutter/bin/flutter.bat doctor:*)"
     ]
   }
 }

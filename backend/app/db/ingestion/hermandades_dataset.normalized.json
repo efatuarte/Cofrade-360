@@ -1,263 +1,386 @@
 {
-  "generated_at": "2026-02-15T19:19:03.272430+00:00",
-  "source": "auto-web-scan-a2",
+  "generated_at": "2026-02-16T00:20:38.094293+00:00",
+  "source": "curated+web-scan-a2",
   "total_items": 71,
-  "fetched_ok": 0,
-  "fetched_error": 71,
+  "curated_items": 71,
+  "fetched_ok": 69,
+  "fetched_error": 2,
   "items": [
     {
       "name_short": "Pino Montano",
-      "name_full": "Pino Montano",
+      "name_full": "Hermandad de la Sagrada Entrada en Jerusalén y Ntra. Sra. del Amparo",
       "web_url": "https://hermandadpinomontano.es",
       "ss_day": "Viernes de Dolores",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Parroquia de la Blanca Paloma",
+        "address": "C. Luisa de Marillac, s/n, Pino Montano, Sevilla",
+        "lat": 37.4161,
+        "lng": -5.975,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Sagrada Entrada en Jerusalén",
+          "kind": "misterio"
+        },
+        {
+          "name": "Nuestra Señora del Amparo",
+          "kind": "virgen"
+        }
+      ],
       "media": {
-        "logo_url": null,
-        "images": []
+        "logo_url": "https://hermandadpinomontano.es/wp-content/uploads/2025/01/Escudo_PinoMontano_Color_Sinfondo.png",
+        "images": [
+          "https://hermandadpinomontano.es/wp-content/uploads/2025/01/Escudo_PinoMontano_Color_Sinfondo.png"
+        ]
       },
       "schedule": {
-        "salida": null,
+        "salida": "2026-03-27T18:00:00",
         "carrera_oficial_start": null,
         "carrera_oficial_end": null,
-        "recogida": null,
+        "recogida": "2026-03-27T23:00:00",
         "itinerary_text": null
       },
       "provenance": [
         {
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
           "url": "https://hermandadpinomontano.es",
-          "accessed_at": "2026-02-15T19:19:03.271309+00:00",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
-            "ss_day"
+            "ss_day",
+            "name_full_web",
+            "media.logo_url"
           ],
-          "status_code": null
+          "status_code": 200
         }
       ],
       "ingestion": {
-        "fetched_ok": false,
-        "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
-        ],
-        "description": null
+        "fetched_ok": true,
+        "has_curated_data": true,
+        "notes": [],
+        "description": "Semana Santa de Sevilla"
       }
     },
     {
       "name_short": "La Misión",
-      "name_full": "La Misión",
+      "name_full": "Archicofradía del Santísimo Sacramento y Hermandad de Penitencia del Stmo. Cristo de la Misión y Ntra. Sra. de los Dolores",
       "web_url": "https://archicofradiamision.es",
       "ss_day": "Viernes de Dolores",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Parroquia de la Misión",
+        "address": "C. Fray Isidoro de Sevilla, s/n, Sevilla",
+        "lat": 37.3648,
+        "lng": -5.958,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Santísimo Cristo de la Misión",
+          "kind": "cristo"
+        },
+        {
+          "name": "Nuestra Señora de los Dolores",
+          "kind": "virgen"
+        }
+      ],
       "media": {
-        "logo_url": null,
-        "images": []
+        "logo_url": "https://archicofradiamision.es/wp-content/uploads/2024/02/Inmaculado-Corazon-de-Maria-2023_035-scaled.jpg",
+        "images": [
+          "https://archicofradiamision.es/wp-content/uploads/2024/02/Inmaculado-Corazon-de-Maria-2023_035-scaled.jpg"
+        ]
       },
       "schedule": {
-        "salida": null,
+        "salida": "2026-03-27T18:00:00",
         "carrera_oficial_start": null,
         "carrera_oficial_end": null,
-        "recogida": null,
+        "recogida": "2026-03-27T23:00:00",
         "itinerary_text": null
       },
       "provenance": [
         {
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
           "url": "https://archicofradiamision.es",
-          "accessed_at": "2026-02-15T19:19:03.271361+00:00",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
-            "ss_day"
+            "ss_day",
+            "name_full_web",
+            "media.logo_url"
           ],
-          "status_code": null
+          "status_code": 200
         }
       ],
       "ingestion": {
-        "fetched_ok": false,
-        "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
-        ],
-        "description": null
+        "fetched_ok": true,
+        "has_curated_data": true,
+        "notes": [],
+        "description": "BIENVENIDOS HERMANDAD DE LA MISIÓN Santo Cristo de la MisiónInmaculado Corazón de MaríaNuestra Señora del Amparo Portal del Hermano Noticias Hacerme Hermano Conoce nuestra hermandad La Archicofradía se fundó en 1949 dándole culto a la imagen del Inmaculado Corazón de María, imagen a la que se consagró el barrio del Heliópolis. En los años 80, [&hellip;]"
       }
     },
     {
       "name_short": "Dulce Nombre (Bellavista)",
-      "name_full": "Dulce Nombre (Bellavista)",
+      "name_full": "Hermandad del Dulce Nombre de Jesús y Ntra. Sra. de la Encarnación",
       "web_url": "https://www.dulcenombrebellavista.es",
       "ss_day": "Viernes de Dolores",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Parroquia de Ntra. Sra. de la Oliva",
+        "address": "Avda. de Bellavista, s/n, Sevilla",
+        "lat": 37.352,
+        "lng": -5.978,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Dulce Nombre de Jesús",
+          "kind": "cristo"
+        },
+        {
+          "name": "Nuestra Señora de la Encarnación",
+          "kind": "virgen"
+        }
+      ],
       "media": {
         "logo_url": null,
         "images": []
       },
       "schedule": {
-        "salida": null,
+        "salida": "2026-03-27T18:00:00",
         "carrera_oficial_start": null,
         "carrera_oficial_end": null,
-        "recogida": null,
+        "recogida": "2026-03-27T23:00:00",
         "itinerary_text": null
       },
       "provenance": [
         {
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
           "url": "https://www.dulcenombrebellavista.es",
-          "accessed_at": "2026-02-15T19:19:03.271377+00:00",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
             "ss_day"
           ],
-          "status_code": null
+          "status_code": 503
         }
       ],
       "ingestion": {
         "fetched_ok": false,
+        "has_curated_data": true,
         "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
+          "fetch_error: https_error=HTTP 503; http_error=HTTP 503"
         ],
         "description": null
       }
     },
     {
       "name_short": "Pasión y Muerte",
-      "name_full": "Pasión y Muerte",
+      "name_full": "Hermandad de Nuestro Padre Jesús de la Pasión y Muerte y María Santísima de la Caridad y Consolación",
       "web_url": "https://hermandadpasionymuerte.es",
       "ss_day": "Viernes de Dolores",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Parroquia de Santa María Madre de la Iglesia",
+        "address": "C. Gustavo Bacarisas, s/n, Los Remedios, Sevilla",
+        "lat": 37.3772,
+        "lng": -6.0098,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Nuestro Padre Jesús de la Pasión y Muerte",
+          "kind": "cristo"
+        },
+        {
+          "name": "María Santísima de la Caridad y Consolación",
+          "kind": "virgen"
+        }
+      ],
       "media": {
         "logo_url": null,
         "images": []
       },
       "schedule": {
-        "salida": null,
+        "salida": "2026-03-27T18:00:00",
         "carrera_oficial_start": null,
         "carrera_oficial_end": null,
-        "recogida": null,
+        "recogida": "2026-03-27T23:00:00",
         "itinerary_text": null
       },
       "provenance": [
         {
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
           "url": "https://hermandadpasionymuerte.es",
-          "accessed_at": "2026-02-15T19:19:03.271390+00:00",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
-            "ss_day"
+            "ss_day",
+            "name_full_web"
           ],
-          "status_code": null
+          "status_code": 200
         }
       ],
       "ingestion": {
-        "fetched_ok": false,
-        "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
-        ],
+        "fetched_ok": true,
+        "has_curated_data": true,
+        "notes": [],
         "description": null
       }
     },
     {
       "name_short": "Bendición y Esperanza",
-      "name_full": "Bendición y Esperanza",
+      "name_full": "Hermandad de la Bendición y la Esperanza",
       "web_url": "https://bendicionyesperanza.es",
       "ss_day": "Viernes de Dolores",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Parroquia de San Pío X",
+        "address": "C. Cardenal Bueno Monreal, s/n, Nervión, Sevilla",
+        "lat": 37.3815,
+        "lng": -5.97,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Nuestro Padre Jesús de la Bendición",
+          "kind": "cristo"
+        },
+        {
+          "name": "María Santísima de la Esperanza",
+          "kind": "virgen"
+        }
+      ],
       "media": {
         "logo_url": null,
         "images": []
       },
       "schedule": {
-        "salida": null,
+        "salida": "2026-03-27T18:00:00",
         "carrera_oficial_start": null,
         "carrera_oficial_end": null,
-        "recogida": null,
+        "recogida": "2026-03-27T23:00:00",
         "itinerary_text": null
       },
       "provenance": [
         {
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
           "url": "https://bendicionyesperanza.es",
-          "accessed_at": "2026-02-15T19:19:03.271403+00:00",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
-            "ss_day"
+            "ss_day",
+            "name_full_web"
           ],
-          "status_code": null
+          "status_code": 200
         }
       ],
       "ingestion": {
-        "fetched_ok": false,
-        "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
-        ],
+        "fetched_ok": true,
+        "has_curated_data": true,
+        "notes": [],
         "description": null
       }
     },
     {
       "name_short": "Stmo. Cristo de la Corona",
-      "name_full": "Stmo. Cristo de la Corona",
+      "name_full": "Hermandad del Stmo. Cristo de la Corona y Ntra. Sra. del Rosario",
       "web_url": "https://www.hermandadcristocorona.org",
       "ss_day": "Viernes de Dolores",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Iglesia de San Nicolás de Bari",
+        "address": "C. Muñoz y Pabón, 6, Sevilla",
+        "lat": 37.3872,
+        "lng": -5.9917,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Santísimo Cristo de la Corona",
+          "kind": "cristo"
+        },
+        {
+          "name": "Nuestra Señora del Rosario",
+          "kind": "virgen"
+        }
+      ],
       "media": {
         "logo_url": null,
         "images": []
       },
       "schedule": {
-        "salida": null,
+        "salida": "2026-03-27T18:00:00",
         "carrera_oficial_start": null,
         "carrera_oficial_end": null,
-        "recogida": null,
+        "recogida": "2026-03-27T23:00:00",
         "itinerary_text": null
       },
       "provenance": [
         {
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
           "url": "https://www.hermandadcristocorona.org",
-          "accessed_at": "2026-02-15T19:19:03.271413+00:00",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
@@ -268,2935 +391,4237 @@
       ],
       "ingestion": {
         "fetched_ok": false,
+        "has_curated_data": true,
         "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
+          "fetch_error: https_error=[Errno 11001] getaddrinfo failed; http_error=[Errno 11001] getaddrinfo failed"
         ],
         "description": null
       }
     },
     {
       "name_short": "Padre Pío",
-      "name_full": "Padre Pío",
+      "name_full": "Hermandad del Stmo. Cristo del Desamparo y Ntra. Sra. de los Dolores Coronada",
       "web_url": "https://hermandadpadrepio.com",
       "ss_day": "Sábado de Pasión",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Parroquia del Padre Pío",
+        "address": "C. Padre Pío de Pietrelcina, s/n, Sevilla Este",
+        "lat": 37.3934,
+        "lng": -5.9329,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Santísimo Cristo del Desamparo",
+          "kind": "cristo"
+        },
+        {
+          "name": "Nuestra Señora de los Dolores Coronada",
+          "kind": "virgen"
+        }
+      ],
       "media": {
-        "logo_url": null,
-        "images": []
+        "logo_url": "https://usercontent.one/wp/hermandadpadrepio.com/wp-content/uploads/2020/04/cropped-escudohdad.png",
+        "images": [
+          "https://usercontent.one/wp/hermandadpadrepio.com/wp-content/uploads/2020/04/cropped-escudohdad.png"
+        ]
       },
       "schedule": {
-        "salida": null,
+        "salida": "2026-03-28T17:30:00",
         "carrera_oficial_start": null,
         "carrera_oficial_end": null,
-        "recogida": null,
+        "recogida": "2026-03-28T23:30:00",
         "itinerary_text": null
       },
       "provenance": [
         {
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
           "url": "https://hermandadpadrepio.com",
-          "accessed_at": "2026-02-15T19:19:03.271424+00:00",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
-            "ss_day"
+            "ss_day",
+            "name_full_web",
+            "media.logo_url"
           ],
-          "status_code": null
+          "status_code": 200
         }
       ],
       "ingestion": {
-        "fetched_ok": false,
-        "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
-        ],
-        "description": null
+        "fetched_ok": true,
+        "has_curated_data": true,
+        "notes": [],
+        "description": "Página oficial de la Hermandad de Padre Pio"
       }
     },
     {
       "name_short": "Divino Perdón",
-      "name_full": "Divino Perdón",
+      "name_full": "Hermandad del Divino Perdón",
       "web_url": "https://mobile.twitter.com/hdadivinoperdon",
       "ss_day": "Sábado de Pasión",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Parroquia de San Juan de Ribera",
+        "address": "Barriada Padre Pío Palmete, Sevilla",
+        "lat": 37.38,
+        "lng": -5.94,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Nuestro Padre Jesús del Divino Perdón",
+          "kind": "cristo"
+        },
+        {
+          "name": "Nuestra Señora de los Dolores",
+          "kind": "virgen"
+        }
+      ],
       "media": {
         "logo_url": null,
         "images": []
       },
       "schedule": {
-        "salida": null,
+        "salida": "2026-03-28T17:00:00",
         "carrera_oficial_start": null,
         "carrera_oficial_end": null,
-        "recogida": null,
+        "recogida": "2026-03-28T22:30:00",
         "itinerary_text": null
       },
       "provenance": [
         {
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
           "url": "https://mobile.twitter.com/hdadivinoperdon",
-          "accessed_at": "2026-02-15T19:19:03.271433+00:00",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
             "ss_day"
           ],
-          "status_code": null
+          "status_code": 200
         }
       ],
       "ingestion": {
-        "fetched_ok": false,
-        "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
-        ],
+        "fetched_ok": true,
+        "has_curated_data": true,
+        "notes": [],
         "description": null
       }
     },
     {
       "name_short": "Torreblanca",
-      "name_full": "Torreblanca",
+      "name_full": "Hermandad de Nuestra Señora de los Dolores",
       "web_url": "https://hermandaddelosdolores.org",
       "ss_day": "Sábado de Pasión",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Parroquia de Ntra. Sra. de los Dolores",
+        "address": "C. Emilia Barral, s/n, Torreblanca, Sevilla",
+        "lat": 37.3875,
+        "lng": -5.9378,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Santísimo Cristo de la Salud",
+          "kind": "cristo"
+        },
+        {
+          "name": "Nuestra Señora de los Dolores",
+          "kind": "virgen"
+        }
+      ],
       "media": {
-        "logo_url": null,
-        "images": []
+        "logo_url": "https://hermandaddelosdolores.org/wp-content/uploads/2018/10/favicon.png",
+        "images": [
+          "https://hermandaddelosdolores.org/wp-content/uploads/2018/10/favicon.png"
+        ]
       },
       "schedule": {
-        "salida": null,
+        "salida": "2026-03-28T17:30:00",
         "carrera_oficial_start": null,
         "carrera_oficial_end": null,
-        "recogida": null,
+        "recogida": "2026-03-28T23:00:00",
         "itinerary_text": null
       },
       "provenance": [
         {
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
           "url": "https://hermandaddelosdolores.org",
-          "accessed_at": "2026-02-15T19:19:03.271443+00:00",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
-            "ss_day"
+            "ss_day",
+            "name_full_web",
+            "media.logo_url"
           ],
-          "status_code": null
+          "status_code": 200
         }
       ],
       "ingestion": {
-        "fetched_ok": false,
-        "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
-        ],
-        "description": null
+        "fetched_ok": true,
+        "has_curated_data": true,
+        "notes": [],
+        "description": "Semana Santa de Sevilla"
       }
     },
     {
       "name_short": "San José Obrero",
-      "name_full": "San José Obrero",
+      "name_full": "Hermandad del Cristo de la Humildad y Paciencia y Ntra. Sra. de los Dolores y Misericordia",
       "web_url": "https://hermandadsanjoseobrerosevilla.blogspot.com",
       "ss_day": "Sábado de Pasión",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Parroquia de San José Obrero",
+        "address": "C. Ingeniero La Cierva, s/n, Cerro del Águila, Sevilla",
+        "lat": 37.3755,
+        "lng": -5.9618,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Santísimo Cristo de la Humildad y Paciencia",
+          "kind": "cristo"
+        },
+        {
+          "name": "Nuestra Señora de los Dolores y Misericordia",
+          "kind": "virgen"
+        }
+      ],
       "media": {
         "logo_url": null,
         "images": []
       },
       "schedule": {
-        "salida": null,
+        "salida": "2026-03-28T17:30:00",
         "carrera_oficial_start": null,
         "carrera_oficial_end": null,
-        "recogida": null,
+        "recogida": "2026-03-28T23:00:00",
         "itinerary_text": null
       },
       "provenance": [
         {
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
           "url": "https://hermandadsanjoseobrerosevilla.blogspot.com",
-          "accessed_at": "2026-02-15T19:19:03.271452+00:00",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
-            "ss_day"
+            "ss_day",
+            "name_full_web"
           ],
-          "status_code": null
+          "status_code": 200
         }
       ],
       "ingestion": {
-        "fetched_ok": false,
-        "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
-        ],
+        "fetched_ok": true,
+        "has_curated_data": true,
+        "notes": [],
         "description": null
       }
     },
     {
       "name_short": "La Milagrosa",
-      "name_full": "La Milagrosa",
+      "name_full": "Hermandad de la Milagrosa",
       "web_url": "https://www.hermandaddelamilagrosa.es",
       "ss_day": "Sábado de Pasión",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Capilla de la Medalla Milagrosa",
+        "address": "C. San Vicente de Paúl, s/n, Sevilla",
+        "lat": 37.3707,
+        "lng": -5.9684,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Santísimo Cristo de la Caridad",
+          "kind": "cristo"
+        },
+        {
+          "name": "Nuestra Señora de la Medalla Milagrosa",
+          "kind": "virgen"
+        }
+      ],
       "media": {
         "logo_url": null,
         "images": []
       },
       "schedule": {
-        "salida": null,
+        "salida": "2026-03-28T17:00:00",
         "carrera_oficial_start": null,
         "carrera_oficial_end": null,
-        "recogida": null,
+        "recogida": "2026-03-28T22:30:00",
         "itinerary_text": null
       },
       "provenance": [
         {
-          "url": "https://www.hermandaddelamilagrosa.es",
-          "accessed_at": "2026-02-15T19:19:03.271462+00:00",
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
+          "url": "https://hermandaddelamilagrosa.es/",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
-            "ss_day"
+            "ss_day",
+            "name_full_web"
           ],
-          "status_code": null
+          "status_code": 200
         }
       ],
       "ingestion": {
-        "fetched_ok": false,
-        "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
-        ],
+        "fetched_ok": true,
+        "has_curated_data": true,
+        "notes": [],
         "description": null
       }
     },
     {
       "name_short": "Jesús Despojado",
-      "name_full": "Jesús Despojado",
+      "name_full": "Hermandad de Nuestro Padre Jesús Despojado de sus Vestiduras y María Santísima de los Dolores y Misericordia",
       "web_url": "https://www.jesusdespojado.org",
       "ss_day": "Domingo de Ramos",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Iglesia de San Benito Abad (parroquia antigua)",
+        "address": "C. Luis Montoto, 91, Sevilla",
+        "lat": 37.3893,
+        "lng": -5.9803,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Nuestro Padre Jesús Despojado de sus Vestiduras",
+          "kind": "cristo"
+        },
+        {
+          "name": "María Santísima de los Dolores y Misericordia",
+          "kind": "virgen"
+        }
+      ],
       "media": {
         "logo_url": null,
         "images": []
       },
       "schedule": {
-        "salida": null,
-        "carrera_oficial_start": null,
-        "carrera_oficial_end": null,
-        "recogida": null,
+        "salida": "2026-03-29T14:30:00",
+        "carrera_oficial_start": "2026-03-29T17:00:00",
+        "carrera_oficial_end": "2026-03-29T17:30:00",
+        "recogida": "2026-03-29T20:30:00",
         "itinerary_text": null
       },
       "provenance": [
         {
-          "url": "https://www.jesusdespojado.org",
-          "accessed_at": "2026-02-15T19:19:03.271473+00:00",
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
+          "url": "https://jesusdespojado.org/",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
-            "ss_day"
+            "ss_day",
+            "name_full_web"
           ],
-          "status_code": null
+          "status_code": 200
         }
       ],
       "ingestion": {
-        "fetched_ok": false,
-        "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
-        ],
+        "fetched_ok": true,
+        "has_curated_data": true,
+        "notes": [],
         "description": null
       }
     },
     {
       "name_short": "La Paz",
-      "name_full": "La Paz",
+      "name_full": "Hermandad de Nuestro Padre Jesús de la Victoria y María Santísima de la Paz",
       "web_url": "https://www.hermandaddelapaz.org",
       "ss_day": "Domingo de Ramos",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Iglesia de San Sebastián",
+        "address": "C. San Sebastián, s/n, Sevilla",
+        "lat": 37.382,
+        "lng": -5.9855,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Nuestro Padre Jesús de la Victoria",
+          "kind": "cristo"
+        },
+        {
+          "name": "María Santísima de la Paz",
+          "kind": "virgen"
+        }
+      ],
       "media": {
         "logo_url": null,
         "images": []
       },
       "schedule": {
-        "salida": null,
-        "carrera_oficial_start": null,
-        "carrera_oficial_end": null,
-        "recogida": null,
+        "salida": "2026-03-29T15:00:00",
+        "carrera_oficial_start": "2026-03-29T17:45:00",
+        "carrera_oficial_end": "2026-03-29T18:15:00",
+        "recogida": "2026-03-29T21:00:00",
         "itinerary_text": null
       },
       "provenance": [
         {
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
           "url": "https://www.hermandaddelapaz.org",
-          "accessed_at": "2026-02-15T19:19:03.271482+00:00",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
-            "ss_day"
+            "ss_day",
+            "name_full_web"
           ],
-          "status_code": null
+          "status_code": 200
         }
       ],
       "ingestion": {
-        "fetched_ok": false,
-        "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
-        ],
-        "description": null
+        "fetched_ok": true,
+        "has_curated_data": true,
+        "notes": [],
+        "description": "Hermandad de la Paz de Sevilla"
       }
     },
     {
       "name_short": "La Cena",
-      "name_full": "La Cena",
+      "name_full": "Hermandad Sacramental de la Sagrada Cena",
       "web_url": "https://lacenadesevilla.es",
       "ss_day": "Domingo de Ramos",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Capilla de Nuestra Señora del Rosario",
+        "address": "C. Resolana, s/n, Sevilla",
+        "lat": 37.3985,
+        "lng": -5.993,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Sagrada Cena Sacramental",
+          "kind": "misterio"
+        },
+        {
+          "name": "Nuestra Señora del Subterráneo",
+          "kind": "virgen"
+        }
+      ],
       "media": {
         "logo_url": null,
         "images": []
       },
       "schedule": {
-        "salida": null,
-        "carrera_oficial_start": null,
-        "carrera_oficial_end": null,
-        "recogida": null,
+        "salida": "2026-03-29T14:00:00",
+        "carrera_oficial_start": "2026-03-29T17:30:00",
+        "carrera_oficial_end": "2026-03-29T18:00:00",
+        "recogida": "2026-03-29T21:30:00",
         "itinerary_text": null
       },
       "provenance": [
         {
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
           "url": "https://lacenadesevilla.es",
-          "accessed_at": "2026-02-15T19:19:03.271491+00:00",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
-            "ss_day"
+            "ss_day",
+            "name_full_web"
           ],
-          "status_code": null
+          "status_code": 200
         }
       ],
       "ingestion": {
-        "fetched_ok": false,
-        "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
-        ],
+        "fetched_ok": true,
+        "has_curated_data": true,
+        "notes": [],
         "description": null
       }
     },
     {
       "name_short": "La Hiniesta",
-      "name_full": "La Hiniesta",
+      "name_full": "Hermandad de la Hiniesta",
       "web_url": "https://www.hermandaddelahiniesta.es",
       "ss_day": "Domingo de Ramos",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Iglesia de San Julián",
+        "address": "C. San Julián, s/n, Sevilla",
+        "lat": 37.3972,
+        "lng": -5.9905,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Nuestro Padre Jesús de la Buena Muerte",
+          "kind": "cristo"
+        },
+        {
+          "name": "Nuestra Señora de la Hiniesta Gloriosa",
+          "kind": "virgen"
+        }
+      ],
       "media": {
-        "logo_url": null,
-        "images": []
+        "logo_url": "https://www.hermandaddelahiniesta.es/wp-content/uploads/2025/02/hazte-hermano.png",
+        "images": [
+          "https://www.hermandaddelahiniesta.es/wp-content/uploads/2025/02/hazte-hermano.png"
+        ]
       },
       "schedule": {
-        "salida": null,
-        "carrera_oficial_start": null,
-        "carrera_oficial_end": null,
-        "recogida": null,
+        "salida": "2026-03-29T14:30:00",
+        "carrera_oficial_start": "2026-03-29T18:15:00",
+        "carrera_oficial_end": "2026-03-29T18:45:00",
+        "recogida": "2026-03-29T22:00:00",
         "itinerary_text": null
       },
       "provenance": [
         {
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
           "url": "https://www.hermandaddelahiniesta.es",
-          "accessed_at": "2026-02-15T19:19:03.271500+00:00",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
-            "ss_day"
+            "ss_day",
+            "name_full_web",
+            "media.logo_url"
           ],
-          "status_code": null
+          "status_code": 200
         }
       ],
       "ingestion": {
-        "fetched_ok": false,
-        "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
-        ],
-        "description": null
+        "fetched_ok": true,
+        "has_curated_data": true,
+        "notes": [],
+        "description": "Sitio Oficial"
       }
     },
     {
       "name_short": "San Roque",
-      "name_full": "San Roque",
+      "name_full": "Hermandad de Nuestro Padre Jesús de las Penas y María Santísima de Gracia y Esperanza",
       "web_url": "https://hermandadsanroque.com",
       "ss_day": "Domingo de Ramos",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Iglesia de San Roque",
+        "address": "C. Arrayán, s/n, Sevilla",
+        "lat": 37.3945,
+        "lng": -5.9925,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Nuestro Padre Jesús de las Penas",
+          "kind": "cristo"
+        },
+        {
+          "name": "María Santísima de Gracia y Esperanza",
+          "kind": "virgen"
+        }
+      ],
       "media": {
-        "logo_url": null,
-        "images": []
+        "logo_url": "https://hermandadsanroque.com/wp-content/uploads/2021/11/whastapp-1.png",
+        "images": [
+          "https://hermandadsanroque.com/wp-content/uploads/2021/11/whastapp-1.png"
+        ]
       },
       "schedule": {
-        "salida": null,
-        "carrera_oficial_start": null,
-        "carrera_oficial_end": null,
-        "recogida": null,
+        "salida": "2026-03-29T15:00:00",
+        "carrera_oficial_start": "2026-03-29T18:45:00",
+        "carrera_oficial_end": "2026-03-29T19:15:00",
+        "recogida": "2026-03-29T22:30:00",
         "itinerary_text": null
       },
       "provenance": [
         {
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
           "url": "https://hermandadsanroque.com",
-          "accessed_at": "2026-02-15T19:19:03.271510+00:00",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
-            "ss_day"
+            "ss_day",
+            "name_full_web",
+            "media.logo_url"
           ],
-          "status_code": null
+          "status_code": 200
         }
       ],
       "ingestion": {
-        "fetched_ok": false,
-        "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
-        ],
-        "description": null
+        "fetched_ok": true,
+        "has_curated_data": true,
+        "notes": [],
+        "description": "Cultos y Eventos"
       }
     },
     {
       "name_short": "La Estrella",
-      "name_full": "La Estrella",
+      "name_full": "Hermandad de la Estrella",
       "web_url": "https://www.hermandad-estrella.org",
       "ss_day": "Domingo de Ramos",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Iglesia de la Estrella (San Jacinto)",
+        "address": "C. San Jacinto, 51, Triana, Sevilla",
+        "lat": 37.379,
+        "lng": -6.0065,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Nuestro Padre Jesús de las Penas",
+          "kind": "cristo"
+        },
+        {
+          "name": "María Santísima de la Estrella",
+          "kind": "virgen"
+        }
+      ],
       "media": {
         "logo_url": null,
         "images": []
       },
       "schedule": {
-        "salida": null,
-        "carrera_oficial_start": null,
-        "carrera_oficial_end": null,
-        "recogida": null,
+        "salida": "2026-03-29T14:30:00",
+        "carrera_oficial_start": "2026-03-29T19:00:00",
+        "carrera_oficial_end": "2026-03-29T19:30:00",
+        "recogida": "2026-03-29T23:00:00",
         "itinerary_text": null
       },
       "provenance": [
         {
-          "url": "https://www.hermandad-estrella.org",
-          "accessed_at": "2026-02-15T19:19:03.271518+00:00",
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
+          "url": "https://hermandad-estrella.org/",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
-            "ss_day"
+            "ss_day",
+            "name_full_web"
           ],
-          "status_code": null
+          "status_code": 200
         }
       ],
       "ingestion": {
-        "fetched_ok": false,
-        "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
-        ],
-        "description": null
+        "fetched_ok": true,
+        "has_curated_data": true,
+        "notes": [],
+        "description": "Web oficial de la Pontificia, Real, Ilustre y Fervorosa Hermandad Sacramental y Cofradía de Nazarenos de Nuestro Padre Jesús de las Penas, María Santísima de la Estrella Coronada, Triunfo del Santo Lignum Crucis, San Francisco de Paula y Santas Justa y Rufina - La Estrella de Sevilla"
       }
     },
     {
       "name_short": "La Amargura",
-      "name_full": "La Amargura",
+      "name_full": "Hermandad de la Amargura",
       "web_url": "https://www.amargura.org",
       "ss_day": "Domingo de Ramos",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Iglesia de San Juan de la Palma",
+        "address": "C. Feria, s/n, Sevilla",
+        "lat": 37.3943,
+        "lng": -5.9945,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Nuestro Padre Jesús del Silencio en el Desprecio de Herodes",
+          "kind": "cristo"
+        },
+        {
+          "name": "María Santísima de la Amargura Coronada",
+          "kind": "virgen"
+        }
+      ],
       "media": {
         "logo_url": null,
         "images": []
       },
       "schedule": {
-        "salida": null,
-        "carrera_oficial_start": null,
-        "carrera_oficial_end": null,
-        "recogida": null,
+        "salida": "2026-03-29T15:00:00",
+        "carrera_oficial_start": "2026-03-29T19:30:00",
+        "carrera_oficial_end": "2026-03-29T20:00:00",
+        "recogida": "2026-03-29T23:00:00",
         "itinerary_text": null
       },
       "provenance": [
         {
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
           "url": "https://www.amargura.org",
-          "accessed_at": "2026-02-15T19:19:03.271566+00:00",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
-            "ss_day"
+            "ss_day",
+            "name_full_web"
           ],
-          "status_code": null
+          "status_code": 200
         }
       ],
       "ingestion": {
-        "fetched_ok": false,
-        "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
-        ],
-        "description": null
+        "fetched_ok": true,
+        "has_curated_data": true,
+        "notes": [],
+        "description": "Hermandad de la Amargura Sevilla: Noticias, actividades, agenda, galerías de imágenes, descarga de documentos, publicaciones..."
       }
     },
     {
       "name_short": "El Amor",
-      "name_full": "El Amor",
+      "name_full": "Hermandad del Amor",
       "web_url": "https://hermandaddelamor.net",
       "ss_day": "Domingo de Ramos",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Iglesia Colegial del Divino Salvador",
+        "address": "Plaza del Salvador, s/n, Sevilla",
+        "lat": 37.3895,
+        "lng": -5.9935,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Nuestro Padre Jesús del Amor",
+          "kind": "cristo"
+        },
+        {
+          "name": "María Santísima del Socorro",
+          "kind": "virgen"
+        }
+      ],
       "media": {
         "logo_url": null,
         "images": []
       },
       "schedule": {
-        "salida": null,
-        "carrera_oficial_start": null,
-        "carrera_oficial_end": null,
-        "recogida": null,
+        "salida": "2026-03-29T15:30:00",
+        "carrera_oficial_start": "2026-03-29T19:45:00",
+        "carrera_oficial_end": "2026-03-29T20:15:00",
+        "recogida": "2026-03-29T23:30:00",
         "itinerary_text": null
       },
       "provenance": [
         {
-          "url": "https://hermandaddelamor.net",
-          "accessed_at": "2026-02-15T19:19:03.271577+00:00",
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
+          "url": "https://www.hermandaddelamor.net/",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
-            "ss_day"
+            "ss_day",
+            "name_full_web"
           ],
-          "status_code": null
+          "status_code": 200
         }
       ],
       "ingestion": {
-        "fetched_ok": false,
-        "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
-        ],
+        "fetched_ok": true,
+        "has_curated_data": true,
+        "notes": [],
         "description": null
       }
     },
     {
       "name_short": "Cautivo y Rescatado",
-      "name_full": "Cautivo y Rescatado",
+      "name_full": "Hermandad de Nuestro Padre Jesús Cautivo y Rescatado y Ntra. Sra. de las Mercedes",
       "web_url": "https://jesuscautivoyrescatado.com",
       "ss_day": "Lunes Santo",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Parroquia de Ntra. Sra. de la Asunción",
+        "address": "Avda. de la Paz, s/n, Nervión, Sevilla",
+        "lat": 37.3817,
+        "lng": -5.9705,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Nuestro Padre Jesús Cautivo y Rescatado",
+          "kind": "cristo"
+        },
+        {
+          "name": "Nuestra Señora de las Mercedes",
+          "kind": "virgen"
+        }
+      ],
       "media": {
         "logo_url": null,
         "images": []
       },
       "schedule": {
-        "salida": null,
-        "carrera_oficial_start": null,
-        "carrera_oficial_end": null,
-        "recogida": null,
+        "salida": "2026-03-30T15:00:00",
+        "carrera_oficial_start": "2026-03-30T18:00:00",
+        "carrera_oficial_end": "2026-03-30T18:30:00",
+        "recogida": "2026-03-30T22:00:00",
         "itinerary_text": null
       },
       "provenance": [
         {
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
           "url": "https://jesuscautivoyrescatado.com",
-          "accessed_at": "2026-02-15T19:19:03.271604+00:00",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
-            "ss_day"
+            "ss_day",
+            "name_full_web"
           ],
-          "status_code": null
+          "status_code": 200
         }
       ],
       "ingestion": {
-        "fetched_ok": false,
-        "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
-        ],
+        "fetched_ok": true,
+        "has_curated_data": true,
+        "notes": [],
         "description": null
       }
     },
     {
       "name_short": "Redención -Rocío",
-      "name_full": "Redención -Rocío",
+      "name_full": "Hermandad de la Redención",
       "web_url": "https://hermandadredencion.com",
       "ss_day": "Lunes Santo",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Parroquia de Santiago",
+        "address": "C. Santiago, 15, Sevilla",
+        "lat": 37.393,
+        "lng": -5.9887,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Nuestro Padre Jesús de la Redención",
+          "kind": "cristo"
+        },
+        {
+          "name": "Nuestra Señora del Rocío",
+          "kind": "virgen"
+        }
+      ],
       "media": {
         "logo_url": null,
         "images": []
       },
       "schedule": {
-        "salida": null,
-        "carrera_oficial_start": null,
-        "carrera_oficial_end": null,
-        "recogida": null,
+        "salida": "2026-03-30T15:00:00",
+        "carrera_oficial_start": "2026-03-30T18:30:00",
+        "carrera_oficial_end": "2026-03-30T19:00:00",
+        "recogida": "2026-03-30T22:15:00",
         "itinerary_text": null
       },
       "provenance": [
         {
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
           "url": "https://hermandadredencion.com",
-          "accessed_at": "2026-02-15T19:19:03.271614+00:00",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
-            "ss_day"
+            "ss_day",
+            "name_full_web"
           ],
-          "status_code": null
+          "status_code": 200
         }
       ],
       "ingestion": {
-        "fetched_ok": false,
-        "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
-        ],
+        "fetched_ok": true,
+        "has_curated_data": true,
+        "notes": [],
         "description": null
       }
     },
     {
       "name_short": "Santa Genoveva",
-      "name_full": "Santa Genoveva",
+      "name_full": "Hermandad de Santa Genoveva",
       "web_url": "https://santagenoveva.com",
       "ss_day": "Lunes Santo",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Parroquia de Santa Genoveva",
+        "address": "C. Dársena, s/n, Polígono San Pablo, Sevilla",
+        "lat": 37.41,
+        "lng": -5.968,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Nuestro Padre Jesús Cautivo",
+          "kind": "cristo"
+        },
+        {
+          "name": "María Santísima de las Mercedes",
+          "kind": "virgen"
+        }
+      ],
       "media": {
         "logo_url": null,
         "images": []
       },
       "schedule": {
-        "salida": null,
-        "carrera_oficial_start": null,
-        "carrera_oficial_end": null,
-        "recogida": null,
+        "salida": "2026-03-30T14:30:00",
+        "carrera_oficial_start": "2026-03-30T18:45:00",
+        "carrera_oficial_end": "2026-03-30T19:15:00",
+        "recogida": "2026-03-30T23:00:00",
         "itinerary_text": null
       },
       "provenance": [
         {
-          "url": "https://santagenoveva.com",
-          "accessed_at": "2026-02-15T19:19:03.271623+00:00",
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
+          "url": "https://www.santagenoveva.com/",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
-            "ss_day"
+            "ss_day",
+            "name_full_web"
           ],
-          "status_code": null
+          "status_code": 200
         }
       ],
       "ingestion": {
-        "fetched_ok": false,
-        "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
-        ],
+        "fetched_ok": true,
+        "has_curated_data": true,
+        "notes": [],
         "description": null
       }
     },
     {
       "name_short": "San Gonzalo",
-      "name_full": "San Gonzalo",
+      "name_full": "Hermandad de San Gonzalo",
       "web_url": "https://hermandaddesangonzalo.es",
       "ss_day": "Lunes Santo",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Parroquia de San Gonzalo",
+        "address": "C. Pagés del Corro, s/n, Triana, Sevilla",
+        "lat": 37.3772,
+        "lng": -6.0045,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Nuestro Padre Jesús de la Salud",
+          "kind": "cristo"
+        },
+        {
+          "name": "Nuestra Señora de la Salud",
+          "kind": "virgen"
+        }
+      ],
       "media": {
-        "logo_url": null,
-        "images": []
+        "logo_url": "https://hermandaddesangonzalo.es/wp-content/uploads/2018/09/ornamento.png",
+        "images": [
+          "https://hermandaddesangonzalo.es/wp-content/uploads/2018/09/ornamento.png"
+        ]
       },
       "schedule": {
-        "salida": null,
-        "carrera_oficial_start": null,
-        "carrera_oficial_end": null,
-        "recogida": null,
+        "salida": "2026-03-30T14:30:00",
+        "carrera_oficial_start": "2026-03-30T19:00:00",
+        "carrera_oficial_end": "2026-03-30T19:30:00",
+        "recogida": "2026-03-30T23:00:00",
         "itinerary_text": null
       },
       "provenance": [
         {
-          "url": "https://hermandaddesangonzalo.es",
-          "accessed_at": "2026-02-15T19:19:03.271631+00:00",
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
+          "url": "https://hermandaddesangonzalo.es/",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
-            "ss_day"
+            "ss_day",
+            "name_full_web",
+            "media.logo_url"
           ],
-          "status_code": null
+          "status_code": 200
         }
       ],
       "ingestion": {
-        "fetched_ok": false,
-        "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
-        ],
+        "fetched_ok": true,
+        "has_curated_data": true,
+        "notes": [],
         "description": null
       }
     },
     {
       "name_short": "Santa Marta",
-      "name_full": "Santa Marta",
+      "name_full": "Hermandad de Santa Marta",
       "web_url": "https://hermandaddesantamarta.org",
       "ss_day": "Lunes Santo",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Iglesia de San Andrés",
+        "address": "C. Dueñas, 1, Sevilla",
+        "lat": 37.3918,
+        "lng": -5.9965,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Santísimo Cristo de la Caridad",
+          "kind": "cristo"
+        },
+        {
+          "name": "Nuestra Señora de las Penas",
+          "kind": "virgen"
+        },
+        {
+          "name": "Santa Marta",
+          "kind": "virgen"
+        }
+      ],
       "media": {
         "logo_url": null,
         "images": []
       },
       "schedule": {
-        "salida": null,
-        "carrera_oficial_start": null,
-        "carrera_oficial_end": null,
-        "recogida": null,
+        "salida": "2026-03-30T15:30:00",
+        "carrera_oficial_start": "2026-03-30T19:15:00",
+        "carrera_oficial_end": "2026-03-30T19:45:00",
+        "recogida": "2026-03-30T22:30:00",
         "itinerary_text": null
       },
       "provenance": [
         {
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
           "url": "https://hermandaddesantamarta.org",
-          "accessed_at": "2026-02-15T19:19:03.271640+00:00",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
-            "ss_day"
+            "ss_day",
+            "name_full_web"
           ],
-          "status_code": null
+          "status_code": 200
         }
       ],
       "ingestion": {
-        "fetched_ok": false,
-        "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
-        ],
-        "description": null
+        "fetched_ok": true,
+        "has_curated_data": true,
+        "notes": [],
+        "description": "Web oficial de la Hermandad de Santa Marta de Sevilla"
       }
     },
     {
       "name_short": "Vera+Cruz",
-      "name_full": "Vera+Cruz",
+      "name_full": "Hermandad de la Vera-Cruz",
       "web_url": "https://veracruzsevilla.org",
       "ss_day": "Lunes Santo",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Capilla de la Vera-Cruz (Convento de San Francisco)",
+        "address": "C. Sierpes, s/n (antigua ubicación), Sevilla",
+        "lat": 37.388,
+        "lng": -5.9955,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Santísimo Cristo de la Vera-Cruz",
+          "kind": "cristo"
+        },
+        {
+          "name": "Nuestra Señora de las Tristezas",
+          "kind": "virgen"
+        }
+      ],
       "media": {
         "logo_url": null,
         "images": []
       },
       "schedule": {
-        "salida": null,
-        "carrera_oficial_start": null,
-        "carrera_oficial_end": null,
-        "recogida": null,
+        "salida": "2026-03-30T15:30:00",
+        "carrera_oficial_start": "2026-03-30T19:30:00",
+        "carrera_oficial_end": "2026-03-30T20:00:00",
+        "recogida": "2026-03-30T23:00:00",
         "itinerary_text": null
       },
       "provenance": [
         {
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
           "url": "https://veracruzsevilla.org",
-          "accessed_at": "2026-02-15T19:19:03.271648+00:00",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
-            "ss_day"
+            "ss_day",
+            "name_full_web"
           ],
-          "status_code": null
+          "status_code": 200
         }
       ],
       "ingestion": {
-        "fetched_ok": false,
-        "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
-        ],
-        "description": null
+        "fetched_ok": true,
+        "has_curated_data": true,
+        "notes": [],
+        "description": "Hermandad de la Vera Cruz. Sevilla"
       }
     },
     {
       "name_short": "Las Penas",
-      "name_full": "Las Penas",
+      "name_full": "Hermandad de las Penas de San Vicente",
       "web_url": "https://www.hermandaddelaspenas.es",
       "ss_day": "Lunes Santo",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Iglesia de San Vicente",
+        "address": "C. San Vicente, 86, Sevilla",
+        "lat": 37.3925,
+        "lng": -6.0005,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Nuestro Padre Jesús de las Penas",
+          "kind": "cristo"
+        },
+        {
+          "name": "María Santísima de los Dolores y Misericordia",
+          "kind": "virgen"
+        }
+      ],
       "media": {
         "logo_url": null,
         "images": []
       },
       "schedule": {
-        "salida": null,
-        "carrera_oficial_start": null,
-        "carrera_oficial_end": null,
-        "recogida": null,
+        "salida": "2026-03-30T15:30:00",
+        "carrera_oficial_start": "2026-03-30T20:00:00",
+        "carrera_oficial_end": "2026-03-30T20:30:00",
+        "recogida": "2026-03-30T23:30:00",
         "itinerary_text": null
       },
       "provenance": [
         {
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
           "url": "https://www.hermandaddelaspenas.es",
-          "accessed_at": "2026-02-15T19:19:03.271657+00:00",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
-            "ss_day"
+            "ss_day",
+            "name_full_web"
           ],
-          "status_code": null
+          "status_code": 200
         }
       ],
       "ingestion": {
-        "fetched_ok": false,
-        "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
-        ],
+        "fetched_ok": true,
+        "has_curated_data": true,
+        "notes": [],
         "description": null
       }
     },
     {
       "name_short": "Las Aguas",
-      "name_full": "Las Aguas",
+      "name_full": "Hermandad de las Aguas",
       "web_url": "https://www.hermandaddelasaguas.org",
       "ss_day": "Lunes Santo",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Iglesia del Sagrario",
+        "address": "Avda. de la Constitución, s/n, Sevilla",
+        "lat": 37.386,
+        "lng": -5.9932,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Nuestro Padre Jesús de las Aguas",
+          "kind": "cristo"
+        },
+        {
+          "name": "Nuestra Señora del Mayor Dolor",
+          "kind": "virgen"
+        }
+      ],
       "media": {
         "logo_url": null,
         "images": []
       },
       "schedule": {
-        "salida": null,
-        "carrera_oficial_start": null,
-        "carrera_oficial_end": null,
-        "recogida": null,
+        "salida": "2026-03-30T16:00:00",
+        "carrera_oficial_start": "2026-03-30T20:15:00",
+        "carrera_oficial_end": "2026-03-30T20:45:00",
+        "recogida": "2026-03-30T23:15:00",
         "itinerary_text": null
       },
       "provenance": [
         {
-          "url": "https://www.hermandaddelasaguas.org",
-          "accessed_at": "2026-02-15T19:19:03.271666+00:00",
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
+          "url": "https://lasaguas.es/",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
-            "ss_day"
+            "ss_day",
+            "name_full_web"
           ],
-          "status_code": null
+          "status_code": 200
         }
       ],
       "ingestion": {
-        "fetched_ok": false,
-        "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
-        ],
+        "fetched_ok": true,
+        "has_curated_data": true,
+        "notes": [],
         "description": null
       }
     },
     {
       "name_short": "El Museo",
-      "name_full": "El Museo",
+      "name_full": "Hermandad del Museo",
       "web_url": "https://www.hermandaddelmuseo.org",
       "ss_day": "Lunes Santo",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Iglesia del Santo Ángel",
+        "address": "C. Rioja, 2, Sevilla",
+        "lat": 37.3895,
+        "lng": -6.0,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Santísimo Cristo de la Expiración",
+          "kind": "cristo"
+        },
+        {
+          "name": "Nuestra Señora de las Aguas",
+          "kind": "virgen"
+        }
+      ],
       "media": {
-        "logo_url": null,
-        "images": []
+        "logo_url": "https://www.hermandaddelmuseo.org/wp-content/uploads/2025/07/logo-museo.png",
+        "images": [
+          "https://www.hermandaddelmuseo.org/wp-content/uploads/2025/07/logo-museo.png"
+        ]
       },
       "schedule": {
-        "salida": null,
-        "carrera_oficial_start": null,
-        "carrera_oficial_end": null,
-        "recogida": null,
+        "salida": "2026-03-30T16:00:00",
+        "carrera_oficial_start": "2026-03-30T20:30:00",
+        "carrera_oficial_end": "2026-03-30T21:00:00",
+        "recogida": "2026-03-30T23:30:00",
         "itinerary_text": null
       },
       "provenance": [
         {
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
           "url": "https://www.hermandaddelmuseo.org",
-          "accessed_at": "2026-02-15T19:19:03.271674+00:00",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
-            "ss_day"
+            "ss_day",
+            "name_full_web",
+            "media.logo_url"
           ],
-          "status_code": null
+          "status_code": 200
         }
       ],
       "ingestion": {
-        "fetched_ok": false,
-        "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
-        ],
-        "description": null
+        "fetched_ok": true,
+        "has_curated_data": true,
+        "notes": [],
+        "description": "ZONA RESERVADA"
       }
     },
     {
       "name_short": "San Esteban",
-      "name_full": "San Esteban",
+      "name_full": "Hermandad de San Esteban",
       "web_url": "https://www.hermandadsanesteban.org",
       "ss_day": "Martes Santo",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Iglesia de San Esteban",
+        "address": "C. San Esteban, 52, Sevilla",
+        "lat": 37.3855,
+        "lng": -5.986,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Nuestro Padre Jesús de la Salud y Buen Viaje",
+          "kind": "cristo"
+        },
+        {
+          "name": "Nuestra Señora de los Desamparados",
+          "kind": "virgen"
+        }
+      ],
       "media": {
-        "logo_url": null,
-        "images": []
+        "logo_url": "https://www.hermandadsanesteban.org/wp-content/uploads/2026/01/banner_web-1024x1000.jpg",
+        "images": [
+          "https://www.hermandadsanesteban.org/wp-content/uploads/2026/01/banner_web-1024x1000.jpg"
+        ]
       },
       "schedule": {
-        "salida": null,
-        "carrera_oficial_start": null,
-        "carrera_oficial_end": null,
-        "recogida": null,
+        "salida": "2026-03-31T15:00:00",
+        "carrera_oficial_start": "2026-03-31T18:15:00",
+        "carrera_oficial_end": "2026-03-31T18:45:00",
+        "recogida": "2026-03-31T22:00:00",
         "itinerary_text": null
       },
       "provenance": [
         {
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
           "url": "https://www.hermandadsanesteban.org",
-          "accessed_at": "2026-02-15T19:19:03.271682+00:00",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
-            "ss_day"
+            "ss_day",
+            "name_full_web",
+            "media.logo_url"
           ],
-          "status_code": null
+          "status_code": 200
         }
       ],
       "ingestion": {
-        "fetched_ok": false,
-        "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
-        ],
-        "description": null
+        "fetched_ok": true,
+        "has_curated_data": true,
+        "notes": [],
+        "description": "1926 · 2026 Ir a la Web Actualidad del Centenario"
       }
     },
     {
       "name_short": "Dolores del Cerro",
-      "name_full": "Dolores del Cerro",
+      "name_full": "Hermandad de los Dolores del Cerro del Águila",
       "web_url": "https://www.doloresdelcerro.com",
       "ss_day": "Martes Santo",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Parroquia de Ntra. Sra. de los Dolores del Cerro",
+        "address": "C. Pino Montano, s/n, Cerro del Águila, Sevilla",
+        "lat": 37.3725,
+        "lng": -5.9633,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Santísimo Cristo de la Misericordia",
+          "kind": "cristo"
+        },
+        {
+          "name": "Nuestra Señora de los Dolores",
+          "kind": "virgen"
+        }
+      ],
       "media": {
         "logo_url": null,
         "images": []
       },
       "schedule": {
-        "salida": null,
-        "carrera_oficial_start": null,
-        "carrera_oficial_end": null,
-        "recogida": null,
+        "salida": "2026-03-31T14:30:00",
+        "carrera_oficial_start": "2026-03-31T18:45:00",
+        "carrera_oficial_end": "2026-03-31T19:15:00",
+        "recogida": "2026-03-31T22:30:00",
         "itinerary_text": null
       },
       "provenance": [
         {
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
           "url": "https://www.doloresdelcerro.com",
-          "accessed_at": "2026-02-15T19:19:03.271690+00:00",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
-            "ss_day"
+            "ss_day",
+            "name_full_web"
           ],
-          "status_code": null
+          "status_code": 200
         }
       ],
       "ingestion": {
-        "fetched_ok": false,
-        "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
-        ],
-        "description": null
+        "fetched_ok": true,
+        "has_curated_data": true,
+        "notes": [],
+        "description": "Web Oficial Fervorosa Hermandad Sacramental y Cofradía de Nazarenos del Santísimo Cristo del Desamparo y Abandono, Nuestro Padre Jesús de la Humildad y Nuestra Señora de los Dolores"
       }
     },
     {
       "name_short": "La Candelaria",
-      "name_full": "La Candelaria",
+      "name_full": "Hermandad de la Candelaria",
       "web_url": "https://www.hermandaddelacandelaria.com",
       "ss_day": "Martes Santo",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Iglesia de San Nicolás de Bari",
+        "address": "C. Muñoz y Pabón, 6, Sevilla",
+        "lat": 37.3872,
+        "lng": -5.9917,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Nuestro Padre Jesús de la Salud",
+          "kind": "cristo"
+        },
+        {
+          "name": "Nuestra Señora de la Candelaria",
+          "kind": "virgen"
+        }
+      ],
       "media": {
         "logo_url": null,
         "images": []
       },
       "schedule": {
-        "salida": null,
-        "carrera_oficial_start": null,
-        "carrera_oficial_end": null,
-        "recogida": null,
+        "salida": "2026-03-31T15:00:00",
+        "carrera_oficial_start": "2026-03-31T19:00:00",
+        "carrera_oficial_end": "2026-03-31T19:30:00",
+        "recogida": "2026-03-31T23:00:00",
         "itinerary_text": null
       },
       "provenance": [
         {
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
           "url": "https://www.hermandaddelacandelaria.com",
-          "accessed_at": "2026-02-15T19:19:03.271713+00:00",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
-            "ss_day"
+            "ss_day",
+            "name_full_web"
           ],
-          "status_code": null
+          "status_code": 200
         }
       ],
       "ingestion": {
-        "fetched_ok": false,
-        "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
-        ],
+        "fetched_ok": true,
+        "has_curated_data": true,
+        "notes": [],
         "description": null
       }
     },
     {
       "name_short": "San Benito",
-      "name_full": "San Benito",
+      "name_full": "Hermandad de San Benito",
       "web_url": "https://hermandaddesanbenito.net",
       "ss_day": "Martes Santo",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Iglesia de San Benito Abad",
+        "address": "C. Luis Montoto, 91, Sevilla",
+        "lat": 37.3893,
+        "lng": -5.9803,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Nuestro Padre Jesús de la Presentación al Pueblo",
+          "kind": "cristo"
+        },
+        {
+          "name": "Nuestra Señora de la Encarnación",
+          "kind": "virgen"
+        }
+      ],
       "media": {
         "logo_url": null,
         "images": []
       },
       "schedule": {
-        "salida": null,
-        "carrera_oficial_start": null,
-        "carrera_oficial_end": null,
-        "recogida": null,
+        "salida": "2026-03-31T15:00:00",
+        "carrera_oficial_start": "2026-03-31T19:15:00",
+        "carrera_oficial_end": "2026-03-31T19:45:00",
+        "recogida": "2026-03-31T23:00:00",
         "itinerary_text": null
       },
       "provenance": [
         {
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
           "url": "https://hermandaddesanbenito.net",
-          "accessed_at": "2026-02-15T19:19:03.271723+00:00",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
-            "ss_day"
+            "ss_day",
+            "name_full_web"
           ],
-          "status_code": null
+          "status_code": 200
         }
       ],
       "ingestion": {
-        "fetched_ok": false,
-        "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
-        ],
+        "fetched_ok": true,
+        "has_curated_data": true,
+        "notes": [],
         "description": null
       }
     },
     {
       "name_short": "Dulce Nombre",
-      "name_full": "Dulce Nombre",
+      "name_full": "Hermandad del Dulce Nombre de Jesús",
       "web_url": "https://hermandaddeldulcenombre.org",
       "ss_day": "Martes Santo",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Iglesia de San Lorenzo",
+        "address": "Plaza de San Lorenzo, s/n, Sevilla",
+        "lat": 37.3933,
+        "lng": -5.999,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Nuestro Padre Jesús ante Anás",
+          "kind": "cristo"
+        },
+        {
+          "name": "Nuestra Señora del Dulce Nombre",
+          "kind": "virgen"
+        }
+      ],
       "media": {
         "logo_url": null,
         "images": []
       },
       "schedule": {
-        "salida": null,
-        "carrera_oficial_start": null,
-        "carrera_oficial_end": null,
-        "recogida": null,
+        "salida": "2026-03-31T15:30:00",
+        "carrera_oficial_start": "2026-03-31T19:30:00",
+        "carrera_oficial_end": "2026-03-31T20:00:00",
+        "recogida": "2026-03-31T23:30:00",
         "itinerary_text": null
       },
       "provenance": [
         {
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
           "url": "https://hermandaddeldulcenombre.org",
-          "accessed_at": "2026-02-15T19:19:03.271734+00:00",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
-            "ss_day"
+            "ss_day",
+            "name_full_web"
           ],
-          "status_code": null
+          "status_code": 200
         }
       ],
       "ingestion": {
-        "fetched_ok": false,
-        "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
-        ],
+        "fetched_ok": true,
+        "has_curated_data": true,
+        "notes": [],
         "description": null
       }
     },
     {
       "name_short": "Los Javieres",
-      "name_full": "Los Javieres",
+      "name_full": "Hermandad de los Javieres",
       "web_url": "https://javieres.com",
       "ss_day": "Martes Santo",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Capilla de San José",
+        "address": "C. Jovellanos, 1, Sevilla",
+        "lat": 37.389,
+        "lng": -5.9962,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Nuestro Padre Jesús de la Providencia",
+          "kind": "cristo"
+        },
+        {
+          "name": "María Santísima del Patrocinio",
+          "kind": "virgen"
+        }
+      ],
       "media": {
-        "logo_url": null,
-        "images": []
+        "logo_url": "https://javieres.com/wp-content/uploads/2021/10/nazareno.png",
+        "images": [
+          "https://javieres.com/wp-content/uploads/2021/10/nazareno.png"
+        ]
       },
       "schedule": {
-        "salida": null,
-        "carrera_oficial_start": null,
-        "carrera_oficial_end": null,
-        "recogida": null,
+        "salida": "2026-03-31T16:00:00",
+        "carrera_oficial_start": "2026-03-31T19:45:00",
+        "carrera_oficial_end": "2026-03-31T20:15:00",
+        "recogida": "2026-03-31T23:00:00",
         "itinerary_text": null
       },
       "provenance": [
         {
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
           "url": "https://javieres.com",
-          "accessed_at": "2026-02-15T19:19:03.271743+00:00",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
-            "ss_day"
+            "ss_day",
+            "name_full_web",
+            "media.logo_url"
           ],
-          "status_code": null
+          "status_code": 200
         }
       ],
       "ingestion": {
-        "fetched_ok": false,
-        "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
-        ],
-        "description": null
+        "fetched_ok": true,
+        "has_curated_data": true,
+        "notes": [],
+        "description": "Hermandad y Cofradía de Nazarenos del Santísimo Cristo de las Almas, María Santísima de Gracia y Amparo, María Inmaculada y San Francisco Javier."
       }
     },
     {
       "name_short": "Los Estudiantes",
-      "name_full": "Los Estudiantes",
+      "name_full": "Hermandad de los Estudiantes",
       "web_url": "https://hermandaddelosestudiantes.es",
       "ss_day": "Martes Santo",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Capilla de la Universidad de Sevilla",
+        "address": "C. San Fernando, s/n, Sevilla",
+        "lat": 37.377,
+        "lng": -5.988,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Santísimo Cristo de la Buena Muerte",
+          "kind": "cristo"
+        },
+        {
+          "name": "María Santísima de la Angustia",
+          "kind": "virgen"
+        }
+      ],
       "media": {
         "logo_url": null,
         "images": []
       },
       "schedule": {
-        "salida": null,
-        "carrera_oficial_start": null,
-        "carrera_oficial_end": null,
-        "recogida": null,
+        "salida": "2026-03-31T16:00:00",
+        "carrera_oficial_start": "2026-03-31T20:00:00",
+        "carrera_oficial_end": "2026-03-31T20:30:00",
+        "recogida": "2026-03-31T23:30:00",
         "itinerary_text": null
       },
       "provenance": [
         {
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
           "url": "https://hermandaddelosestudiantes.es",
-          "accessed_at": "2026-02-15T19:19:03.271752+00:00",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
             "ss_day"
           ],
-          "status_code": null
+          "status_code": 200
         }
       ],
       "ingestion": {
-        "fetched_ok": false,
-        "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
-        ],
+        "fetched_ok": true,
+        "has_curated_data": true,
+        "notes": [],
         "description": null
       }
     },
     {
       "name_short": "Santa Cruz",
-      "name_full": "Santa Cruz",
+      "name_full": "Hermandad de Santa Cruz",
       "web_url": "https://www.hermandaddesantacruz.com",
       "ss_day": "Martes Santo",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Iglesia de Santa Cruz",
+        "address": "C. Mateos Gago, s/n, Sevilla",
+        "lat": 37.3845,
+        "lng": -5.988,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Santísimo Cristo de las Misericordias",
+          "kind": "cristo"
+        },
+        {
+          "name": "Nuestra Señora de los Dolores",
+          "kind": "virgen"
+        }
+      ],
       "media": {
         "logo_url": null,
         "images": []
       },
       "schedule": {
-        "salida": null,
-        "carrera_oficial_start": null,
-        "carrera_oficial_end": null,
-        "recogida": null,
+        "salida": "2026-03-31T16:00:00",
+        "carrera_oficial_start": "2026-03-31T20:15:00",
+        "carrera_oficial_end": "2026-03-31T20:45:00",
+        "recogida": "2026-03-31T23:30:00",
         "itinerary_text": null
       },
       "provenance": [
         {
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
           "url": "https://www.hermandaddesantacruz.com",
-          "accessed_at": "2026-02-15T19:19:03.271760+00:00",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
-            "ss_day"
+            "ss_day",
+            "name_full_web"
           ],
-          "status_code": null
+          "status_code": 200
         }
       ],
       "ingestion": {
-        "fetched_ok": false,
-        "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
-        ],
+        "fetched_ok": true,
+        "has_curated_data": true,
+        "notes": [],
         "description": null
       }
     },
     {
       "name_short": "El Carmen",
-      "name_full": "El Carmen",
+      "name_full": "Hermandad del Carmen Doloroso",
       "web_url": "https://www.hermandaddelcarmen.es",
       "ss_day": "Miércoles Santo",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Iglesia del Santo Ángel",
+        "address": "C. Rioja, 2, Sevilla",
+        "lat": 37.3895,
+        "lng": -6.0,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Nuestro Padre Jesús del Silencio ante Pilato (El Carmen)",
+          "kind": "cristo"
+        },
+        {
+          "name": "Nuestra Señora del Carmen Doloroso",
+          "kind": "virgen"
+        }
+      ],
       "media": {
-        "logo_url": null,
-        "images": []
+        "logo_url": "https://www.hermandaddelcarmen.es/wp-content/uploads/2020/10/HermandadelCarmen.png",
+        "images": [
+          "https://www.hermandaddelcarmen.es/wp-content/uploads/2020/10/HermandadelCarmen.png"
+        ]
       },
       "schedule": {
-        "salida": null,
-        "carrera_oficial_start": null,
-        "carrera_oficial_end": null,
-        "recogida": null,
+        "salida": "2026-04-01T14:30:00",
+        "carrera_oficial_start": "2026-04-01T18:00:00",
+        "carrera_oficial_end": "2026-04-01T18:30:00",
+        "recogida": "2026-04-01T22:00:00",
         "itinerary_text": null
       },
       "provenance": [
         {
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
           "url": "https://www.hermandaddelcarmen.es",
-          "accessed_at": "2026-02-15T19:19:03.271784+00:00",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
-            "ss_day"
+            "ss_day",
+            "name_full_web",
+            "media.logo_url"
           ],
-          "status_code": null
+          "status_code": 200
         }
       ],
       "ingestion": {
-        "fetched_ok": false,
-        "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
-        ],
-        "description": null
+        "fetched_ok": true,
+        "has_curated_data": true,
+        "notes": [],
+        "description": "Web oficial de la Hermandad del Carmen de Sevilla, establecida en la Parroquia de Omnium Sanctorum de la calle Feria."
       }
     },
     {
       "name_short": "La Sed",
-      "name_full": "La Sed",
+      "name_full": "Hermandad de la Sed",
       "web_url": "https://www.hermandaddelased.org",
       "ss_day": "Miércoles Santo",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Capilla de la Evangelización de los Pueblos",
+        "address": "Avda. Kansas City, s/n, Sevilla",
+        "lat": 37.378,
+        "lng": -5.964,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Santísimo Cristo de la Sed",
+          "kind": "cristo"
+        },
+        {
+          "name": "Nuestra Señora de Consolación y Lágrimas",
+          "kind": "virgen"
+        }
+      ],
       "media": {
         "logo_url": null,
         "images": []
       },
       "schedule": {
-        "salida": null,
-        "carrera_oficial_start": null,
-        "carrera_oficial_end": null,
-        "recogida": null,
+        "salida": "2026-04-01T14:00:00",
+        "carrera_oficial_start": "2026-04-01T18:30:00",
+        "carrera_oficial_end": "2026-04-01T19:00:00",
+        "recogida": "2026-04-01T22:30:00",
         "itinerary_text": null
       },
       "provenance": [
         {
-          "url": "https://www.hermandaddelased.org",
-          "accessed_at": "2026-02-15T19:19:03.271793+00:00",
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
+          "url": "https://hermandaddelased.org/",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
-            "ss_day"
+            "ss_day",
+            "name_full_web"
           ],
-          "status_code": null
+          "status_code": 200
         }
       ],
       "ingestion": {
-        "fetched_ok": false,
-        "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
-        ],
+        "fetched_ok": true,
+        "has_curated_data": true,
+        "notes": [],
         "description": null
       }
     },
     {
       "name_short": "San Bernardo",
-      "name_full": "San Bernardo",
+      "name_full": "Hermandad de San Bernardo",
       "web_url": "https://www.hermandaddesanbernardo.com",
       "ss_day": "Miércoles Santo",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Iglesia de San Bernardo",
+        "address": "C. Santo Rey, s/n, San Bernardo, Sevilla",
+        "lat": 37.3785,
+        "lng": -5.9835,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Nuestro Padre Jesús del Gran Poder (San Bernardo)",
+          "kind": "cristo"
+        },
+        {
+          "name": "María Santísima del Refugio",
+          "kind": "virgen"
+        }
+      ],
       "media": {
-        "logo_url": null,
-        "images": []
+        "logo_url": "https://www.hermandaddesanbernardo.com/wp-content/uploads/geo.png",
+        "images": [
+          "https://www.hermandaddesanbernardo.com/wp-content/uploads/geo.png"
+        ]
       },
       "schedule": {
-        "salida": null,
-        "carrera_oficial_start": null,
-        "carrera_oficial_end": null,
-        "recogida": null,
+        "salida": "2026-04-01T14:30:00",
+        "carrera_oficial_start": "2026-04-01T18:45:00",
+        "carrera_oficial_end": "2026-04-01T19:15:00",
+        "recogida": "2026-04-01T23:00:00",
         "itinerary_text": null
       },
       "provenance": [
         {
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
           "url": "https://www.hermandaddesanbernardo.com",
-          "accessed_at": "2026-02-15T19:19:03.271801+00:00",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
-            "ss_day"
+            "ss_day",
+            "name_full_web",
+            "media.logo_url"
           ],
-          "status_code": null
+          "status_code": 200
         }
       ],
       "ingestion": {
-        "fetched_ok": false,
-        "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
-        ],
-        "description": null
+        "fetched_ok": true,
+        "has_curated_data": true,
+        "notes": [],
+        "description": "Hermandad de San Bernardo"
       }
     },
     {
       "name_short": "Buen Fin",
-      "name_full": "Buen Fin",
+      "name_full": "Hermandad del Buen Fin",
       "web_url": "https://hermandadbuenfin.es",
       "ss_day": "Miércoles Santo",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Iglesia de San Antonio de Padua",
+        "address": "C. San Vicente, 65, Sevilla",
+        "lat": 37.3918,
+        "lng": -6.002,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Nuestro Padre Jesús de la Sagrada Columna y Azotes",
+          "kind": "cristo"
+        },
+        {
+          "name": "Nuestra Señora del Buen Fin",
+          "kind": "virgen"
+        }
+      ],
       "media": {
-        "logo_url": null,
-        "images": []
+        "logo_url": "https://hermandadbuenfin.es/wp-content/uploads/2022/12/YoutubeBF.png",
+        "images": [
+          "https://hermandadbuenfin.es/wp-content/uploads/2022/12/YoutubeBF.png"
+        ]
       },
       "schedule": {
-        "salida": null,
-        "carrera_oficial_start": null,
-        "carrera_oficial_end": null,
-        "recogida": null,
+        "salida": "2026-04-01T15:00:00",
+        "carrera_oficial_start": "2026-04-01T19:00:00",
+        "carrera_oficial_end": "2026-04-01T19:30:00",
+        "recogida": "2026-04-01T23:00:00",
         "itinerary_text": null
       },
       "provenance": [
         {
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
           "url": "https://hermandadbuenfin.es",
-          "accessed_at": "2026-02-15T19:19:03.271810+00:00",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
-            "ss_day"
+            "ss_day",
+            "name_full_web",
+            "media.logo_url"
           ],
-          "status_code": null
+          "status_code": 200
         }
       ],
       "ingestion": {
-        "fetched_ok": false,
-        "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
-        ],
-        "description": null
+        "fetched_ok": true,
+        "has_curated_data": true,
+        "notes": [],
+        "description": "Facebook Youtube Twitter Instagram"
       }
     },
     {
       "name_short": "Sagrada Lanzada",
-      "name_full": "Sagrada Lanzada",
+      "name_full": "Hermandad de la Lanzada",
       "web_url": "https://lanzada.org",
       "ss_day": "Miércoles Santo",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Iglesia de San Martín",
+        "address": "C. San Martín, s/n, Sevilla",
+        "lat": 37.3928,
+        "lng": -5.9935,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Santísimo Cristo de la Lanzada",
+          "kind": "cristo"
+        },
+        {
+          "name": "María Santísima de Guía",
+          "kind": "virgen"
+        }
+      ],
       "media": {
-        "logo_url": null,
-        "images": []
+        "logo_url": "https://lanzada.org/wp-content/uploads/2022/09/home1-image1-copyright.jpg",
+        "images": [
+          "https://lanzada.org/wp-content/uploads/2022/09/home1-image1-copyright.jpg"
+        ]
       },
       "schedule": {
-        "salida": null,
-        "carrera_oficial_start": null,
-        "carrera_oficial_end": null,
-        "recogida": null,
+        "salida": "2026-04-01T15:30:00",
+        "carrera_oficial_start": "2026-04-01T19:15:00",
+        "carrera_oficial_end": "2026-04-01T19:45:00",
+        "recogida": "2026-04-01T23:15:00",
         "itinerary_text": null
       },
       "provenance": [
         {
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
           "url": "https://lanzada.org",
-          "accessed_at": "2026-02-15T19:19:03.271817+00:00",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
-            "ss_day"
+            "ss_day",
+            "name_full_web",
+            "media.logo_url"
           ],
-          "status_code": null
+          "status_code": 200
         }
       ],
       "ingestion": {
-        "fetched_ok": false,
-        "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
-        ],
-        "description": null
+        "fetched_ok": true,
+        "has_curated_data": true,
+        "notes": [],
+        "description": "Descubre la Hermandad Sagrada Lanzada Sevilla y su labor en la comunidad. Únete a nuestra causa y ayúdanos a mejorar."
       }
     },
     {
       "name_short": "El Baratillo",
-      "name_full": "El Baratillo",
+      "name_full": "Hermandad del Baratillo",
       "web_url": "https://www.hermandadelbaratillo.es",
       "ss_day": "Miércoles Santo",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Capilla del Baratillo (Real Maestranza)",
+        "address": "Paseo de Cristóbal Colón, s/n, Sevilla",
+        "lat": 37.3835,
+        "lng": -5.998,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Nuestro Padre Jesús de la Misericordia",
+          "kind": "cristo"
+        },
+        {
+          "name": "María Santísima de la Piedad",
+          "kind": "virgen"
+        }
+      ],
       "media": {
         "logo_url": null,
         "images": []
       },
       "schedule": {
-        "salida": null,
-        "carrera_oficial_start": null,
-        "carrera_oficial_end": null,
-        "recogida": null,
+        "salida": "2026-04-01T15:30:00",
+        "carrera_oficial_start": "2026-04-01T19:30:00",
+        "carrera_oficial_end": "2026-04-01T20:00:00",
+        "recogida": "2026-04-01T23:15:00",
         "itinerary_text": null
       },
       "provenance": [
         {
-          "url": "https://www.hermandadelbaratillo.es",
-          "accessed_at": "2026-02-15T19:19:03.271844+00:00",
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
+          "url": "https://hermandadelbaratillo.es/",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
-            "ss_day"
+            "ss_day",
+            "name_full_web"
           ],
-          "status_code": null
+          "status_code": 200
         }
       ],
       "ingestion": {
-        "fetched_ok": false,
-        "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
-        ],
+        "fetched_ok": true,
+        "has_curated_data": true,
+        "notes": [],
         "description": null
       }
     },
     {
       "name_short": "Cristo de Burgos",
-      "name_full": "Cristo de Burgos",
+      "name_full": "Hermandad del Cristo de Burgos",
       "web_url": "https://www.cristodeburgos.es",
       "ss_day": "Miércoles Santo",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Iglesia de San Pedro",
+        "address": "Plaza de San Pedro, s/n, Sevilla",
+        "lat": 37.391,
+        "lng": -5.99,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Santísimo Cristo de Burgos",
+          "kind": "cristo"
+        },
+        {
+          "name": "Madre de Dios de la Palma",
+          "kind": "virgen"
+        }
+      ],
       "media": {
-        "logo_url": null,
-        "images": []
+        "logo_url": "https://cristodeburgos.es/wp-content/uploads/2017/10/logo4.jpg",
+        "images": [
+          "https://cristodeburgos.es/wp-content/uploads/2017/10/logo4.jpg"
+        ]
       },
       "schedule": {
-        "salida": null,
-        "carrera_oficial_start": null,
-        "carrera_oficial_end": null,
-        "recogida": null,
+        "salida": "2026-04-01T16:00:00",
+        "carrera_oficial_start": "2026-04-01T19:45:00",
+        "carrera_oficial_end": "2026-04-01T20:15:00",
+        "recogida": "2026-04-01T23:30:00",
         "itinerary_text": null
       },
       "provenance": [
         {
-          "url": "https://www.cristodeburgos.es",
-          "accessed_at": "2026-02-15T19:19:03.271853+00:00",
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
+          "url": "https://cristodeburgos.es/",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
-            "ss_day"
+            "ss_day",
+            "name_full_web",
+            "media.logo_url"
           ],
-          "status_code": null
+          "status_code": 200
         }
       ],
       "ingestion": {
-        "fetched_ok": false,
-        "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
-        ],
-        "description": null
+        "fetched_ok": true,
+        "has_curated_data": true,
+        "notes": [],
+        "description": "Próximos Actos y Cultos      VER TODOS LOS ACTOS Y CULTOS     PORTAL DEL HERMANO    HAZTE HERMANO  CONTACTAR    \r\nUltimas Noticias"
       }
     },
     {
       "name_short": "Siete Palabras",
-      "name_full": "Siete Palabras",
+      "name_full": "Hermandad de las Siete Palabras",
       "web_url": "https://siete-palabras.com",
       "ss_day": "Miércoles Santo",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Iglesia de San Vicente",
+        "address": "C. San Vicente, 86, Sevilla",
+        "lat": 37.3925,
+        "lng": -6.0005,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Santísimo Cristo de las Siete Palabras",
+          "kind": "cristo"
+        },
+        {
+          "name": "María Santísima de los Remedios",
+          "kind": "virgen"
+        }
+      ],
       "media": {
         "logo_url": null,
         "images": []
       },
       "schedule": {
-        "salida": null,
-        "carrera_oficial_start": null,
-        "carrera_oficial_end": null,
-        "recogida": null,
+        "salida": "2026-04-01T16:00:00",
+        "carrera_oficial_start": "2026-04-01T20:00:00",
+        "carrera_oficial_end": "2026-04-01T20:30:00",
+        "recogida": "2026-04-01T23:30:00",
         "itinerary_text": null
       },
       "provenance": [
         {
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
           "url": "https://siete-palabras.com",
-          "accessed_at": "2026-02-15T19:19:03.271878+00:00",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
-            "ss_day"
+            "ss_day",
+            "name_full_web"
           ],
-          "status_code": null
+          "status_code": 200
         }
       ],
       "ingestion": {
-        "fetched_ok": false,
-        "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
-        ],
-        "description": null
+        "fetched_ok": true,
+        "has_curated_data": true,
+        "notes": [],
+        "description": "Últimas noticias Solicitud de puestos para el Miércoles Santo de 2026 Con el objetivo de conformar de forma organizada el cortejo de cara al próximo Miércoles Santo, la junta de gobierno ha establecido como periodo para solicitar los puestos de la cofradía desde el 14 de febrero al 7 de marzo, pudiendo solicitar los siguientes"
       }
     },
     {
       "name_short": "Los Panaderos",
-      "name_full": "Los Panaderos",
+      "name_full": "Hermandad de los Panaderos",
       "web_url": "https://www.hdadpanaderos.es",
       "ss_day": "Miércoles Santo",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Iglesia de Santa Ana",
+        "address": "C. Pureza, s/n, Triana, Sevilla",
+        "lat": 37.381,
+        "lng": -6.004,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Santísimo Cristo de la Expiración",
+          "kind": "cristo"
+        },
+        {
+          "name": "Nuestra Señora de las Penas",
+          "kind": "virgen"
+        }
+      ],
       "media": {
         "logo_url": null,
         "images": []
       },
       "schedule": {
-        "salida": null,
-        "carrera_oficial_start": null,
-        "carrera_oficial_end": null,
-        "recogida": null,
+        "salida": "2026-04-01T16:00:00",
+        "carrera_oficial_start": "2026-04-01T20:15:00",
+        "carrera_oficial_end": "2026-04-01T20:45:00",
+        "recogida": "2026-04-01T00:00:00",
         "itinerary_text": null
       },
       "provenance": [
         {
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
           "url": "https://www.hdadpanaderos.es",
-          "accessed_at": "2026-02-15T19:19:03.271887+00:00",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
-            "ss_day"
+            "ss_day",
+            "name_full_web"
           ],
-          "status_code": null
+          "status_code": 200
         }
       ],
       "ingestion": {
-        "fetched_ok": false,
-        "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
-        ],
-        "description": null
+        "fetched_ok": true,
+        "has_curated_data": true,
+        "notes": [],
+        "description": "Web oficial de la Hermandad de los Panaderos de Sevilla, establecida en la Capilla de San Andrés de la Calle Orfila."
       }
     },
     {
       "name_short": "Los Negritos",
-      "name_full": "Los Negritos",
+      "name_full": "Hermandad de los Negritos",
       "web_url": "https://www.hermandadlosnegritos.org",
       "ss_day": "Jueves Santo",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Capilla de Nuestra Señora de los Ángeles",
+        "address": "C. Resolana, 58, Sevilla",
+        "lat": 37.3985,
+        "lng": -5.992,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Santísimo Cristo de la Fundación",
+          "kind": "cristo"
+        },
+        {
+          "name": "Nuestra Señora de los Ángeles",
+          "kind": "virgen"
+        }
+      ],
       "media": {
         "logo_url": null,
         "images": []
       },
       "schedule": {
-        "salida": null,
-        "carrera_oficial_start": null,
-        "carrera_oficial_end": null,
-        "recogida": null,
+        "salida": "2026-04-02T14:30:00",
+        "carrera_oficial_start": "2026-04-02T18:00:00",
+        "carrera_oficial_end": "2026-04-02T18:30:00",
+        "recogida": "2026-04-02T22:00:00",
         "itinerary_text": null
       },
       "provenance": [
         {
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
           "url": "https://www.hermandadlosnegritos.org",
-          "accessed_at": "2026-02-15T19:19:03.271927+00:00",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
-            "ss_day"
+            "ss_day",
+            "name_full_web"
           ],
-          "status_code": null
+          "status_code": 200
         }
       ],
       "ingestion": {
-        "fetched_ok": false,
-        "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
-        ],
+        "fetched_ok": true,
+        "has_curated_data": true,
+        "notes": [],
         "description": null
       }
     },
     {
       "name_short": "La Exaltación",
-      "name_full": "La Exaltación",
+      "name_full": "Hermandad de la Exaltación",
       "web_url": "https://www.laexaltacion.org",
       "ss_day": "Jueves Santo",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Iglesia de Santa Catalina",
+        "address": "Plaza de los Terceros, s/n, Sevilla",
+        "lat": 37.3912,
+        "lng": -5.988,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Santísimo Cristo de la Exaltación",
+          "kind": "cristo"
+        },
+        {
+          "name": "Nuestra Señora de las Lágrimas",
+          "kind": "virgen"
+        }
+      ],
       "media": {
-        "logo_url": null,
-        "images": []
+        "logo_url": "https://www.laexaltacion.org/wp-content/uploads/2021/02/ESCUDO-EXALTACION-linea-300-morado.png",
+        "images": [
+          "https://www.laexaltacion.org/wp-content/uploads/2021/02/ESCUDO-EXALTACION-linea-300-morado.png"
+        ]
       },
       "schedule": {
-        "salida": null,
-        "carrera_oficial_start": null,
-        "carrera_oficial_end": null,
-        "recogida": null,
+        "salida": "2026-04-02T15:00:00",
+        "carrera_oficial_start": "2026-04-02T18:30:00",
+        "carrera_oficial_end": "2026-04-02T19:00:00",
+        "recogida": "2026-04-02T22:30:00",
         "itinerary_text": null
       },
       "provenance": [
         {
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
           "url": "https://www.laexaltacion.org",
-          "accessed_at": "2026-02-15T19:19:03.271936+00:00",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
-            "ss_day"
+            "ss_day",
+            "name_full_web",
+            "media.logo_url"
           ],
-          "status_code": null
+          "status_code": 200
         }
       ],
       "ingestion": {
-        "fetched_ok": false,
-        "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
-        ],
-        "description": null
+        "fetched_ok": true,
+        "has_curated_data": true,
+        "notes": [],
+        "description": "Aquí podrás encontrar información sobre nuestros amados titulares, nuestra historia y patrimonio, así como noticias y cultos."
       }
     },
     {
       "name_short": "Las Cigarreras",
-      "name_full": "Las Cigarreras",
+      "name_full": "Hermandad de la Columna y Azotes (Las Cigarreras)",
       "web_url": "https://www.columnayazotes.es",
       "ss_day": "Jueves Santo",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Capilla de San José (Fábrica de Tabacos)",
+        "address": "C. San Fernando, 4, Sevilla",
+        "lat": 37.378,
+        "lng": -5.987,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Santísimo Cristo de la Columna y Azotes",
+          "kind": "cristo"
+        },
+        {
+          "name": "Nuestra Señora de la Victoria",
+          "kind": "virgen"
+        }
+      ],
       "media": {
-        "logo_url": null,
-        "images": []
+        "logo_url": "https://www.columnayazotes.es/images/stories/web/Hermandaddelascigarreras.jpg",
+        "images": [
+          "https://www.columnayazotes.es/images/stories/web/Hermandaddelascigarreras.jpg"
+        ]
       },
       "schedule": {
-        "salida": null,
-        "carrera_oficial_start": null,
-        "carrera_oficial_end": null,
-        "recogida": null,
+        "salida": "2026-04-02T15:00:00",
+        "carrera_oficial_start": "2026-04-02T19:00:00",
+        "carrera_oficial_end": "2026-04-02T19:30:00",
+        "recogida": "2026-04-02T23:00:00",
         "itinerary_text": null
       },
       "provenance": [
         {
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
           "url": "https://www.columnayazotes.es",
-          "accessed_at": "2026-02-15T19:19:03.271960+00:00",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
-            "ss_day"
+            "ss_day",
+            "name_full_web",
+            "media.logo_url"
           ],
-          "status_code": null
+          "status_code": 200
         }
       ],
       "ingestion": {
-        "fetched_ok": false,
-        "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
-        ],
-        "description": null
+        "fetched_ok": true,
+        "has_curated_data": true,
+        "notes": [],
+        "description": "Real e Ilustre Hermandad y Cofradía de Nazarenos de la Sagrada Columna y Azotes de Nuestro Señor Jesucristo y María Santísima de la Victoria"
       }
     },
     {
       "name_short": "Monte-Sión",
-      "name_full": "Monte-Sión",
+      "name_full": "Hermandad de Monte-Sión",
       "web_url": "https://hermandaddemontesion.com",
       "ss_day": "Jueves Santo",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Iglesia de San Gregorio (Capilla de Monte-Sión)",
+        "address": "C. Bustos Tavera, 17, Sevilla",
+        "lat": 37.395,
+        "lng": -5.9893,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Nuestro Padre Jesús de la Oración en el Huerto",
+          "kind": "cristo"
+        },
+        {
+          "name": "Nuestra Señora del Rosario en sus Misterios Dolorosos",
+          "kind": "virgen"
+        }
+      ],
       "media": {
-        "logo_url": null,
-        "images": []
+        "logo_url": "https://hermandaddemontesion.com/wp-content/uploads/2025/09/Portada_Anuario_25-scaled.jpeg",
+        "images": [
+          "https://hermandaddemontesion.com/wp-content/uploads/2025/09/Portada_Anuario_25-scaled.jpeg"
+        ]
       },
       "schedule": {
-        "salida": null,
-        "carrera_oficial_start": null,
-        "carrera_oficial_end": null,
-        "recogida": null,
+        "salida": "2026-04-02T15:30:00",
+        "carrera_oficial_start": "2026-04-02T19:15:00",
+        "carrera_oficial_end": "2026-04-02T19:45:00",
+        "recogida": "2026-04-02T23:00:00",
         "itinerary_text": null
       },
       "provenance": [
         {
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
           "url": "https://hermandaddemontesion.com",
-          "accessed_at": "2026-02-15T19:19:03.271968+00:00",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
-            "ss_day"
+            "ss_day",
+            "name_full_web",
+            "media.logo_url"
           ],
-          "status_code": null
+          "status_code": 200
         }
       ],
       "ingestion": {
-        "fetched_ok": false,
-        "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
-        ],
+        "fetched_ok": true,
+        "has_curated_data": true,
+        "notes": [],
         "description": null
       }
     },
     {
       "name_short": "La Quinta Angustia",
-      "name_full": "La Quinta Angustia",
+      "name_full": "Hermandad de la Quinta Angustia",
       "web_url": "https://laquintaangustia.org",
       "ss_day": "Jueves Santo",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Iglesia de la Magdalena",
+        "address": "C. San Pablo, 10, Sevilla",
+        "lat": 37.3895,
+        "lng": -5.9985,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Sagrado Descendimiento de Nuestro Señor Jesucristo",
+          "kind": "misterio"
+        },
+        {
+          "name": "María Santísima de la Quinta Angustia",
+          "kind": "virgen"
+        }
+      ],
       "media": {
         "logo_url": null,
         "images": []
       },
       "schedule": {
-        "salida": null,
-        "carrera_oficial_start": null,
-        "carrera_oficial_end": null,
-        "recogida": null,
+        "salida": "2026-04-02T16:00:00",
+        "carrera_oficial_start": "2026-04-02T19:30:00",
+        "carrera_oficial_end": "2026-04-02T20:00:00",
+        "recogida": "2026-04-02T23:15:00",
         "itinerary_text": null
       },
       "provenance": [
         {
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
           "url": "https://laquintaangustia.org",
-          "accessed_at": "2026-02-15T19:19:03.271975+00:00",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
-            "ss_day"
+            "ss_day",
+            "name_full_web"
           ],
-          "status_code": null
+          "status_code": 200
         }
       ],
       "ingestion": {
-        "fetched_ok": false,
-        "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
-        ],
-        "description": null
+        "fetched_ok": true,
+        "has_curated_data": true,
+        "notes": [],
+        "description": "Página web oficial de la Hermandad de la Quinta Angustia de Sevilla."
       }
     },
     {
       "name_short": "El Valle",
-      "name_full": "El Valle",
+      "name_full": "Hermandad del Valle",
       "web_url": "https://www.elvalle.org",
       "ss_day": "Jueves Santo",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Iglesia de la Anunciación",
+        "address": "C. Laraña, 4, Sevilla",
+        "lat": 37.391,
+        "lng": -5.993,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Santísimo Cristo de la Sed",
+          "kind": "cristo"
+        },
+        {
+          "name": "Nuestra Señora del Valle",
+          "kind": "virgen"
+        }
+      ],
       "media": {
         "logo_url": null,
         "images": []
       },
       "schedule": {
-        "salida": null,
-        "carrera_oficial_start": null,
-        "carrera_oficial_end": null,
-        "recogida": null,
+        "salida": "2026-04-02T16:00:00",
+        "carrera_oficial_start": "2026-04-02T20:00:00",
+        "carrera_oficial_end": "2026-04-02T20:30:00",
+        "recogida": "2026-04-02T23:30:00",
         "itinerary_text": null
       },
       "provenance": [
         {
-          "url": "https://www.elvalle.org",
-          "accessed_at": "2026-02-15T19:19:03.272015+00:00",
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
+          "url": "https://elvalle.org/",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
-            "ss_day"
+            "ss_day",
+            "name_full_web"
           ],
-          "status_code": null
+          "status_code": 200
         }
       ],
       "ingestion": {
-        "fetched_ok": false,
-        "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
-        ],
-        "description": null
+        "fetched_ok": true,
+        "has_curated_data": true,
+        "notes": [],
+        "description": "HERMANDAD EL VALLE Fotos de Jaime Rodríguez PORTAL DEL HERMANO COFRADÍA BOLETINES novedades “RESULTADOS SORTEOS ESPECIALES &#8211; VELÁ 2024” Leer más “Vicente Gómez-Zarzuela. Vida y Obra” Leer más Convocatoria Cabildos Generales Leer más Cabildo General Ordinario de Elecciones Leer más Listado de solicitudes de insignias Jueves Santo 2024 Leer más Memoria Actividades 2023 Leer más Actualidad deLa Hermandad Instagram Facebook Twitter Youtube TITULARES DE LA archicofradía Santísimo Cristo de la Coronación de Espinas Nuestra Señora del Valle Nuestro Padre Jesús con la Cruz al Hombro"
       }
     },
     {
       "name_short": "Pasión",
-      "name_full": "Pasión",
+      "name_full": "Hermandad de Pasión",
       "web_url": "https://www.hermandaddepasion.org",
       "ss_day": "Jueves Santo",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Iglesia Colegial del Divino Salvador",
+        "address": "Plaza del Salvador, s/n, Sevilla",
+        "lat": 37.3895,
+        "lng": -5.9935,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Nuestro Padre Jesús de la Pasión",
+          "kind": "cristo"
+        },
+        {
+          "name": "Nuestra Señora de la Merced",
+          "kind": "virgen"
+        }
+      ],
       "media": {
         "logo_url": null,
         "images": []
       },
       "schedule": {
-        "salida": null,
-        "carrera_oficial_start": null,
-        "carrera_oficial_end": null,
-        "recogida": null,
+        "salida": "2026-04-02T16:30:00",
+        "carrera_oficial_start": "2026-04-02T20:15:00",
+        "carrera_oficial_end": "2026-04-02T20:45:00",
+        "recogida": "2026-04-02T00:00:00",
         "itinerary_text": null
       },
       "provenance": [
         {
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
           "url": "https://www.hermandaddepasion.org",
-          "accessed_at": "2026-02-15T19:19:03.272023+00:00",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
-            "ss_day"
+            "ss_day",
+            "name_full_web"
           ],
-          "status_code": null
+          "status_code": 200
         }
       ],
       "ingestion": {
-        "fetched_ok": false,
-        "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
-        ],
+        "fetched_ok": true,
+        "has_curated_data": true,
+        "notes": [],
         "description": null
       }
     },
     {
       "name_short": "El Silencio",
-      "name_full": "El Silencio",
+      "name_full": "Hermandad del Silencio",
       "web_url": "https://www.hermandaddeelsilencio.org",
       "ss_day": "Madrugada",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Iglesia de San Antonio Abad",
+        "address": "C. Alfonso XII, 3, Sevilla",
+        "lat": 37.3895,
+        "lng": -5.986,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Nuestro Padre Jesús Nazareno",
+          "kind": "cristo"
+        },
+        {
+          "name": "Nuestra Señora de la Concepción",
+          "kind": "virgen"
+        }
+      ],
       "media": {
         "logo_url": null,
         "images": []
       },
       "schedule": {
-        "salida": null,
-        "carrera_oficial_start": null,
-        "carrera_oficial_end": null,
-        "recogida": null,
+        "salida": "2026-04-03T01:00:00",
+        "carrera_oficial_start": "2026-04-03T03:00:00",
+        "carrera_oficial_end": "2026-04-03T03:30:00",
+        "recogida": "2026-04-03T07:00:00",
         "itinerary_text": null
       },
       "provenance": [
         {
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
           "url": "https://www.hermandaddeelsilencio.org",
-          "accessed_at": "2026-02-15T19:19:03.272032+00:00",
+          "accessed_at": "2026-02-16T00:20:38.093281+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
-            "ss_day"
+            "ss_day",
+            "name_full_web"
           ],
-          "status_code": null
+          "status_code": 200
         }
       ],
       "ingestion": {
-        "fetched_ok": false,
-        "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
-        ],
+        "fetched_ok": true,
+        "has_curated_data": true,
+        "notes": [],
         "description": null
       }
     },
     {
       "name_short": "Gran Poder",
-      "name_full": "Gran Poder",
+      "name_full": "Pontificia y Real Hermandad y Cofradía de Nazarenos de Nuestro Padre Jesús del Gran Poder y María Santísima del Mayor Dolor y Traspaso",
       "web_url": "https://www.gran-poder.es",
       "ss_day": "Madrugada",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Basílica de Jesús del Gran Poder",
+        "address": "Plaza de San Lorenzo, 13, Sevilla",
+        "lat": 37.3935,
+        "lng": -5.9995,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Nuestro Padre Jesús del Gran Poder",
+          "kind": "cristo"
+        },
+        {
+          "name": "María Santísima del Mayor Dolor y Traspaso",
+          "kind": "virgen"
+        }
+      ],
       "media": {
-        "logo_url": null,
-        "images": []
+        "logo_url": "https://www.gran-poder.es/wp-content/uploads/2021/09/salida-scaled.jpg",
+        "images": [
+          "https://www.gran-poder.es/wp-content/uploads/2021/09/salida-scaled.jpg"
+        ]
       },
       "schedule": {
-        "salida": null,
-        "carrera_oficial_start": null,
-        "carrera_oficial_end": null,
-        "recogida": null,
+        "salida": "2026-04-03T01:00:00",
+        "carrera_oficial_start": "2026-04-03T03:20:00",
+        "carrera_oficial_end": "2026-04-03T04:15:00",
+        "recogida": "2026-04-03T07:30:00",
         "itinerary_text": null
       },
       "provenance": [
         {
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.094293+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
           "url": "https://www.gran-poder.es",
-          "accessed_at": "2026-02-15T19:19:03.272040+00:00",
+          "accessed_at": "2026-02-16T00:20:38.094293+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
-            "ss_day"
+            "ss_day",
+            "name_full_web",
+            "media.logo_url"
           ],
-          "status_code": null
+          "status_code": 200
         }
       ],
       "ingestion": {
-        "fetched_ok": false,
-        "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
-        ],
-        "description": null
+        "fetched_ok": true,
+        "has_curated_data": true,
+        "notes": [],
+        "description": "Web Oficial de la Pontificia y Real Hermandad y Cofradía de Nazarenos de Nuestro Padre Jesús del Gran Poder y María Santísima del Mayor Dolor y Traspaso."
       }
     },
     {
       "name_short": "La Macarena",
-      "name_full": "La Macarena",
+      "name_full": "Real, Ilustre y Fervorosa Hermandad y Cofradía de Nazarenos de Nuestro Padre Jesús de la Sentencia y María Santísima de la Esperanza Macarena",
       "web_url": "https://www.hermandaddelamacarena.es",
       "ss_day": "Madrugada",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Basílica de la Macarena",
+        "address": "C. Bécquer, 1, Sevilla",
+        "lat": 37.4008,
+        "lng": -5.99,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Nuestro Padre Jesús de la Sentencia",
+          "kind": "cristo"
+        },
+        {
+          "name": "María Santísima de la Esperanza Macarena",
+          "kind": "virgen"
+        }
+      ],
       "media": {
         "logo_url": null,
         "images": []
       },
       "schedule": {
-        "salida": null,
-        "carrera_oficial_start": null,
-        "carrera_oficial_end": null,
-        "recogida": null,
+        "salida": "2026-04-03T00:00:00",
+        "carrera_oficial_start": "2026-04-03T04:30:00",
+        "carrera_oficial_end": "2026-04-03T05:30:00",
+        "recogida": "2026-04-03T13:00:00",
         "itinerary_text": null
       },
       "provenance": [
         {
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.094293+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
           "url": "https://www.hermandaddelamacarena.es",
-          "accessed_at": "2026-02-15T19:19:03.272047+00:00",
+          "accessed_at": "2026-02-16T00:20:38.094293+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
-            "ss_day"
+            "ss_day",
+            "name_full_web"
           ],
-          "status_code": null
+          "status_code": 200
         }
       ],
       "ingestion": {
-        "fetched_ok": false,
-        "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
-        ],
-        "description": null
+        "fetched_ok": true,
+        "has_curated_data": true,
+        "notes": [],
+        "description": "| Web oficial de la Hermandad de la Macarena"
       }
     },
     {
       "name_short": "El Calvario",
-      "name_full": "El Calvario",
+      "name_full": "Hermandad del Calvario",
       "web_url": "https://hermandaddelcalvario.org",
       "ss_day": "Madrugada",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Iglesia de la Magdalena",
+        "address": "C. San Pablo, 10, Sevilla",
+        "lat": 37.3895,
+        "lng": -5.9985,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Santísimo Cristo del Calvario",
+          "kind": "cristo"
+        },
+        {
+          "name": "Nuestra Señora de la Presentación",
+          "kind": "virgen"
+        }
+      ],
       "media": {
-        "logo_url": null,
-        "images": []
+        "logo_url": "https://hermandaddelcalvario.org/wp-content/uploads/2025/03/WhatsApp-Image-2025-03-30-at-14.05.08-819x1024.jpeg",
+        "images": [
+          "https://hermandaddelcalvario.org/wp-content/uploads/2025/03/WhatsApp-Image-2025-03-30-at-14.05.08-819x1024.jpeg"
+        ]
       },
       "schedule": {
-        "salida": null,
-        "carrera_oficial_start": null,
-        "carrera_oficial_end": null,
-        "recogida": null,
+        "salida": "2026-04-03T02:00:00",
+        "carrera_oficial_start": "2026-04-03T05:15:00",
+        "carrera_oficial_end": "2026-04-03T05:45:00",
+        "recogida": "2026-04-03T08:30:00",
         "itinerary_text": null
       },
       "provenance": [
         {
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.094293+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
           "url": "https://hermandaddelcalvario.org",
-          "accessed_at": "2026-02-15T19:19:03.272072+00:00",
+          "accessed_at": "2026-02-16T00:20:38.094293+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
-            "ss_day"
+            "ss_day",
+            "name_full_web",
+            "media.logo_url"
           ],
-          "status_code": null
+          "status_code": 200
         }
       ],
       "ingestion": {
-        "fetched_ok": false,
-        "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
-        ],
-        "description": null
+        "fetched_ok": true,
+        "has_curated_data": true,
+        "notes": [],
+        "description": "Pontificia y Real Hermandad y Cofradía de Nazarenos del Stmo. Cristo del Calvario y Ntra. Señora de la Presentación. Sevilla"
       }
     },
     {
       "name_short": "Esperanza de Triana",
-      "name_full": "Esperanza de Triana",
+      "name_full": "Hermandad de la Esperanza de Triana",
       "web_url": "https://esperanzadetriana.es",
       "ss_day": "Madrugada",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Capilla de los Marineros",
+        "address": "C. Pureza, 52, Triana, Sevilla",
+        "lat": 37.3815,
+        "lng": -6.004,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Nuestro Padre Jesús de las Tres Caídas",
+          "kind": "cristo"
+        },
+        {
+          "name": "María Santísima de la Esperanza de Triana",
+          "kind": "virgen"
+        }
+      ],
       "media": {
         "logo_url": null,
         "images": []
       },
       "schedule": {
-        "salida": null,
-        "carrera_oficial_start": null,
-        "carrera_oficial_end": null,
-        "recogida": null,
+        "salida": "2026-04-03T01:30:00",
+        "carrera_oficial_start": "2026-04-03T05:45:00",
+        "carrera_oficial_end": "2026-04-03T06:30:00",
+        "recogida": "2026-04-03T13:30:00",
         "itinerary_text": null
       },
       "provenance": [
         {
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.094293+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
           "url": "https://esperanzadetriana.es",
-          "accessed_at": "2026-02-15T19:19:03.272096+00:00",
+          "accessed_at": "2026-02-16T00:20:38.094293+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
-            "ss_day"
+            "ss_day",
+            "name_full_web"
           ],
-          "status_code": null
+          "status_code": 200
         }
       ],
       "ingestion": {
-        "fetched_ok": false,
-        "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
-        ],
+        "fetched_ok": true,
+        "has_curated_data": true,
+        "notes": [],
         "description": null
       }
     },
     {
       "name_short": "Los Gitanos",
-      "name_full": "Los Gitanos",
+      "name_full": "Hermandad de los Gitanos",
       "web_url": "https://www.hermandaddelosgitanos.com",
       "ss_day": "Madrugada",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Iglesia de los Gitanos (San Román)",
+        "address": "Avda. de Miraflores, s/n, Sevilla",
+        "lat": 37.402,
+        "lng": -5.9865,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Nuestro Padre Jesús de la Salud",
+          "kind": "cristo"
+        },
+        {
+          "name": "María Santísima de las Angustias Coronada",
+          "kind": "virgen"
+        }
+      ],
       "media": {
-        "logo_url": null,
-        "images": []
+        "logo_url": "https://www.hermandaddelosgitanos.com/wp-content/uploads/2018/03/0002-1024x683.jpg",
+        "images": [
+          "https://www.hermandaddelosgitanos.com/wp-content/uploads/2018/03/0002-1024x683.jpg"
+        ]
       },
       "schedule": {
-        "salida": null,
-        "carrera_oficial_start": null,
-        "carrera_oficial_end": null,
-        "recogida": null,
+        "salida": "2026-04-03T00:30:00",
+        "carrera_oficial_start": "2026-04-03T06:15:00",
+        "carrera_oficial_end": "2026-04-03T06:45:00",
+        "recogida": "2026-04-03T13:00:00",
         "itinerary_text": null
       },
       "provenance": [
         {
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.094293+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
           "url": "https://www.hermandaddelosgitanos.com",
-          "accessed_at": "2026-02-15T19:19:03.272121+00:00",
+          "accessed_at": "2026-02-16T00:20:38.094293+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
-            "ss_day"
+            "ss_day",
+            "name_full_web",
+            "media.logo_url"
           ],
-          "status_code": null
+          "status_code": 200
         }
       ],
       "ingestion": {
-        "fetched_ok": false,
-        "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
-        ],
-        "description": null
+        "fetched_ok": true,
+        "has_curated_data": true,
+        "notes": [],
+        "description": "Página web oficial de la Hermandad de los Gitanos."
       }
     },
     {
       "name_short": "Carretería",
-      "name_full": "Carretería",
+      "name_full": "Hermandad de la Carretería",
       "web_url": "https://hermandaddelacarreteria.org",
       "ss_day": "Viernes Santo",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Capilla de la Carretería",
+        "address": "C. Temprado, 8, Sevilla",
+        "lat": 37.3855,
+        "lng": -5.9975,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Santísimo Cristo de la Salud",
+          "kind": "cristo"
+        },
+        {
+          "name": "María Santísima de la Luz",
+          "kind": "virgen"
+        }
+      ],
       "media": {
         "logo_url": null,
         "images": []
       },
       "schedule": {
-        "salida": null,
-        "carrera_oficial_start": null,
-        "carrera_oficial_end": null,
-        "recogida": null,
+        "salida": "2026-04-03T15:00:00",
+        "carrera_oficial_start": "2026-04-03T18:00:00",
+        "carrera_oficial_end": "2026-04-03T18:30:00",
+        "recogida": "2026-04-03T22:00:00",
         "itinerary_text": null
       },
       "provenance": [
         {
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.094293+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
           "url": "https://hermandaddelacarreteria.org",
-          "accessed_at": "2026-02-15T19:19:03.272130+00:00",
+          "accessed_at": "2026-02-16T00:20:38.094293+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
-            "ss_day"
+            "ss_day",
+            "name_full_web"
           ],
-          "status_code": null
+          "status_code": 200
         }
       ],
       "ingestion": {
-        "fetched_ok": false,
-        "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
-        ],
+        "fetched_ok": true,
+        "has_curated_data": true,
+        "notes": [],
         "description": null
       }
     },
     {
       "name_short": "La Soledad (San Buenaventura)",
-      "name_full": "La Soledad (San Buenaventura)",
+      "name_full": "Hermandad de la Soledad de San Buenaventura",
       "web_url": "https://www.soledadsanbuenaventura.com",
       "ss_day": "Viernes Santo",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Convento de San Buenaventura",
+        "address": "C. Carlos Cañal, 4, Sevilla",
+        "lat": 37.387,
+        "lng": -5.996,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Santísimo Cristo del Descendimiento",
+          "kind": "cristo"
+        },
+        {
+          "name": "Nuestra Señora de la Soledad",
+          "kind": "virgen"
+        }
+      ],
       "media": {
         "logo_url": null,
         "images": []
       },
       "schedule": {
-        "salida": null,
-        "carrera_oficial_start": null,
-        "carrera_oficial_end": null,
-        "recogida": null,
+        "salida": "2026-04-03T15:30:00",
+        "carrera_oficial_start": "2026-04-03T18:30:00",
+        "carrera_oficial_end": "2026-04-03T19:00:00",
+        "recogida": "2026-04-03T22:30:00",
         "itinerary_text": null
       },
       "provenance": [
         {
-          "url": "https://www.soledadsanbuenaventura.com",
-          "accessed_at": "2026-02-15T19:19:03.272154+00:00",
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.094293+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
+          "url": "https://soledadsanbuenaventura.com/",
+          "accessed_at": "2026-02-16T00:20:38.094293+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
-            "ss_day"
+            "ss_day",
+            "name_full_web"
           ],
-          "status_code": null
+          "status_code": 200
         }
       ],
       "ingestion": {
-        "fetched_ok": false,
-        "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
-        ],
+        "fetched_ok": true,
+        "has_curated_data": true,
+        "notes": [],
         "description": null
       }
     },
     {
       "name_short": "El Cachorro",
-      "name_full": "El Cachorro",
+      "name_full": "Pontificia, Real e Ilustre Hermandad Sacramental del Santísimo Cristo de la Expiración y María Santísima del Patrocinio",
       "web_url": "https://www.hermandaddelcachorro.org",
       "ss_day": "Viernes Santo",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Capilla del Patrocinio",
+        "address": "C. Castilla, 182, Triana, Sevilla",
+        "lat": 37.3835,
+        "lng": -6.0055,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Santísimo Cristo de la Expiración",
+          "kind": "cristo"
+        },
+        {
+          "name": "Nuestra Señora del Patrocinio",
+          "kind": "virgen"
+        }
+      ],
       "media": {
         "logo_url": null,
         "images": []
       },
       "schedule": {
-        "salida": null,
-        "carrera_oficial_start": null,
-        "carrera_oficial_end": null,
-        "recogida": null,
+        "salida": "2026-04-03T15:30:00",
+        "carrera_oficial_start": "2026-04-03T19:00:00",
+        "carrera_oficial_end": "2026-04-03T19:30:00",
+        "recogida": "2026-04-03T23:00:00",
         "itinerary_text": null
       },
       "provenance": [
         {
-          "url": "https://www.hermandaddelcachorro.org",
-          "accessed_at": "2026-02-15T19:19:03.272162+00:00",
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.094293+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
+          "url": "https://hermandaddelcachorro.org/",
+          "accessed_at": "2026-02-16T00:20:38.094293+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
-            "ss_day"
+            "ss_day",
+            "name_full_web"
           ],
-          "status_code": null
+          "status_code": 200
         }
       ],
       "ingestion": {
-        "fetched_ok": false,
-        "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
-        ],
-        "description": null
+        "fetched_ok": true,
+        "has_curated_data": true,
+        "notes": [],
+        "description": "Pontificia, Real e Ilustre Hermandad y Cofradía de Nazarenos del Santísimo Cristo de la Expiración y Nuestra Madre y Señora del Patrocinio en su Dolor y Gloria NOTICIAS APP IOS Y ANDROID PAPELETAS…"
       }
     },
     {
       "name_short": "La O",
-      "name_full": "La O",
+      "name_full": "Hermandad de la O",
       "web_url": "https://www.hermandaddelao.es",
       "ss_day": "Viernes Santo",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Iglesia de Nuestra Señora de la O",
+        "address": "C. Castilla, 30, Triana, Sevilla",
+        "lat": 37.386,
+        "lng": -6.003,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Nuestro Padre Jesús Nazareno",
+          "kind": "cristo"
+        },
+        {
+          "name": "Nuestra Señora de la O",
+          "kind": "virgen"
+        }
+      ],
       "media": {
         "logo_url": null,
         "images": []
       },
       "schedule": {
-        "salida": null,
-        "carrera_oficial_start": null,
-        "carrera_oficial_end": null,
-        "recogida": null,
+        "salida": "2026-04-03T16:00:00",
+        "carrera_oficial_start": "2026-04-03T19:15:00",
+        "carrera_oficial_end": "2026-04-03T19:45:00",
+        "recogida": "2026-04-03T23:30:00",
         "itinerary_text": null
       },
       "provenance": [
         {
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.094293+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
           "url": "https://www.hermandaddelao.es",
-          "accessed_at": "2026-02-15T19:19:03.272169+00:00",
+          "accessed_at": "2026-02-16T00:20:38.094293+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
-            "ss_day"
+            "ss_day",
+            "name_full_web"
           ],
-          "status_code": null
+          "status_code": 200
         }
       ],
       "ingestion": {
-        "fetched_ok": false,
-        "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
-        ],
+        "fetched_ok": true,
+        "has_curated_data": true,
+        "notes": [],
         "description": null
       }
     },
     {
       "name_short": "Tres Caídas de San Isidoro",
-      "name_full": "Tres Caídas de San Isidoro",
+      "name_full": "Hermandad de las Tres Caídas de San Isidoro",
       "web_url": "https://trescaidas.org",
       "ss_day": "Viernes Santo",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Iglesia de San Isidoro",
+        "address": "C. San Isidoro, s/n, Sevilla",
+        "lat": 37.3912,
+        "lng": -5.9895,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Nuestro Padre Jesús de las Tres Caídas y Nuestra Señora del Loreto",
+          "kind": "misterio"
+        },
+        {
+          "name": "Nuestra Señora de Loreto",
+          "kind": "virgen"
+        }
+      ],
       "media": {
         "logo_url": null,
         "images": []
       },
       "schedule": {
-        "salida": null,
-        "carrera_oficial_start": null,
-        "carrera_oficial_end": null,
-        "recogida": null,
+        "salida": "2026-04-03T16:00:00",
+        "carrera_oficial_start": "2026-04-03T19:30:00",
+        "carrera_oficial_end": "2026-04-03T20:00:00",
+        "recogida": "2026-04-03T23:30:00",
         "itinerary_text": null
       },
       "provenance": [
         {
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.094293+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
           "url": "https://trescaidas.org",
-          "accessed_at": "2026-02-15T19:19:03.272288+00:00",
+          "accessed_at": "2026-02-16T00:20:38.094293+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
-            "ss_day"
+            "ss_day",
+            "name_full_web"
           ],
-          "status_code": null
+          "status_code": 200
         }
       ],
       "ingestion": {
-        "fetched_ok": false,
-        "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
-        ],
+        "fetched_ok": true,
+        "has_curated_data": true,
+        "notes": [],
         "description": null
       }
     },
     {
       "name_short": "Montserrat",
-      "name_full": "Montserrat",
+      "name_full": "Hermandad de Montserrat",
       "web_url": "https://www.montserratsevilla.com",
       "ss_day": "Viernes Santo",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Capilla de Montserrat",
+        "address": "C. Cristo del Buen Fin, s/n, Sevilla",
+        "lat": 37.3888,
+        "lng": -6.0015,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Santísimo Cristo de la Conversión del Buen Ladrón",
+          "kind": "cristo"
+        },
+        {
+          "name": "Nuestra Señora de Montserrat",
+          "kind": "virgen"
+        }
+      ],
       "media": {
         "logo_url": null,
         "images": []
       },
       "schedule": {
-        "salida": null,
-        "carrera_oficial_start": null,
-        "carrera_oficial_end": null,
-        "recogida": null,
+        "salida": "2026-04-03T16:30:00",
+        "carrera_oficial_start": "2026-04-03T19:45:00",
+        "carrera_oficial_end": "2026-04-03T20:15:00",
+        "recogida": "2026-04-03T00:00:00",
         "itinerary_text": null
       },
       "provenance": [
         {
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.094293+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
           "url": "https://www.montserratsevilla.com",
-          "accessed_at": "2026-02-15T19:19:03.272297+00:00",
+          "accessed_at": "2026-02-16T00:20:38.094293+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
-            "ss_day"
+            "ss_day",
+            "name_full_web"
           ],
-          "status_code": null
+          "status_code": 200
         }
       ],
       "ingestion": {
-        "fetched_ok": false,
-        "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
-        ],
+        "fetched_ok": true,
+        "has_curated_data": true,
+        "notes": [],
         "description": null
       }
     },
     {
       "name_short": "Sagrada Mortaja",
-      "name_full": "Sagrada Mortaja",
+      "name_full": "Hermandad de la Sagrada Mortaja",
       "web_url": "https://www.hermandadsagradamortaja.org",
       "ss_day": "Viernes Santo",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Iglesia de San Gregorio",
+        "address": "C. Alfonso XII, 11, Sevilla",
+        "lat": 37.3895,
+        "lng": -5.9858,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Sagrada Mortaja de Nuestro Señor Jesucristo",
+          "kind": "misterio"
+        },
+        {
+          "name": "Nuestra Señora de la Piedad",
+          "kind": "virgen"
+        }
+      ],
       "media": {
         "logo_url": null,
         "images": []
       },
       "schedule": {
-        "salida": null,
-        "carrera_oficial_start": null,
-        "carrera_oficial_end": null,
-        "recogida": null,
+        "salida": "2026-04-03T16:30:00",
+        "carrera_oficial_start": "2026-04-03T20:00:00",
+        "carrera_oficial_end": "2026-04-03T20:30:00",
+        "recogida": "2026-04-03T00:00:00",
         "itinerary_text": null
       },
       "provenance": [
         {
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.094293+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
           "url": "https://www.hermandadsagradamortaja.org",
-          "accessed_at": "2026-02-15T19:19:03.272321+00:00",
+          "accessed_at": "2026-02-16T00:20:38.094293+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
-            "ss_day"
+            "ss_day",
+            "name_full_web"
           ],
-          "status_code": null
+          "status_code": 200
         }
       ],
       "ingestion": {
-        "fetched_ok": false,
-        "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
-        ],
+        "fetched_ok": true,
+        "has_curated_data": true,
+        "notes": [],
         "description": null
       }
     },
     {
       "name_short": "El Sol",
-      "name_full": "El Sol",
+      "name_full": "Hermandad del Sol",
       "web_url": "https://hermandaddelsol.org",
       "ss_day": "Sábado Santo",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Parroquia de San Diego de Alcalá",
+        "address": "Barriada del Tardón, Sevilla",
+        "lat": 37.376,
+        "lng": -6.0115,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Nuestro Padre Jesús del Amor Despojado",
+          "kind": "cristo"
+        },
+        {
+          "name": "María Santísima del Sol",
+          "kind": "virgen"
+        }
+      ],
       "media": {
-        "logo_url": null,
-        "images": []
+        "logo_url": "https://hermandaddelsol.org/wp-content/uploads/Cabecera-Sol-e1517530069414.jpg",
+        "images": [
+          "https://hermandaddelsol.org/wp-content/uploads/Cabecera-Sol-e1517530069414.jpg"
+        ]
       },
       "schedule": {
-        "salida": null,
-        "carrera_oficial_start": null,
-        "carrera_oficial_end": null,
-        "recogida": null,
+        "salida": "2026-04-04T15:00:00",
+        "carrera_oficial_start": "2026-04-04T18:00:00",
+        "carrera_oficial_end": "2026-04-04T18:30:00",
+        "recogida": "2026-04-04T22:00:00",
         "itinerary_text": null
       },
       "provenance": [
         {
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.094293+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
           "url": "https://hermandaddelsol.org",
-          "accessed_at": "2026-02-15T19:19:03.272331+00:00",
+          "accessed_at": "2026-02-16T00:20:38.094293+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
-            "ss_day"
+            "ss_day",
+            "name_full_web",
+            "media.logo_url"
           ],
-          "status_code": null
+          "status_code": 200
         }
       ],
       "ingestion": {
-        "fetched_ok": false,
-        "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
-        ],
-        "description": null
+        "fetched_ok": true,
+        "has_curated_data": true,
+        "notes": [],
+        "description": "Bienvenidos a la Web de la Hermandad de Nuestra Señora del Sol de Sevilla. Recibe nuestras noticias por e-mail, suscríbete a nuestra web."
       }
     },
     {
       "name_short": "Los Servitas",
-      "name_full": "Los Servitas",
+      "name_full": "Real Hermandad Servita de Nuestra Señora de los Dolores",
       "web_url": "https://realhermandadservita.com",
       "ss_day": "Sábado Santo",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Capilla de los Dolores",
+        "address": "C. Cervantes, s/n (Plaza de los Dolores), Sevilla",
+        "lat": 37.388,
+        "lng": -5.99,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Nuestra Señora de los Dolores",
+          "kind": "virgen"
+        }
+      ],
       "media": {
-        "logo_url": null,
-        "images": []
+        "logo_url": "https://i0.wp.com/realhermandadservita.com/wp-content/uploads/2018/01/cropped-IMG-20180108-WA0015.jpg?fit=512%2C512&#038;ssl=1",
+        "images": [
+          "https://i0.wp.com/realhermandadservita.com/wp-content/uploads/2018/01/cropped-IMG-20180108-WA0015.jpg?fit=512%2C512&#038;ssl=1"
+        ]
       },
       "schedule": {
-        "salida": null,
-        "carrera_oficial_start": null,
-        "carrera_oficial_end": null,
-        "recogida": null,
+        "salida": "2026-04-04T16:00:00",
+        "carrera_oficial_start": "2026-04-04T18:30:00",
+        "carrera_oficial_end": "2026-04-04T19:00:00",
+        "recogida": "2026-04-04T21:30:00",
         "itinerary_text": null
       },
       "provenance": [
         {
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.094293+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
           "url": "https://realhermandadservita.com",
-          "accessed_at": "2026-02-15T19:19:03.272338+00:00",
+          "accessed_at": "2026-02-16T00:20:38.094293+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
-            "ss_day"
+            "ss_day",
+            "name_full_web",
+            "media.logo_url"
           ],
-          "status_code": null
+          "status_code": 200
         }
       ],
       "ingestion": {
-        "fetched_ok": false,
-        "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
-        ],
-        "description": null
+        "fetched_ok": true,
+        "has_curated_data": true,
+        "notes": [],
+        "description": "Pagina Oficial de la Real, Ilustre y Venerable Hermandad de Nazarenos y Primitiva Cofradía Servita de Nuestra Señora de los Dolores, Santísimo Cristo de la Providencia, María Santísima de la Soleda…"
       }
     },
     {
       "name_short": "La Trinidad",
-      "name_full": "La Trinidad",
+      "name_full": "Hermandad de la Trinidad",
       "web_url": "https://hermandaddelatrinidad.es",
       "ss_day": "Sábado Santo",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Iglesia de la Trinidad",
+        "address": "C. María Auxiliadora, 18, Sevilla",
+        "lat": 37.387,
+        "lng": -5.985,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Santísimo Cristo de las Cinco Llagas",
+          "kind": "cristo"
+        },
+        {
+          "name": "Nuestra Señora de la Esperanza Trinitaria",
+          "kind": "virgen"
+        }
+      ],
       "media": {
         "logo_url": null,
         "images": []
       },
       "schedule": {
-        "salida": null,
-        "carrera_oficial_start": null,
-        "carrera_oficial_end": null,
-        "recogida": null,
+        "salida": "2026-04-04T16:00:00",
+        "carrera_oficial_start": "2026-04-04T19:00:00",
+        "carrera_oficial_end": "2026-04-04T19:30:00",
+        "recogida": "2026-04-04T23:00:00",
         "itinerary_text": null
       },
       "provenance": [
         {
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.094293+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
           "url": "https://hermandaddelatrinidad.es",
-          "accessed_at": "2026-02-15T19:19:03.272346+00:00",
+          "accessed_at": "2026-02-16T00:20:38.094293+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
-            "ss_day"
+            "ss_day",
+            "name_full_web"
           ],
-          "status_code": null
+          "status_code": 200
         }
       ],
       "ingestion": {
-        "fetched_ok": false,
-        "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
-        ],
+        "fetched_ok": true,
+        "has_curated_data": true,
+        "notes": [],
         "description": null
       }
     },
     {
       "name_short": "El Santo Entierro",
-      "name_full": "El Santo Entierro",
+      "name_full": "Hermandad del Santo Entierro",
       "web_url": "https://www.santoentierro.org",
       "ss_day": "Sábado Santo",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Iglesia de San Gregorio",
+        "address": "C. Alfonso XII, 11, Sevilla",
+        "lat": 37.3895,
+        "lng": -5.9858,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Santísimo Cristo Yacente",
+          "kind": "cristo"
+        },
+        {
+          "name": "Santo Entierro de Nuestro Señor Jesucristo",
+          "kind": "misterio"
+        },
+        {
+          "name": "Nuestra Señora de Villaviciosa",
+          "kind": "virgen"
+        }
+      ],
       "media": {
-        "logo_url": null,
-        "images": []
+        "logo_url": "https://d7bc7deaf8.clvaw-cdnwnd.com/f4fff72578b303c39129fdbe120047b9/200002900-505db505dd/700/P%C3%A1ginas%20desdeProyecto%20Modificaci%C3%B3n%20Reglas%202026.jpeg?ph=d7bc7deaf8",
+        "images": [
+          "https://d7bc7deaf8.clvaw-cdnwnd.com/f4fff72578b303c39129fdbe120047b9/200002900-505db505dd/700/P%C3%A1ginas%20desdeProyecto%20Modificaci%C3%B3n%20Reglas%202026.jpeg?ph=d7bc7deaf8"
+        ]
       },
       "schedule": {
-        "salida": null,
-        "carrera_oficial_start": null,
-        "carrera_oficial_end": null,
-        "recogida": null,
+        "salida": "2026-04-04T17:00:00",
+        "carrera_oficial_start": "2026-04-04T19:30:00",
+        "carrera_oficial_end": "2026-04-04T20:00:00",
+        "recogida": "2026-04-04T23:30:00",
         "itinerary_text": null
       },
       "provenance": [
         {
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.094293+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
           "url": "https://www.santoentierro.org",
-          "accessed_at": "2026-02-15T19:19:03.272369+00:00",
+          "accessed_at": "2026-02-16T00:20:38.094293+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
-            "ss_day"
+            "ss_day",
+            "name_full_web",
+            "media.logo_url"
           ],
-          "status_code": null
+          "status_code": 200
         }
       ],
       "ingestion": {
-        "fetched_ok": false,
-        "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
-        ],
-        "description": null
+        "fetched_ok": true,
+        "has_curated_data": true,
+        "notes": [],
+        "description": "Hermandad del Santo Entierro de Nuestro Señor Jesucristo, Triunfo de la Santa Cruz y María Santísima de Villaviciosa"
       }
     },
     {
       "name_short": "La Soledad (San Lorenzo)",
-      "name_full": "La Soledad (San Lorenzo)",
+      "name_full": "Hermandad de la Soledad de San Lorenzo",
       "web_url": "https://www.hermandaddelasoledad.org",
       "ss_day": "Sábado Santo",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Iglesia de San Lorenzo",
+        "address": "Plaza de San Lorenzo, s/n, Sevilla",
+        "lat": 37.3933,
+        "lng": -5.999,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Nuestra Señora de la Soledad",
+          "kind": "virgen"
+        }
+      ],
       "media": {
         "logo_url": null,
         "images": []
       },
       "schedule": {
-        "salida": null,
-        "carrera_oficial_start": null,
-        "carrera_oficial_end": null,
-        "recogida": null,
+        "salida": "2026-04-04T17:30:00",
+        "carrera_oficial_start": "2026-04-04T20:00:00",
+        "carrera_oficial_end": "2026-04-04T20:30:00",
+        "recogida": "2026-04-04T23:30:00",
         "itinerary_text": null
       },
       "provenance": [
         {
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.094293+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
           "url": "https://www.hermandaddelasoledad.org",
-          "accessed_at": "2026-02-15T19:19:03.272392+00:00",
+          "accessed_at": "2026-02-16T00:20:38.094293+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
-            "ss_day"
+            "ss_day",
+            "name_full_web"
           ],
-          "status_code": null
+          "status_code": 200
         }
       ],
       "ingestion": {
-        "fetched_ok": false,
-        "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
-        ],
-        "description": null
+        "fetched_ok": true,
+        "has_curated_data": true,
+        "notes": [],
+        "description": "Hermandad Sacramental de la Soledad"
       }
     },
     {
       "name_short": "La Resurrección",
-      "name_full": "La Resurrección",
+      "name_full": "Hermandad de la Resurrección",
       "web_url": "https://www.hermandaddelaresurreccion.com",
       "ss_day": "Domingo de Resurrección",
       "sede": {
-        "temple_name": null,
-        "address": null,
-        "lat": null,
-        "lng": null,
-        "needs_geocode": true
+        "temple_name": "Iglesia de Santa Marina",
+        "address": "C. San Luis, s/n, Sevilla",
+        "lat": 37.3957,
+        "lng": -5.989,
+        "needs_geocode": false
       },
-      "titulares": [],
+      "titulares": [
+        {
+          "name": "Nuestro Padre Jesús Resucitado",
+          "kind": "cristo"
+        },
+        {
+          "name": "Nuestra Señora de la Aurora",
+          "kind": "virgen"
+        }
+      ],
       "media": {
-        "logo_url": null,
-        "images": []
+        "logo_url": "https://www.hermandaddelaresurreccion.com/wp-content/uploads/2019/08/TWITTER.png",
+        "images": [
+          "https://www.hermandaddelaresurreccion.com/wp-content/uploads/2019/08/TWITTER.png"
+        ]
       },
       "schedule": {
-        "salida": null,
-        "carrera_oficial_start": null,
-        "carrera_oficial_end": null,
-        "recogida": null,
+        "salida": "2026-04-05T07:00:00",
+        "carrera_oficial_start": "2026-04-05T08:30:00",
+        "carrera_oficial_end": "2026-04-05T09:00:00",
+        "recogida": "2026-04-05T11:00:00",
         "itinerary_text": null
       },
       "provenance": [
         {
+          "url": "curated:hermandades_curated_data.py",
+          "accessed_at": "2026-02-16T00:20:38.094293+00:00",
+          "fields_extracted": [
+            "name_full",
+            "sede",
+            "titulares",
+            "schedule"
+          ],
+          "status_code": null
+        },
+        {
           "url": "https://www.hermandaddelaresurreccion.com",
-          "accessed_at": "2026-02-15T19:19:03.272415+00:00",
+          "accessed_at": "2026-02-16T00:20:38.094293+00:00",
           "fields_extracted": [
             "name_short",
             "web_url",
-            "ss_day"
+            "ss_day",
+            "name_full_web",
+            "media.logo_url"
           ],
-          "status_code": null
+          "status_code": 200
         }
       ],
       "ingestion": {
-        "fetched_ok": false,
-        "notes": [
-          "fetch_error: https_error=Tunnel connection failed: 403 Forbidden; http_error=HTTP 403",
-          "manual_review_required:name_full"
-        ],
+        "fetched_ok": true,
+        "has_curated_data": true,
+        "notes": [],
         "description": null
       }
     }

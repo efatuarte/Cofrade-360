@@ -1,3 +1,4 @@
+import json
 import uuid
 from datetime import datetime
 from typing import List, Optional, Tuple
@@ -6,8 +7,30 @@ from sqlalchemy import or_
 from sqlalchemy.orm import Session, joinedload
 
 from app.core.security import get_password_hash
-from app.models.models import Evento, Hermandad, Location, MediaAsset, PlanItem, User, UserPlan
-from app.schemas.schemas import EventoCreate, EventoUpdate, HermandadCreate, LocationCreate, UserCreate
+from app.models.models import (
+    DataProvenance,
+    Evento,
+    Hermandad,
+    Location,
+    MediaAsset,
+    PlanItem,
+    Procession,
+    ProcessionItineraryText,
+    ProcessionSchedulePoint,
+    Titular,
+    User,
+    UserPlan,
+)
+from app.schemas.schemas import (
+    EventoCreate,
+    EventoUpdate,
+    HermandadCreate,
+    LocationCreate,
+    ProcessionItineraryTextUpsert,
+    ProcessionSchedulePointCreate,
+    ProvenanceCreate,
+    UserCreate,
+)
 
 
 # ============= User CRUD =============
@@ -73,7 +96,7 @@ def create_location(db: Session, location: LocationCreate) -> Location:
 def get_hermandad(db: Session, hermandad_id: str) -> Optional[Hermandad]:
     return (
         db.query(Hermandad)
-        .options(joinedload(Hermandad.church))
+        .options(joinedload(Hermandad.church), joinedload(Hermandad.titulares))
         .filter(Hermandad.id == hermandad_id)
         .first()
     )
@@ -93,7 +116,7 @@ def get_brotherhoods_paginated(
     church_id: Optional[str] = None,
     has_media: Optional[bool] = None,
 ) -> Tuple[List[Hermandad], int]:
-    query = db.query(Hermandad).options(joinedload(Hermandad.church))
+    query = db.query(Hermandad).options(joinedload(Hermandad.church), joinedload(Hermandad.titulares))
 
     if q:
         pattern = f"%{q}%"
@@ -366,3 +389,123 @@ def reorder_plan_items(db: Session, *, plan_id: str, ordered_ids: List[str]) -> 
         db.query(PlanItem).filter(PlanItem.plan_id == plan_id, PlanItem.id == item_id).update({"position": idx})
     db.commit()
     return db.query(PlanItem).filter(PlanItem.plan_id == plan_id).order_by(PlanItem.position.asc()).all()
+
+
+# ============= Procession CRUD =============
+
+def list_processions(
+    db: Session,
+    *,
+    date: Optional[datetime] = None,
+    status: Optional[str] = None,
+) -> List[Procession]:
+    query = db.query(Procession)
+    if date:
+        query = query.filter(Procession.date == date)
+    if status:
+        query = query.filter(Procession.status == status)
+    return query.order_by(Procession.date.asc()).all()
+
+
+def get_procession(db: Session, procession_id: str) -> Optional[Procession]:
+    return db.query(Procession).filter(Procession.id == procession_id).first()
+
+
+# ============= Procession Schedule CRUD =============
+
+def list_procession_schedule_points(db: Session, *, procession_id: str) -> List[ProcessionSchedulePoint]:
+    return (
+        db.query(ProcessionSchedulePoint)
+        .filter(ProcessionSchedulePoint.procession_id == procession_id)
+        .order_by(ProcessionSchedulePoint.scheduled_datetime.asc())
+        .all()
+    )
+
+
+def replace_procession_schedule_points(
+    db: Session,
+    *,
+    procession_id: str,
+    points: List[ProcessionSchedulePointCreate],
+) -> List[ProcessionSchedulePoint]:
+    db.query(ProcessionSchedulePoint).filter(
+        ProcessionSchedulePoint.procession_id == procession_id
+    ).delete()
+    for p in points:
+        db.add(
+            ProcessionSchedulePoint(
+                id=str(uuid.uuid4()),
+                procession_id=procession_id,
+                point_type=p.point_type,
+                label=p.label,
+                scheduled_datetime=p.scheduled_datetime,
+            )
+        )
+    db.commit()
+    return list_procession_schedule_points(db, procession_id=procession_id)
+
+
+# ============= Procession Itinerary CRUD =============
+
+def get_procession_itinerary_text(db: Session, *, procession_id: str) -> Optional[ProcessionItineraryText]:
+    return (
+        db.query(ProcessionItineraryText)
+        .filter(ProcessionItineraryText.procession_id == procession_id)
+        .first()
+    )
+
+
+def upsert_procession_itinerary_text(
+    db: Session,
+    *,
+    procession_id: str,
+    payload: ProcessionItineraryTextUpsert,
+) -> ProcessionItineraryText:
+    itinerary = get_procession_itinerary_text(db, procession_id=procession_id)
+    if itinerary is None:
+        itinerary = ProcessionItineraryText(
+            id=str(uuid.uuid4()),
+            procession_id=procession_id,
+            raw_text=payload.raw_text,
+            source_url=payload.source_url,
+            accessed_at=payload.accessed_at or datetime.utcnow(),
+        )
+        db.add(itinerary)
+    else:
+        itinerary.raw_text = payload.raw_text
+        itinerary.source_url = payload.source_url
+        itinerary.accessed_at = payload.accessed_at or datetime.utcnow()
+    db.commit()
+    db.refresh(itinerary)
+    return itinerary
+
+
+# ============= Provenance CRUD =============
+
+def create_provenance(db: Session, *, payload: ProvenanceCreate) -> DataProvenance:
+    row = DataProvenance(
+        id=str(uuid.uuid4()),
+        entity_type=payload.entity_type,
+        entity_id=payload.entity_id,
+        source_url=payload.source_url,
+        accessed_at=payload.accessed_at,
+        fields_extracted=json.dumps(payload.fields_extracted),
+    )
+    db.add(row)
+    db.commit()
+    db.refresh(row)
+    return row
+
+
+def list_provenance(
+    db: Session,
+    *,
+    entity_type: Optional[str] = None,
+    entity_id: Optional[str] = None,
+) -> List[DataProvenance]:
+    query = db.query(DataProvenance)
+    if entity_type:
+        query = query.filter(DataProvenance.entity_type == entity_type)
+    if entity_id:
+        query = query.filter(DataProvenance.entity_id == entity_id)
+    return query.order_by(DataProvenance.created_at.desc()).all()

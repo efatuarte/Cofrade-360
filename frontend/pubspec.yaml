@@ -29,6 +29,10 @@ dependencies:
   shared_preferences: ^2.2.2
   flutter_secure_storage: ^10.0.0
   
+  # Map
+  flutter_map: ^8.2.2
+  latlong2: ^0.9.1
+
   # Utils
   dartz: ^0.10.1
   equatable: ^2.0.5

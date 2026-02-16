@@ -8,7 +8,7 @@ from datetime import datetime
 
 from app.core.security import get_password_hash
 from app.db.session import SessionLocal
-from app.models.models import Evento, Hermandad, Location, MediaAsset, User
+from app.models.models import Evento, Hermandad, Location, MediaAsset, Titular, User
 
 
 def seed_database():
@@ -51,6 +51,7 @@ def seed_database():
                 fecha_fundacion=datetime(1431, 1, 1),
                 name_short="Gran Poder",
                 name_full="Pontificia y Real Hermandad del Gran Poder",
+                web_url="https://www.gran-poder.es",
                 church_id=locations[3].id,
                 ss_day="madrugada",
                 history="Devoción histórica sevillana desde el siglo XV.",
@@ -66,6 +67,7 @@ def seed_database():
                 fecha_fundacion=datetime(1595, 1, 1),
                 name_short="Macarena",
                 name_full="Hermandad de la Esperanza Macarena",
+                web_url="https://www.hermandaddelamacarena.es",
                 church_id=locations[4].id,
                 ss_day="madrugada",
                 history="Una de las corporaciones más populares de Sevilla.",
@@ -81,6 +83,7 @@ def seed_database():
                 fecha_fundacion=datetime(1689, 1, 1),
                 name_short="Cachorro",
                 name_full="Hermandad del Santísimo Cristo de la Expiración",
+                web_url="https://www.hermandaddelcachorro.org",
                 church_id=locations[5].id,
                 ss_day="viernes_santo",
                 history="Icono de Triana y del Viernes Santo sevillano.",
@@ -120,6 +123,17 @@ def seed_database():
         db.add_all(media_assets)
         db.commit()
 
+        titulares = [
+            Titular(id=str(uuid.uuid4()), brotherhood_id=hermandades[0].id, name="Nuestro Padre Jesús del Gran Poder", kind="cristo", position=0),
+            Titular(id=str(uuid.uuid4()), brotherhood_id=hermandades[0].id, name="María Santísima del Mayor Dolor y Traspaso", kind="virgen", position=1),
+            Titular(id=str(uuid.uuid4()), brotherhood_id=hermandades[1].id, name="Nuestro Padre Jesús de la Sentencia", kind="cristo", position=0),
+            Titular(id=str(uuid.uuid4()), brotherhood_id=hermandades[1].id, name="María Santísima de la Esperanza Macarena", kind="virgen", position=1),
+            Titular(id=str(uuid.uuid4()), brotherhood_id=hermandades[2].id, name="Santísimo Cristo de la Expiración", kind="cristo", position=0),
+            Titular(id=str(uuid.uuid4()), brotherhood_id=hermandades[2].id, name="Nuestra Señora del Patrocinio", kind="virgen", position=1),
+        ]
+        db.add_all(titulares)
+        db.commit()
+
         eventos = [
             Evento(id=str(uuid.uuid4()), titulo="Pregón de Semana Santa 2026", descripcion="Pregón oficial de la Semana Santa de Sevilla.", tipo="otro", fecha_inicio=datetime(2026, 4, 3, 20, 0), fecha_fin=datetime(2026, 4, 3, 22, 0), location_id=locations[0].id, es_gratuito=False, precio=15.0, moneda="EUR", poster_asset_id="events/pregon-2026.jpg", estado="programado"),
             Evento(id=str(uuid.uuid4()), titulo="Vía Crucis Magno", descripcion="Vía Crucis por las calles del centro.", tipo="culto", fecha_inicio=datetime(2026, 4, 4, 18, 0), fecha_fin=datetime(2026, 4, 4, 21, 0), location_id=locations[1].id, hermandad_id=hermandades[1].id, es_gratuito=True, precio=0, poster_asset_id="events/via-crucis-magno.jpg", estado="programado"),
@@ -132,15 +146,13 @@ def seed_database():
             Evento(id=str(uuid.uuid4()), titulo="Traslado al Paso – Cachorro", descripcion="Traslado de imágenes al paso.", tipo="otro", fecha_inicio=datetime(2026, 4, 9, 22, 0), fecha_fin=datetime(2026, 4, 9, 23, 30), location_id=locations[5].id, hermandad_id=hermandades[2].id, es_gratuito=True, precio=0, estado="programado"),
             Evento(id=str(uuid.uuid4()), titulo="Exposición: Bordados de Semana Santa", descripcion="Muestra de bordados sevillanos.", tipo="exposicion", fecha_inicio=datetime(2026, 3, 20, 10, 0), fecha_fin=datetime(2026, 4, 12, 20, 0), location_id=locations[6].id, es_gratuito=False, precio=5.0, moneda="EUR", estado="programado"),
         ]
-        db.add_all(provenance_rows)
-        db.commit()
-
         db.add_all(eventos)
         db.commit()
 
         print("Database seeded successfully!")
         print(f"   - {len(locations)} locations")
         print(f"   - {len(hermandades)} hermandades")
+        print(f"   - {len(titulares)} titulares")
         print(f"   - {len(media_assets)} media assets")
         print(f"   - {len(eventos)} eventos")
 

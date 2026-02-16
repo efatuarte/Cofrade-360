@@ -3,12 +3,13 @@ from datetime import datetime
 from typing import Optional
 
 from fastapi import APIRouter, Depends, HTTPException, Query
-from sqlalchemy.orm import Session
+from sqlalchemy.orm import Session, joinedload
 
 from app.core.deps import get_db, require_roles
 from app.crud import crud
-from app.models.models import User
+from app.models.models import Procession as ProcessionModel, User
 from app.schemas.schemas import (
+    ProcessionDetailResponse,
     ProcessionItineraryTextResponse,
     ProcessionItineraryTextUpsert,
     ProcessionOccupationCreate,
@@ -37,12 +38,39 @@ def list_processions(
     return crud.list_processions(db, date=date, status=status.value if status else None)
 
 
-@router.get("/processions/{procession_id}", response_model=ProcessionResponse)
+@router.get("/processions/{procession_id}", response_model=ProcessionDetailResponse)
 def get_procession(procession_id: str, db: Session = Depends(get_db)):
-    item = crud.get_procession(db, procession_id)
+    item = (
+        db.query(ProcessionModel)
+        .options(
+            joinedload(ProcessionModel.schedule_points),
+            joinedload(ProcessionModel.itinerary),
+            joinedload(ProcessionModel.brotherhood),
+        )
+        .filter(ProcessionModel.id == procession_id)
+        .first()
+    )
     if not item:
         raise HTTPException(status_code=404, detail="Procession not found")
     return item
+
+
+@router.get(
+    "/brotherhoods/{brotherhood_id}/processions",
+    response_model=list[ProcessionDetailResponse],
+    tags=["hermandades"],
+)
+def get_brotherhood_processions(brotherhood_id: str, db: Session = Depends(get_db)):
+    return (
+        db.query(ProcessionModel)
+        .options(
+            joinedload(ProcessionModel.schedule_points),
+            joinedload(ProcessionModel.itinerary),
+        )
+        .filter(ProcessionModel.brotherhood_id == brotherhood_id)
+        .order_by(ProcessionModel.date.asc())
+        .all()
+    )
 
 
 @router.get("/processions/{procession_id}/occupations", response_model=list[ProcessionOccupationResponse])

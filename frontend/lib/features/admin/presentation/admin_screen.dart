@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../auth/presentation/providers/auth_provider.dart';
+import '../../auth/presentation/providers/auth_provider.dart';
 
 final adminBrotherhoodsProvider = FutureProvider<List<Map<String, dynamic>>>((ref) async {
   final response = await ref.watch(apiClientProvider).dio.get('/admin/brotherhoods');

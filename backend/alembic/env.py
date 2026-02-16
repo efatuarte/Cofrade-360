@@ -9,7 +9,7 @@ import os
 sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
 
 from app.db.session import Base
-from app.models.models import User, Location, Hermandad, Evento, Ruta, Nodo, Arista
+from app.models.models import User, Location, Hermandad, Titular, Evento, Ruta, Nodo, Arista
 from app.core.config import settings
 
 # this is the Alembic Config object

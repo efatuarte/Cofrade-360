@@ -34,6 +34,8 @@ class LocationKind(str, Enum):
 
 
 class SemanaSantaDay(str, Enum):
+    viernes_dolores = "viernes_dolores"
+    sabado_pasion = "sabado_pasion"
     domingo_ramos = "domingo_ramos"
     lunes_santo = "lunes_santo"
     martes_santo = "martes_santo"
@@ -162,6 +164,22 @@ class Hermandad(HermandadBase):
     model_config = ConfigDict(from_attributes=True)
 
 
+class TitularKind(str, Enum):
+    cristo = "cristo"
+    virgen = "virgen"
+    misterio = "misterio"
+    unknown = "unknown"
+
+
+class TitularResponse(BaseModel):
+    id: str
+    name: str
+    kind: TitularKind = TitularKind.unknown
+    position: int = 0
+
+    model_config = ConfigDict(from_attributes=True)
+
+
 class BrotherhoodResponse(BaseModel):
     id: str
     name_short: str
@@ -169,12 +187,14 @@ class BrotherhoodResponse(BaseModel):
     logo_asset_id: Optional[str] = None
     church_id: Optional[str] = None
     sede: Optional[str] = None
+    web_url: Optional[str] = None
     ss_day: Optional[SemanaSantaDay] = None
     history: Optional[str] = None
     highlights: Optional[str] = None
     stats: Optional[str] = None
     created_at: datetime
     church: Optional[LocationResponse] = None
+    titulares: List[TitularResponse] = []
 
     model_config = ConfigDict(from_attributes=True)
 
@@ -505,6 +525,20 @@ class ProcessionItineraryTextResponse(BaseModel):
     model_config = ConfigDict(from_attributes=True)
 
 
+class ProcessionDetailResponse(BaseModel):
+    id: str
+    brotherhood_id: str
+    date: datetime
+    status: str
+    confidence: float = 0.5
+    created_at: datetime
+    schedule_points: List[ProcessionSchedulePointResponse] = []
+    itinerary: Optional[ProcessionItineraryTextResponse] = None
+    brotherhood: Optional[BrotherhoodResponse] = None
+
+    model_config = ConfigDict(from_attributes=True)
+
+
 class ProvenanceCreate(BaseModel):
     entity_type: str
     entity_id: str
@@ -529,6 +563,7 @@ class IngestionBrotherhoodSource(BaseModel):
 class IngestionImportSummary(BaseModel):
     total_items: int
     created_hermandades: int
+    created_titulares: int = 0
     created_media: int
     created_processions: int
     created_schedule_points: int
